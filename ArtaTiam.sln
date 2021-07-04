@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtaTiam", "ArtaTiam\ArtaTiam.csproj", "{727FB212-7C8B-438D-8F95-F53AF2A9CE45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{87A1E5C0-B216-4AE6-8138-5F16C2371248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{7D8AC70F-9795-4367-9B66-5816EE9F8322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727FB212-7C8B-438D-8F95-F53AF2A9CE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727FB212-7C8B-438D-8F95-F53AF2A9CE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727FB212-7C8B-438D-8F95-F53AF2A9CE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727FB212-7C8B-438D-8F95-F53AF2A9CE45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A1E5C0-B216-4AE6-8138-5F16C2371248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A1E5C0-B216-4AE6-8138-5F16C2371248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A1E5C0-B216-4AE6-8138-5F16C2371248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A1E5C0-B216-4AE6-8138-5F16C2371248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8AC70F-9795-4367-9B66-5816EE9F8322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8AC70F-9795-4367-9B66-5816EE9F8322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8AC70F-9795-4367-9B66-5816EE9F8322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8AC70F-9795-4367-9B66-5816EE9F8322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D60855BE-37F3-410A-8456-92919BB7A7C1}
+	EndGlobalSection
+EndGlobal

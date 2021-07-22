@@ -1,0 +1,295 @@
+﻿body {
+  min-height: 100vh;
+  background: #F2F2F2;
+  overflow-x: hidden !important; }
+
+@font-face {
+  font-family: "Sahel";
+  src: url("/fonts/fontsite/Sahel.woff");
+  src: url("/fonts/fontsite/Sahel.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: url("/fonts/fontsite/IRANYekan.ttf");
+  src: url("/fonts/fontsite/IRANYekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'IranianSans';
+  src: url("/fonts/fontsite/Iranian Sans.ttf");
+  src: url("/fonts/fontsite/Iranian Sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'IranSans';
+  src: url("/fonts/fontsite/IRAN Sans Regular.ttf");
+  src: url("/fonts/fontsite/IRAN Sans Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'BNARM';
+  src: url("/fonts/fontsite/BNARM.TTF");
+  src: url("/fonts/fontsite/BNARM.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+.Sahel {
+  font-family: "Sahel"; }
+
+.IRANYekan {
+  font-family: 'IRANYekan'; }
+
+.IranSans {
+  font-family: 'IranSans'; }
+
+.BNARM {
+  font-family: 'BNARM'; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Sahel;
+  list-style: none;
+  text-decoration: none;
+  outline: none; }
+
+.visible {
+  visibility: visible; }
+
+.hidden {
+  visibility: hidden; }
+
+.display-none {
+  display: none; }
+
+.absolute {
+  position: absolute; }
+
+/*#region Alignment */
+.my-column {
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-align-content: center;
+  -webkit-align-content: center;
+  align-content: center; }
+
+.my-row {
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-align-content: center;
+  -webkit-align-content: center;
+  align-content: center; }
+
+.my-center {
+  text-align: center;
+  align-content: center;
+  align-self: center;
+  margin: 0 auto; }
+
+.fillwidth {
+  min-width: 100%;
+  height: auto; }
+
+.fillheight {
+  min-height: 100%;
+  width: auto; }
+
+/*#endregion */
+.my-clipped {
+  margin-left: auto;
+  margin-right: auto;
+  width: 86vw; }
+
+a:hover {
+  text-decoration: none; }
+
+.gly-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.gly-rotate-270 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.card-with-border {
+  background: #FFFFFF;
+  border: 1px solid #11698E;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px; }
+
+.my-borderless-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px; }
+
+.filter-card {
+  background: #FFF7F1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px; }
+
+.mytext-white {
+  color: white !important; }
+
+.mytext-gray {
+  color: #666 !important; }
+
+.mytext-green {
+  color: #157c3f !important;
+  fill: #157c3f; }
+
+.mytext-orange {
+  color: #FFBC5A; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.paragragh {
+  text-align: justify;
+  text-justify: inter-word;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 2; }
+
+.bgMyGold {
+  background: linear-gradient(125.66deg, #FACA61 16.51%, #E2A734 33.39%, #F1BD50 57.56%, #FBC763 64.86%, #E3AC34 72.61%) !important; }
+
+.bgMyGreen {
+  background: linear-gradient(141.6deg, #126634 13.63%, #248864 38.22%, #126634 65.2%, #286534 73.35%, #126634 82.01%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px; }
+
+.mytext-gold {
+  color: #EDB649;
+  fill: #EDB649; }
+
+.text-08 {
+  font-size: 0.8rem; }
+
+.text-1 {
+  font-size: 1rem; }
+
+.mytext-light {
+  color: #a8a4a4;
+  fill: #a8a4a4; }
+
+.mytext-red {
+  color: #d4200e;
+  fill: #d4200e; }
+
+.space-top {
+  height: 100px; }
+
+/*layout style section*/
+.active-header {
+  color: black;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(7px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+.navbar-section .vertical-divider {
+  width: 2px;
+  height: 90px;
+  border-left: 1px solid #d4cfcf;
+  padding-right: 15px; }
+
+.navbar-section .my-nav-item .nav-link {
+  color: black;
+  font-size: 18px;
+  font-family: IranSans !important;
+  font-weight: 600; }
+
+.navbar-section .my-nav-item {
+  border-bottom: 2px solid transparent;
+  padding: 20px 6px; }
+
+.navbar-section .my-nav-item:visited,
+.navbar-section .my-nav-item:link {
+  border-bottom: 2px solid transparent; }
+
+.navbar-section .my-nav-item:hover,
+.navbar-section .my-nav-item:active {
+  border-bottom: 2px solid #157c3f; }
+  .navbar-section .my-nav-item:hover a,
+  .navbar-section .my-nav-item:active a {
+    color: #157c3f !important; }
+
+.navbar-section .header-flag .nav-link {
+  background: transparent;
+  border-radius: 50%;
+  padding: 0 0.4rem;
+  margin: 0 3px;
+  color: red !important; }
+
+.navbar-section .header-flag .nav-link:hover {
+  background: #EDBA53;
+  fill: white; }
+
+@media only screen and (max-width: 1100px) {
+  .my-nav-item {
+    padding: 10px 6px !important;
+    text-align: right; } }
+
+.right-side-logo {
+  right: 30px;
+  position: fixed;
+  top: 200px;
+  z-index: 100; }
+
+.footer-space {
+  height: 500px; }
+
+/*footer style section*/
+.footer-section {
+  position: relative;
+  width: 100%;
+  bottom: 0; }
+  .footer-section footer {
+    background-image: url("/img/footer-bg.svg");
+    background-size: cover;
+    padding: 50px 0px 20px 0px; }
+    .footer-section footer .footer-titr {
+      font-family: BNARM !important;
+      font-size: 24px; }
+    .footer-section footer .footer-widget hr {
+      border: 2px groove #E3AC34; }
+    .footer-section footer .footer-widget h6 {
+      padding-bottom: 0.45rem;
+      font-family: IRANYekan; }
+    .footer-section footer .footer-widget .vertical-divider {
+      width: 0.5px;
+      height: 40px;
+      border-left: 1px solid #d4cfcf;
+      padding-right: 1px; }
+    .footer-section footer .footer-widget li {
+      padding: 3px 0;
+      font-family: IranSans; }
+      .footer-section footer .footer-widget li a {
+        color: white;
+        font-size: 0.8rem; }
+      .footer-section footer .footer-widget li a:hover {
+        color: gray; }
+        .footer-section footer .footer-widget li a:hover span {
+          color: gray !important; }
+    .footer-section footer .footer-icon {
+      width: 18px !important; }

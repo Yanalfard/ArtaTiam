@@ -5,6 +5,7 @@
 }
 
 <link href="~/css/contact.min.css" rel="stylesheet" />
+<link href="~/css/leaflet.css" rel="stylesheet" />
 
 <section class="contact-us-section col-md-10 my-center">
     <h3 class="text-center title-h3 my-center mb-5">
@@ -12,7 +13,7 @@
             تماس با ما
         </span>
     </h3>
-    <div class="white-card  pr-2 pl-2 pt-4 pb-4 p-md-4" >
+    <div class="white-card  pr-2 pl-2 pt-4 pb-4 p-md-4">
         <div class="text-right" dir="rtl">
             <i class="mytext-red" uk-icon="location" width="35"></i>
             <span class="mytext-bold text-1"> آدرس دفتر مرکزی </span>: ایران / استان آذربایجان شرقی / تبریز / بلوار استاد شهریار / جنب اداره کل بهزیستی / ساختمان 22 / طبقه 5 / واحد<span> E     </span>
@@ -49,10 +50,42 @@
             ارتباط مستقیم
         </span>
     </h3>
-    <div class="white-card p-4" dir="rtl">
+    <div class="white-card pt-4 pb-4 pr-2 pl-2 p-md-4 my-center" dir="rtl">
         <div class="row">
-            
+            <div class="col-md-6 text-right">
+                <span class="mytext-bold text-1 mytext-green"> مدیر عامل (مهندس صفری): </span><span class="mr-1"> 9141245761 98+ </span>
+            </div>
+            <div class="col-md-6 text-right mt-2 mt-md-0">
+                <span class="mytext-bold text-1 mytext-green"> رئیس هیأت مدیره  (آقای اصغری): </span><span class="mr-1"> 9144239397 98+ </span>
+            </div>
         </div>
     </div>
 </section>
+
+@*map section*@
+
+<section class="col-md-10 my-center mt-5 mb-5">
+    <div id="map" class="map my-center"></div>
+</section>
+
+<script src="~/js/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([38.07674409597339, 46.29700302496196], 12);
+
+    L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
+    var iconSetting = L.Icon.extend({
+        options: {
+            iconSize: [28, 40],
+            iconAnchor: [12, 35]
+        }
+    });
+    var customIcon = new iconSetting({ iconUrl: '/green-location.png' });
+    var theMarker = {};
+    theMarker = L.marker([38.07674409597339, 46.29700302496196],
+        { icon: customIcon }).addTo(map).bindPopup(
+            `<h6 class='mytext-darkBlue'>آرتا تیام مهام</h6>`
+        );
+</script>
 

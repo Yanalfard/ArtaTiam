@@ -10,5 +10,9 @@
   {
     "outputFile": "wwwroot/css/contact.css",
     "inputFile": "wwwroot/css/contact.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/About.css",
+    "inputFile": "wwwroot/css/About.scss"
   }
 ]

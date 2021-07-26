@@ -1,0 +1,257 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <title>آرتا تیام مهام</title>
+    <link href="~/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/Controls.min.css" rel="stylesheet" />
+    <link href="/img/Logo.ico" rel="icon" />
+</head>
+<body>
+    <section class="Header navbar-section">
+        <nav id="menu" class="navbar navbar-expand-lg navbar-light fixed-top pt-0 pb-0 border-bottom" style=" background: rgba(255, 255, 255, 1);">
+            <ul class=" header-flag navbar-brand navbar-nav my-row pb-0 pl-4" dir="rtl">
+                <li class="nav-item">
+                    <a class="nav-link mytext-light" href="#" uk-icon="logo-instagram" width="18"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mytext-light" href="#" uk-icon="logo-whatsapp" width="18"></a>
+                </li>
+            </ul>
+            <span class="vertical-divider"></span>
+            <ul class="navbar-brand navbar-nav my-row pb-0" dir="rtl">
+                <li class="nav-item pl-2 pl-lg-0">
+                    <a class="nav-link" href="#">
+                        <img src="~/img/flag/UK-flag.png" width="18" />
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="~/img/flag/iran.png" width="18" />
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon font-weight-bold"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav my-center pb-0" dir="rtl">
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="/">صفحه اصلی</a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            خدمات
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            صادرات
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            واردات
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="/About/aboutCEO">
+                            مدیریت
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            گالری
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            اعلام همکاری
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="#">
+                            درباره ما
+                        </a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" href="/Contact/ContactUs">
+                            تماس با ما
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="navbar-brand navbar-right ml-auto pb-0 d-none d-lg-block">
+                    <img src="~/img/Logo.png" height="80" />
+                </a>
+            </div>
+        </nav>
+
+    </section>
+    <div class=" my-column right-side-logo">
+
+        <a href="#"><img src="~/img/static-layout/Instagram-logo-PNG.png" /></a>
+        <a href="#"><img class="mt-2" src="~/img/static-layout/watsapp.png" /></a>
+    </div>
+    <div class="">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+
+    <section class="footer-section">
+        <div class="bgMyGold p-3"></div>
+        <footer class="">
+            <div class="container" dir="rtl">
+                <div class="row justify-content-start">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="footer-widget">
+                            <!-- Brand -->
+                            <h6 href="#" class="text-white text-right footer-titr pb-0">
+                                شرکت بازرگانی <span class="mytext-gold footer-titr">آرتا تیام مهام</span>
+                            </h6>
+                            <hr />
+                            <p class="paragragh text-white IranSans d-none d-md-block">این قالب به صورت کاملا حرفه ای و تخصصی طراحی و پیاده سازی شده است. کدنویسی این قالب کاملا مطابق با استاندارد ها و اصول طراحی وب بوده و کامنت گذاری بخش های مختلف به شما کمک می کند تا بدون دردسر این قالب را مورد استفاده قرار دهید.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 mr-lg-auto col-sm-12">
+                        <div class="footer-widget text-right">
+                            <h6 class="text-white">اطلاعات تماس</h6>
+                            <hr />
+                            <!-- Links -->
+                            <ul class="footer-links ">
+                                <li>
+
+                                    <i class="mytext-gold footer-icon" uk-icon="location" width="18"></i>
+                                    <span class="text-white text-08">
+                                        ایران / استان آذربایجان شرقی / تبریز / بلوار استاد شهریار / جنب اداره کل بهزیستی / ساختمان 22 / طبقه 5 / واحد E
+                                    </span>
+
+                                </li>
+                                <li>
+
+                                    <i class=" mytext-gold gly-rotate-270" uk-icon="call" width="18"></i>
+                                    <span class="text-white text-08">
+                                        1047 3310 041 - 1099 3310 041
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <a href="mailto:artatiyammaham@chmail.ir">
+                                        <i class=" mytext-gold" uk-icon="mail" width="18"></i>
+                                        <span class="text-white text-08">
+                                            artatiyammaham@chmail.ir
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class=" mytext-gold" uk-icon="logo-whatsapp" width="18"></i>
+                                        <span class="text-white text-08">
+                                            9141245761 98+
+                                        </span>
+                                    </a>
+                                    <span class="vertical-divider"></span>
+                                    <i class="mytext-gold" uk-icon="phone-portrait-outline" width="18"></i>
+                                    <span class="text-white text-08">
+                                        9144239397 98+
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class=" mytext-gold" uk-icon="logo-instagram" width="18"></i>
+                                        <span class="text-white text-08">
+                                            arta.tiyammaham
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-6 d-none d-md-block">
+                        <div class="footer-widget text-right">
+                            <h6 class="text-white">دسترسی سریع</h6>
+                            <hr />
+                            <!-- Links -->
+                            <ul class="footer-links ">
+                                <li>
+                                    <a href="#">
+                                        صفحه اصلی
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        خدمات
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        صادرات و واردات
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-6 d-none d-md-block">
+                        <div class="footer-widget text-right">
+                            <h6 class="text-white">ارتباط با ما</h6>
+                            <hr />
+                            <!-- Links -->
+                            <ul class="footer-links ">
+                                <li>
+                                    <a href="#">
+                                        درباره ما
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        تماس با ما
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        فرم درخواست مذاکره
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- / .row -->
+                <hr class="mt-0 pt-0" />
+                <div class="my-center">
+                    <span class="text-white text-08 IranSans">
+                        ﻃﺮح و ﻣﻄﺎﻟﺐ اﻧﺤﺼﺎرا ﺑﺮای ﺷﺮﮐﺖ آرﺗﺎ ﺗﯿﺎم ﻣﻬﺎم ﻣﺤﻔﻮظ ﻣﯽ ﺑﺎﺷﺪ و در ﺻﻮرت ﻫﺮﮔﻮﻧﻪ ﮐﭙﯽ ﺑﺮداری ﭘﯿﮕﺮد ﻗﺎﻧﻮﻧﯽ دارد. ﻃﺮاﺣﯽ و ﭘﯿﺎده ﺳﺎزی ﺗﻮﺳﻂ ﺷﺮﮐﺖ اﯾﺪه ﭘﺮداز آروﯾﻦ ﺗﺎو
+                    </span>
+                </div>
+
+            </div>
+        </footer>
+    </section>
+    <!-- Footer -->
+
+    <script src="~/Jquery/jquery-3.4.1.js"></script>
+    <script src="~/Bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/uikit.min.js"></script>
+    <script src="~/js/uikit-icons.js"></script>
+    <script>
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 50) {
+                $("#menu").addClass("active-header");
+
+            } else {
+                //remove the background property so it comes transparent again (defined in your css)
+                $("#menu").removeClass("active-header");
+            }
+        });
+    </script>
+</body>
+</html>
+
+

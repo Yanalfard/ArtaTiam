@@ -1,0 +1,180 @@
+﻿@import "Controls.scss";
+.mytext-bold{
+    font-weight:600;
+}
+.about-us-section {
+    width: 80%;
+    padding-top: 130px;
+    padding-bottom: 20px;
+
+    h3 {
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px solid #126634;
+        line-height: 0.1em;
+        margin: 10px 0 20px;
+        font-weight: 600;
+
+        span {
+            font-family: IRANYekan;
+            background: #F2F2F2;
+            padding: 0 10px;
+            font-size: 18px;
+        }
+    }
+}
+
+.about-container {
+    display: flex;
+
+    .content-container {
+        flex: 1;
+    }
+
+    .img-container {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .about-container {
+        display: flex;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -ms-align-content: center;
+        -webkit-align-content: center;
+        align-content: center;
+
+        img {
+            width: 200px !important;
+        }
+    }
+
+    .about-us-section {
+        width: 90%;
+
+        .mobile-header {
+            display: block !important;
+        }
+
+        .desktop-header {
+            display: none !important;
+        }
+    }
+}
+///////////////////////////////////////////
+/*Staff section*/
+.about-us-section {
+    .grid {
+        @include grid-gap(180px,1em);
+        padding: 20px 3vw;
+    }
+
+    .whiteCard {
+        width: 180px;
+        min-height: 280px;
+        background: #FBFBFB;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    .Staff-container {
+        .img-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            padding: 4px;
+            border: 1px solid #808080;
+            
+
+            img {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+////////////////////////////
+/*about ceo section*/
+.about-ceo-section {
+    width: 80%;
+    padding-top: 130px;
+    padding-bottom: 20px;
+
+    .title-h3 {
+        width: 47%;
+        text-align: center;
+        border-bottom: 2px solid #126634;
+        line-height: 0.1em;
+        /* margin: 10px 0 20px;*/
+
+        span {
+            font-family: IRANYekan;
+            background: #F2F2F2;
+            padding: 0 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .img-container {
+        height: 285px !important;
+        max-width: 285px !important;
+        padding: 7px;
+        border: 1px solid #EDB649;
+        background: white;
+        border-radius: 10px;
+        vertical-align: top !important;
+         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        img {
+            border-radius: 10px;
+            height: 270px !important;
+            width: 270px !important;
+            object-fit: cover;
+        }
+    }
+
+    .content-container {
+        span {
+            margin: 10px 0;
+            font-size: 14px;
+            font-family: IRANYekan;
+        }
+    }
+
+
+
+    @media screen and (max-width: 780px) {
+
+        .title-h3 {
+            width: 90% !important;
+        }
+    }
+
+    .bgMyGold {
+        border: none !important;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    }
+
+    .bgMyGold:hover {
+        background: #e1e1e1 !important;
+    }
+}
+@media screen and (max-width: 780px) {
+    .about-ceo-section {
+        width: 90%;
+
+        .img-container {
+            @include my-center();
+
+            img {
+                height: 240px !important;
+                width: 240px !important;
+            }
+        }
+    }
+    }

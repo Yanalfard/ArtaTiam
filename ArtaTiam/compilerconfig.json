@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Controls.css",
+    "inputFile": "wwwroot/css/Controls.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Index.css",
+    "inputFile": "wwwroot/css/Index.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/contact.css",
+    "inputFile": "wwwroot/css/contact.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/About.css",
+    "inputFile": "wwwroot/css/About.scss"
+  }
+]

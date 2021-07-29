@@ -8,17 +8,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.Models
 {
-    public partial class TblContactU
+    [Table("TblUser")]
+    public partial class TblUser
     {
         [Key]
-        public int ContactUsId { get; set; }
+        public int UserId { get; set; }
+        [Required]
         [StringLength(150)]
-        public string To { get; set; }
-        [StringLength(150)]
-        public string Email { get; set; }
-        [StringLength(20)]
+        public string Name { get; set; }
+        [Required]
+        [StringLength(11)]
         public string TellNo { get; set; }
-        [StringLength(1000)]
-        public string Message { get; set; }
+        [Required]
+        [StringLength(64)]
+        public string Password { get; set; }
     }
 }

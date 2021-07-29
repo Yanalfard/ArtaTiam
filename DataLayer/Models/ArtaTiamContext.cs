@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -18,6 +20,7 @@ namespace DataLayer.Models
         public virtual DbSet<TblConfig> TblConfigs { get; set; }
         public virtual DbSet<TblContactU> TblContactUs { get; set; }
         public virtual DbSet<TblNegotiation> TblNegotiations { get; set; }
+        public virtual DbSet<TblUser> TblUsers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

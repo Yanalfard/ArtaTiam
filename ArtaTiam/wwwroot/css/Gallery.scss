@@ -1,0 +1,118 @@
+﻿@import "Controls.scss";
+
+.gallery-section {
+    padding-top: 130px;
+    padding-bottom: 20px;
+
+    .title-h3 {
+        width: 47%;
+        text-align: center;
+        border-bottom: 2px solid #126634;
+        line-height: 0.1em;
+        /* margin: 10px 0 20px;*/
+
+        span {
+            font-family: IRANYekan;
+            background: #F2F2F2;
+            padding: 0 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .white-card {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+
+        .title-h3 {
+            span {
+                background: #FFFFFF !important;
+            }
+        }
+
+        .right-side-menu{
+            max-height:250px;
+        }
+        .bgMyGreen {
+            border-radius: 15px 15px 0 0;
+        }
+    }
+
+    .card-with-border {
+        background: transparent;
+        border: 1px solid #0C590B;
+        border-radius: 10px;
+        padding: 15px 5px;
+    }
+}
+@media screen and (max-width: 780px) {
+    .gallery-section{
+    .title-h3 {
+        width: 90% !important;
+    }
+}
+}
+
+
+// None of this CSS is required for the gallery and lightbox to function.
+
+// --- BEGIN: crop images --- //
+// Optional CSS for cropping images that aren't all the same size.
+
+// Use Bootstrap breakpoints for consistency.
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+$bootstrap-lg: 992px;
+$bootstrap-xl: 1200px;
+
+// Crop thumbnail images.
+#gallery {
+
+    img {
+        height: 75vw;
+        object-fit: contain;
+
+        @media (min-width: $bootstrap-sm) {
+            height: 35vw;
+        }
+
+        @media (min-width: $bootstrap-lg) {
+            height: 18vw;
+        }
+    }
+}
+
+
+// Crop images in lightbox.
+.carousel-item {
+
+    img {
+        height: 60vw;
+        object-fit: contain;
+
+        @media (min-width: $bootstrap-sm) {
+            height: 350px;
+        }
+    }
+}
+
+// --- END: crop images --- //
+
+#gallery {
+
+
+    img {
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    cursor: pointer;
+
+
+    img:hover {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50px;
+    }
+}
+

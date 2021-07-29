@@ -3,6 +3,9 @@
   background: #F2F2F2;
   overflow-x: hidden !important; }
 
+html {
+  scroll-behavior: smooth; }
+
 @font-face {
   font-family: "Sahel";
   src: url("/fonts/fontsite/Sahel.woff");
@@ -303,16 +306,20 @@ a:hover {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }*/ }
+  .header-section .carousel-thumbnails {
+    padding-top: 90px; }
   .header-section .carousel-ban-text-adj {
     position: absolute;
     width: 600px;
     display: flex;
-    margin-left: 18px;
+    /*margin-left: 18px;*/
     bottom: 180px;
     background: rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(7px);
     border-radius: 12px;
     padding: 15px 0; }
+  .header-section .carousel-control-next, .header-section .carousel-control-prev {
+    top: 60px; }
   .header-section .carousel-header-adj {
     margin: 0;
     vertical-align: top;
@@ -329,7 +336,9 @@ a:hover {
     color: white; }
   .header-section .carousel-img-fit {
     min-width: 980px;
+    /*max-width: 1000px;*/
     min-height: 500px;
+    max-height: 500px;
     object-fit: cover;
     object-position: 50% 50%; }
   .header-section .carousel-banner {
@@ -340,11 +349,13 @@ a:hover {
     margin-right: auto;
     transition: 1s; }
   .header-section .carousel-indicators li {
-    width: 250px;
+    width: 200px;
     margin-top: -150px;
     margin-left: -60px;
     transition: 1s;
     opacity: 1; }
+    .header-section .carousel-indicators li img {
+      max-height: 100px; }
   .header-section .carousel-indicators li.active {
     border-top: 4px solid #EDB649;
     z-index: 15; }
@@ -364,10 +375,10 @@ a:hover {
       bottom: -40px; } }
   @media (max-width: 550px) {
     .header-section .carousel-swap-adjuster {
-      bottom: -75px; } }
+      bottom: -70px; } }
   @media (max-width: 380px) {
     .header-section .carousel-swap-adjuster {
-      bottom: -105px; } }
+      bottom: -15px; } }
   .header-section .tile_1 {
     z-index: 14; }
   .header-section .tile_2 {
@@ -446,8 +457,7 @@ a:hover {
 
 .video-section {
   width: 80%;
-  margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-top: 30px; }
 
 .video-section-container {
   display: flex; }
@@ -627,9 +637,9 @@ a:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
   .export-import-section .paragragh {
     padding: 0 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: IranSans; }
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a4a4a; }
 
 @media screen and (max-width: 780px) {
   .export-import-section h3 {

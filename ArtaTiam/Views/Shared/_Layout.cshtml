@@ -43,17 +43,17 @@
                         <a class="nav-link" href="/">صفحه اصلی</a>
                     </li>
                     <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/Home/#Services">
                             خدمات
                         </a>
                     </li>
                     <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/Home/#Export">
                             صادرات
                         </a>
                     </li>
                     <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/Home/#Import">
                             واردات
                         </a>
                     </li>
@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/Gallery/Gallery">
                             گالری
                         </a>
                     </li>
@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/About/aboutUs">
                             درباره ما
                         </a>
                     </li>
@@ -113,7 +113,9 @@
                                 شرکت بازرگانی <span class="mytext-gold footer-titr">آرتا تیام مهام</span>
                             </h6>
                             <hr />
-                            <p class="paragragh text-white IranSans d-none d-md-block">این قالب به صورت کاملا حرفه ای و تخصصی طراحی و پیاده سازی شده است. کدنویسی این قالب کاملا مطابق با استاندارد ها و اصول طراحی وب بوده و کامنت گذاری بخش های مختلف به شما کمک می کند تا بدون دردسر این قالب را مورد استفاده قرار دهید.</p>
+                            <p class="paragragh text-white IRANYekan text-08 d-none d-md-block">
+                                شرکت آرتا تیام مهام بر خود تعهد می داند با عقد قراردادهای منتفع الطرفین با گارانتی کامل، تامین و صادر کلیه سفارشات کشورهای مقصد را با بهترین شرکت های حمل و نقل زمینی و دریایی در اسرع وقت با نازلترین قیمت و برترین کیفیت در اختیار تجار محترم قرار دهد
+                            </p>
                         </div>
                     </div>
 
@@ -251,6 +253,16 @@
             }
         });
     </script>
+
+    <script src="~/lightbox/ekko-lightbox.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+   
+    
 </body>
 </html>
 

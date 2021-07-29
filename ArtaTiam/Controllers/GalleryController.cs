@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ArtaTiam.Controllers
 {
-    public class HomeController : Controller
+    public class GalleryController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Services()
+        public IActionResult Gallery()
         {
             return View();
         }

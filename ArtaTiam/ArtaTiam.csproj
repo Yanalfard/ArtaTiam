@@ -36,6 +36,8 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="wwwroot\lightbox\ekko-lightbox.js" />
+    <None Include="wwwroot\lightbox\ekko-lightbox.min.js.map" />
   </ItemGroup>
 
 </Project>

@@ -8,8 +8,7 @@
 <link href="~/Owl/owl.carousel.min.css" rel="stylesheet" />
 <link href="~/Owl/owl.theme.default.min.css" rel="stylesheet" />
 
-<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js">
-</script>
+<script src="~/Jquery/jquery.min.js"></script>
 <script src="~/Owl/owl.carousel.js"></script>
 <link href="~/css/Index.min.css" rel="stylesheet" />
 <section class="header-section">
@@ -61,10 +60,7 @@
         <!--/.Controls-->
         <ol class="carousel-indicators carousel-swap-adjuster carousel-banner-indicator ">
             <li data-target="#carousel-thumb" data-slide-to="0" class="active tile_3">
-                <div>
-                    <img class="d-block w-100 img-fluid" src="~/img/index/header1.jpg">
-                    <p>text example</p>
-                </div>
+                <img class="d-block w-100 img-fluid" src="~/img/index/header1.jpg">
             </li>
             <li data-target="#carousel-thumb" data-slide-to="1" class="tile_2">
                 <img class="d-block w-100 img-fluid" src="~/img/index/header2.jpg">
@@ -166,6 +162,7 @@
     </div>
 </section>
 
+<!--video section-->
 <section class="video-section my-center">
     <div class="video-section-container my-center pt-2 my-center">
         <div class="img-container pt-md-4">
@@ -181,7 +178,8 @@
     </div>
 </section>
 <!--service section-->
-<section class="service-section my-center">
+<div class="pt-5" id="Services"></div>
+<section class="service-section my-center" >
     <div class="service-container">
         <h3 class="text-center my-center mb-5">
             <span class="my-center">
@@ -296,10 +294,11 @@
 
         </div>
     </div>
+    <div id="Export"></div>
 </section>
 @*export and import section*@
 <section class="export-import-section">
-    <h3 class="text-center my-center mb-5">
+    <h3 class="text-center my-center mb-4">
         <span class="my-center">
             صادرات
         </span>
@@ -337,10 +336,10 @@
                 محصولات نو آوری شده کشاورزی و باغی
             </p>
         </div>
-
+        
     </div>
-    <h3 class="text-center my-center mb-5 mt-5">
-
+    <div class="mb-4" id="Import"></div>
+    <h3 class="text-center my-center mb-4">
         <span class="my-center">
             واردات
         </span>
@@ -356,7 +355,7 @@
             </div>
         </div>
     </div>
-</section>-->
+</section>
 
 
 

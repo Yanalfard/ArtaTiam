@@ -3,6 +3,9 @@
   background: #F2F2F2;
   overflow-x: hidden !important; }
 
+html {
+  scroll-behavior: smooth; }
+
 @font-face {
   font-family: "Sahel";
   src: url("/fonts/fontsite/Sahel.woff");

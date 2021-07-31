@@ -147,8 +147,8 @@
     /*end header style*/
     .Introduction-section {
         width: 80%;
-        margin-top: 110px;
-        margin-bottom: 110px;
+        margin-top: 50px;
+        margin-bottom: 50px;
 
         h3 {
             width: 100%;
@@ -224,6 +224,9 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             padding: 4px;
             border-radius: 50%
+        }
+        label{
+            margin-top:10px;
         }
     }
     /////////////////////////////////////////////
@@ -476,4 +479,12 @@
             }
         }
     }
+
+
+
+
+
+
+
+
 

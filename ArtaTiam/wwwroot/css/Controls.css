@@ -262,7 +262,8 @@ a:hover {
   top: 200px;
   z-index: 100; }
   .right-side-logo .side-item {
-    transition: transform .2s; }
+    transition: transform .2s;
+    width: 40px; }
   .right-side-logo .side-item:hover {
     -ms-transform: scale(1.4);
     /* IE 9 */

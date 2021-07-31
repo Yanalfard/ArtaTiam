@@ -363,6 +363,16 @@ a:hover {
     position: fixed;
     top: 200px;
     z-index: 100;
+
+    .side-item {
+        transition: transform .2s;
+    }
+
+    .side-item:hover {
+        -ms-transform: scale(1.4); /* IE 9 */
+        -webkit-transform: scale(1.4); /* Safari 3-8 */
+        transform: scale(1.4);
+    }
 }
 //////////////////////////////////////
 .footer-space {

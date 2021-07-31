@@ -150,7 +150,8 @@ a:hover {
   border-radius: 10px; }
 
 .mytext-white {
-  color: white !important; }
+  color: white !important;
+  fill: white; }
 
 .mytext-gray {
   color: #666 !important; }

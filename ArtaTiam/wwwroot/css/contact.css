@@ -150,7 +150,8 @@ a:hover {
   border-radius: 10px; }
 
 .mytext-white {
-  color: white !important; }
+  color: white !important;
+  fill: white; }
 
 .mytext-gray {
   color: #666 !important; }
@@ -350,7 +351,7 @@ a:hover {
   border-radius: 7px; }
 
 .form-section {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 30px; }
   .form-section form {
     padding: 20px 60px; }

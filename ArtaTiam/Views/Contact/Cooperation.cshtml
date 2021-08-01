@@ -41,3 +41,56 @@
 </section>
 @*form section*@
 
+<section class="form-section col-md-10 my-center">
+    <h3 class="text-center title-h3 my-center mb-5">
+        <span class="my-center">
+            فرم درخواست مذاکره
+        </span>
+    </h3>
+    <div class="form-container white-card p-4" dir="rtl">
+        <form>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5 ">
+                    <input type="text" class="form-control" id="name" placeholder="نام و نام خانوادگی: ">
+                </div>
+                <div class="form-group col-md-6 col-lg-5 mr-lg-auto">
+                    <input type="text" class="form-control" id="country" placeholder="نام کشور:">
+                </div>
+            </div>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5">
+                    <input type="number" class="form-control" id="PersonalCode" placeholder="کد ملی:">
+                </div>
+                <div class="form-group col-md-4 col-lg-3 mr-lg-auto">
+                    <select id="ProductType" class="form-control">
+                        <option selected>نوع محصول درخواستی:</option>
+                        <option>میوه جات</option>
+                        <option>گروه مواد غذایی</option>
+                        <option>سایر</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2 col-lg-2">
+                    <select id="Tonnage" class="form-control" placeholder="نوع محصول درخواستی:">
+                        <option selected>تناژ مورد نیاز:</option>
+                        <option>20-40</option>
+                        <option>41-100</option>
+                        <option>101-500</option>
+                        <option>سایر</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5">
+                    <input type="tel" class="form-control" id="name" placeholder="شماره واتساپ جهت ارتباط: ">
+                </div>
+            </div>
+
+            <div class="form-group purple-border mt-md-2">
+                <textarea class="form-control" id="Description" rows="3" placeholder="مشخصات مختصری از محصول درخواستی :"></textarea>
+            </div>
+
+            <button type="submit" class="btn bgMyGreen text-white col-12 mt-2">ارسال</button>
+        </form>
+    </div>
+</section>

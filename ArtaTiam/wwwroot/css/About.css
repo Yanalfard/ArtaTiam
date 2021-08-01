@@ -412,7 +412,14 @@ a:hover {
       border-radius: 10px;
       height: 270px !important;
       width: 270px !important;
-      object-fit: cover; }
+      object-fit: cover;
+      transition: transform 2s; }
+    .about-ceo-section .img-container img:hover {
+      -ms-transform: scale(1.2);
+      /* IE 9 */
+      -webkit-transform: scale(1.2);
+      /* Safari 3-8 */
+      transform: scale(1.2); }
   .about-ceo-section .content-container span {
     margin: 10px 0;
     font-size: 14px;

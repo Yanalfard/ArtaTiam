@@ -41,6 +41,13 @@ html {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'IranSansReg2';
+  src: url("/fonts/fontsite/IRANSans Regular2.ttf");
+  src: url("/fonts/fontsite/IRANSans Regular2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 .Sahel {
   font-family: "Sahel"; }
 
@@ -52,6 +59,9 @@ html {
 
 .BNARM {
   font-family: 'BNARM'; }
+
+.Sens-serif {
+  font-family: sans-serif !important; }
 
 * {
   margin: 0;
@@ -168,7 +178,7 @@ a:hover {
 
 .paragragh {
   text-align: justify;
-  text-justify: inter-word;
+  text-justify: kashida;
   margin: auto;
   margin-bottom: 20px;
   font-size: 14px;
@@ -206,6 +216,9 @@ a:hover {
 .space-top {
   height: 100px; }
 
+.text-Bold {
+  font-weight: 600; }
+
 /*layout style section*/
 .active-header {
   color: black;
@@ -213,6 +226,9 @@ a:hover {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: blur(7px);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+#menu {
+  background: white; }
 
 .navbar-section .vertical-divider {
   width: 2px;
@@ -223,7 +239,7 @@ a:hover {
 .navbar-section .my-nav-item .nav-link {
   color: black;
   font-size: 18px;
-  font-family: IranSans !important;
+  font-family: IranSans;
   font-weight: 600; }
 
 .navbar-section .my-nav-item {
@@ -251,6 +267,16 @@ a:hover {
 .navbar-section .header-flag .nav-link:hover {
   background: #EDBA53;
   fill: white; }
+
+.navbar-section .nav-item .flag {
+  transition: transform .2s; }
+
+.navbar-section .nav-item .flag:hover {
+  -ms-transform: scale(1.4);
+  /* IE 9 */
+  -webkit-transform: scale(1.4);
+  /* Safari 3-8 */
+  transform: scale(1.4); }
 
 @media only screen and (max-width: 1100px) {
   .my-nav-item {
@@ -285,7 +311,7 @@ a:hover {
     background-size: cover;
     padding: 50px 0px 20px 0px; }
     .footer-section footer .footer-titr {
-      font-family: BNARM !important;
+      font-family: BNARM;
       font-size: 24px; }
     .footer-section footer .footer-widget hr {
       border: 2px groove #E3AC34; }
@@ -334,6 +360,7 @@ a:hover {
   padding-top: 130px;
   padding-bottom: 20px; }
   .cooperation-section .cooperation-condition-bg {
+    min-width: 40px;
     width: 40px;
     height: 40px;
     /*  padding:7px;*/
@@ -408,6 +435,7 @@ a:hover {
       .services-section .sevice-container .img-container img {
         vertical-align: middle !important; }
   .services-section .general-services .service-number-bg {
+    min-width: 40px;
     width: 40px;
     height: 40px;
     /*  padding:7px;*/

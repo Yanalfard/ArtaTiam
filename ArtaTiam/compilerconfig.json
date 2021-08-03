@@ -18,5 +18,9 @@
   {
     "outputFile": "wwwroot/css/Gallery.css",
     "inputFile": "wwwroot/css/Gallery.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/EnVersion.css",
+    "inputFile": "wwwroot/css/EnVersion.scss"
   }
 ]

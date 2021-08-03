@@ -45,6 +45,14 @@ html {
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'IranSansReg2';
+    src: url('/fonts/fontsite/IRANSans Regular2.ttf');
+    src: url('/fonts/fontsite/IRANSans Regular2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 .Sahel {
     font-family: "Sahel";
@@ -60,6 +68,9 @@ html {
 
 .BNARM {
     font-family: 'BNARM';
+}
+.Sens-serif {
+    font-family: sans-serif !important;
 }
 
 * {
@@ -247,7 +258,7 @@ a:hover {
 
 .paragragh {
     text-align: justify;
-    text-justify: inter-word;
+    text-justify: kashida;
     margin: auto;
     margin-bottom: 20px;
     font-size: 14px;
@@ -288,6 +299,9 @@ a:hover {
 .space-top{
     height:100px;
 }
+.text-Bold {
+    font-weight: 600;
+}
 /////////////////////////////////
 /*layout style section*/
 .active-header {
@@ -296,6 +310,9 @@ a:hover {
     background: rgba(255, 255, 255, 0.6) !important;
     backdrop-filter: blur(7px);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#menu {
+    background: rgba(255, 255, 255, 1);
 }
 .navbar-section {
     .vertical-divider {
@@ -309,7 +326,7 @@ a:hover {
         .nav-link {
             color: black;
             font-size: 18px;
-            font-family: IranSans !important;
+            font-family: IranSans;
             font-weight: 600;
         }
     }
@@ -348,6 +365,18 @@ a:hover {
         .nav-link:hover {
             background: #EDBA53;
             fill: white;
+        }
+    }
+
+    .nav-item {
+        .flag {
+            transition: transform .2s;
+        }
+
+        .flag:hover {
+            -ms-transform: scale(1.4); /* IE 9 */
+            -webkit-transform: scale(1.4); /* Safari 3-8 */
+            transform: scale(1.4)
         }
     }
 }
@@ -392,7 +421,7 @@ height:500px;
         padding: 50px 0px 20px 0px;
 
         .footer-titr {
-            font-family: BNARM !important;
+            font-family: BNARM ;
             font-size: 24px;
         }
 

@@ -20,5 +20,14 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
+
+        public IActionResult EnCooperation()
+        {
+            return View();
+        }
+        public IActionResult EnContactUs()
+        {
+            return View();
+        }
     }
 }

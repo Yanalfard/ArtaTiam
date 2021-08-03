@@ -33,6 +33,7 @@
 
 
     .cooperation-condition-bg {
+        min-width: 40px;
         width: 40px;
         height: 40px;
         /*  padding:7px;*/
@@ -134,13 +135,16 @@
 
         .img-container {
             flex: 1;
-            img{
-            vertical-align:middle !important;}
+
+            img {
+                vertical-align: middle !important;
+            }
         }
     }
 
     .general-services {
         .service-number-bg {
+            min-width: 40px;
             width: 40px;
             height: 40px;
             /*  padding:7px;*/

@@ -16,5 +16,10 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
+
+        public IActionResult EnGallery()
+        {
+            return View();
+        }
     }
 }

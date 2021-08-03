@@ -20,5 +20,15 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
+
+        public IActionResult EnAboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult EnAboutCEO()
+        {
+            return View();
+        }
     }
 }

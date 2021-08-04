@@ -575,10 +575,13 @@
         transform: rotate(-10deg);
         border-radius: 15px;
         padding: 20px 0;
+        transition: transform 0.5s;
+
 
         img, label {
             -ms-transform: rotate(10deg); /* IE 9 */
             transform: rotate(10deg);
+            transition: transform 0.5s;
         }
 
         img {
@@ -587,6 +590,16 @@
 
         label {
             padding: 0 4px;
+        }
+    }
+
+    .whiteCard:hover {
+        -ms-transform: rotate(10deg); /* IE 9 */
+        transform: rotate(10deg);
+
+        img, label {
+            -ms-transform: rotate(-10deg); /* IE 9 */
+            transform: rotate(-10deg);
         }
     }
 

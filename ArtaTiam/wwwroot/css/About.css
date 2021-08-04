@@ -260,7 +260,8 @@ a:hover {
 .navbar-section .header-flag .nav-link {
   background: transparent;
   border-radius: 50%;
-  padding: 0 0.4rem;
+  /*padding: 0 0.5rem 0.3rem;*/
+  padding: 0.1rem .6rem .3rem;
   margin: 0 3px;
   color: red !important; }
 
@@ -439,7 +440,7 @@ a:hover {
       height: 270px !important;
       width: 270px !important;
       object-fit: cover;
-      transition: transform 2s; }
+      transition: transform 1s; }
     .about-ceo-section .img-container img:hover {
       -ms-transform: scale(1.2);
       /* IE 9 */

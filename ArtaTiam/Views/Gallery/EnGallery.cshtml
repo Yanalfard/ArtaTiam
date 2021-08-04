@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "EnGallery";
+    ViewData["Title"] = "Gallery";
     Layout = "~/Views/Shared/_EnLayout.cshtml";
 }
 
@@ -27,12 +27,12 @@
                 <hr />
                 <div class="my-row pl-3">
                     <i class="mytext-green" uk-icon="play-circle" width="30"></i>
-                    <a href="javascript:video()" class="mytext-bold ml-1 mt-1 mytext-gray text-09">videos</a>
+                    <a href="javascript:video()" class="mytext-bold ml-1 mt-1 mytext-gray text-09">Videos</a>
                 </div>
                 <hr />
                 <div class="my-row pl-3">
                     <i class="mytext-green" uk-icon="calendar" width="30"></i>
-                    <a href="javascript:archive()" class="mytext-bold ml-1 mt-1 mytext-gray text-09">Download archive</a>
+                    <a href="javascript:archive()" class="mytext-bold ml-1 mt-1 mytext-gray text-09">Download Archive</a>
                 </div>
             </div>
             <div class="col-md-9 my-column mt-4 mt-md-0" id="gallery-result">
@@ -57,11 +57,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="edit-admin pb-5 d-none">
+                        <hr />
+                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                    </div>
                 </div>
                 <div class="card-with-border mb-4" id="gallery-video">
                     <h3 class="text-center title-h3 my-center mb-5">
                         <span class="my-center">
-                            videos
+                            Videos
                         </span>
                     </h3>
                     <div class="row justify-content-center">
@@ -80,11 +84,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="edit-admin pb-5 d-none">
+                        <hr />
+                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                    </div>
                 </div>
                 <div class="card-with-border mb-4" id="gallery-archive">
                     <h3 class="text-center title-h3 my-center mb-5">
                         <span class="my-center">
-                            Download archive
+                            Download Archive
                         </span>
                     </h3>
                     <div class="row justify-content-center">
@@ -105,6 +113,10 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="edit-admin pb-5 d-none">
+                        <hr />
+                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
                     </div>
                 </div>
             </div>

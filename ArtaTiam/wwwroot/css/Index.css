@@ -260,7 +260,8 @@ a:hover {
 .navbar-section .header-flag .nav-link {
   background: transparent;
   border-radius: 50%;
-  padding: 0 0.4rem;
+  /*padding: 0 0.5rem 0.3rem;*/
+  padding: 0.1rem .6rem .3rem;
   margin: 0 3px;
   color: red !important; }
 
@@ -754,15 +755,25 @@ a:hover {
     /* IE 9 */
     transform: rotate(-10deg);
     border-radius: 15px;
-    padding: 20px 0; }
+    padding: 20px 0;
+    transition: transform 0.5s; }
     .our-service-section .whiteCard img, .our-service-section .whiteCard label {
       -ms-transform: rotate(10deg);
       /* IE 9 */
-      transform: rotate(10deg); }
+      transform: rotate(10deg);
+      transition: transform 0.5s; }
     .our-service-section .whiteCard img {
       width: 50px; }
     .our-service-section .whiteCard label {
       padding: 0 4px; }
+  .our-service-section .whiteCard:hover {
+    -ms-transform: rotate(10deg);
+    /* IE 9 */
+    transform: rotate(10deg); }
+    .our-service-section .whiteCard:hover img, .our-service-section .whiteCard:hover label {
+      -ms-transform: rotate(-10deg);
+      /* IE 9 */
+      transform: rotate(-10deg); }
   .our-service-section .grid {
     display: grid;
     grid-template-rows: auto;

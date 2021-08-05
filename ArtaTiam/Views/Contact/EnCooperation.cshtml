@@ -8,5 +8,101 @@
 <link href="~/css/EnVersion.min.css" rel="stylesheet" />
 
 
+<section class="cooperation-section col-md-10 my-center">
+    <h3 class="text-center title-h3 my-center mb-3 mb-md-4">
+        <span class="my-center">
+            Announcement of cooperation
+        </span>
+    </h3>
+    <p class="paragragh" dir="ltr">
+        Merchants, farmers and factories can announce their cooperation in selling their products by entering their information via WhatsApp or email.
+    </p>
+    <h6 class="text-left mytext-green mytext-bold ">
+        preliminary conditions
+    </h6>
 
+    <div class="my-column mt-3" dir="ltr">
+        <div class="my-row mt-2">
+            <i class="mytext-gold" uk-icon="chevron-forward-circle" width="40"></i>
+            <label class="ml-2 mt-2 text-left">
+                <span class="mytext-bold mr-0">Ability to export goods:  </span> healthy, with a standard license and export, legitimate goods
+            </label>
+        </div>
+        <div class="my-row mt-2">
+            <i class="mytext-gold" uk-icon="chevron-forward-circle" width="40"></i>
+            <label class="ml-2 mt-2 mytext-bold text-left">
+                Flexibility regarding non-exclusivity of goods
+            </label>
+        </div>
+        <div class="my-row mt-2">
+            <i class="mytext-gold" uk-icon="chevron-forward-circle" width="40"></i>
+            <label class="ml-2 mt-2 mytext-bold text-left">
+                Goods with high tonnage and number
+            </label>
+        </div>
+    </div>
+    <div class="edit-admin pb-5 d-none">
+        <hr />
+        <a class="btn btn-info mr-auto pl-3 float-right pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+    </div>
+</section>
+@*form section*@
+
+<section class="form-section col-md-10 my-center">
+    <h3 class="text-center title-h3 my-center mb-5">
+        <span class="my-center">
+            Negotiation request form
+        </span>
+    </h3>
+    <div class="form-container white-card p-4" dir="ltr">
+        <form>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5 ">
+                    <input type="text" class="form-control" id="name" placeholder="Name and surname:  ">
+                </div>
+                <div class="form-group col-md-6 col-lg-5 ml-lg-auto">
+                    <input type="text" class="form-control" id="country" placeholder="From the country: ">
+                </div>
+            </div>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5">
+                    <input type="number" class="form-control" id="PersonalCode" placeholder="Personality Code:">
+                </div>
+                <div class="form-group col-md-4 col-lg-3 ml-lg-auto">
+                    <select id="ProductType" class="form-control">
+                        <option selected>Requested product type: </option>
+                        <option>Fruitage</option>
+                        <option>Food group</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2 col-lg-2 ">
+                    <select id="Tonnage" class="form-control">
+                        <option selected>Required tonnage: </option>
+                        <option>20-40</option>
+                        <option>41-100</option>
+                        <option>101-500</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-row mt-md-2">
+                <div class="form-group col-md-6 col-lg-5">
+                    <input type="tel" class="form-control" id="name" placeholder="WhatsApp number for communication:  ">
+                </div>
+            </div>
+
+            <div class="form-group purple-border mt-md-2">
+                <textarea class="form-control" id="Description" rows="3" placeholder="Brief specifications of the requested product: "></textarea>
+            </div>
+
+            <button type="submit" class="btn bgMyGreen text-white col-12 mt-2">Send</button>
+        </form>
+    </div>
+    <div class="edit-admin pb-5 d-none">
+        <hr />
+        <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+    </div>
+</section>
 

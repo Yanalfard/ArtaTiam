@@ -32,7 +32,7 @@
         }
 
         .right-side-menu{
-            max-height:250px;
+            max-height:300px;
         }
         .bgMyGreen {
             border-radius: 15px 15px 0 0;
@@ -47,12 +47,22 @@
     }
 }
 @media screen and (max-width: 780px) {
-    .gallery-section{
-    .title-h3 {
-        width: 90% !important;
+    .gallery-section {
+        .title-h3 {
+            width: 90% !important;
+        }
+
     }
 }
+
+@media screen and (max-width: 767px) {
+    .gallery-section {
+        .right-side-menu {
+            @include my-center();
+        }
+    }
 }
+
 
 
 // None of this CSS is required for the gallery and lightbox to function.

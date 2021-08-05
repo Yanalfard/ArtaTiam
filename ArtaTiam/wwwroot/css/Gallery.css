@@ -359,7 +359,7 @@ a:hover {
     .gallery-section .white-card .title-h3 span {
       background: #FFFFFF !important; }
     .gallery-section .white-card .right-side-menu {
-      max-height: 250px; }
+      max-height: 300px; }
     .gallery-section .white-card .bgMyGreen {
       border-radius: 15px 15px 0 0; }
   .gallery-section .card-with-border {
@@ -371,6 +371,13 @@ a:hover {
 @media screen and (max-width: 780px) {
   .gallery-section .title-h3 {
     width: 90% !important; } }
+
+@media screen and (max-width: 767px) {
+  .gallery-section .right-side-menu {
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    margin: 0 auto; } }
 
 #gallery img {
   height: 75vw;

@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,36 @@ namespace ArtaTiam
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddControllersWithViews();
+            //Pager
+            services.AddPaging(options =>
+            {
+                options.ViewName = "Paging";
+                options.HtmlIndicatorDown = " <span>&darr;</span>";
+                options.HtmlIndicatorUp = " <span>&uarr;</span>";
+            });
+
+            #region Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/Login";
+                options.LogoutPath = "/Logout";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
+            });
+            #endregion
+
+            #region Session
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,10 +72,16 @@ namespace ArtaTiam
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
 
+            #region  404 error
+            app.UseStatusCodePagesWithReExecute("/Error");
+            #endregion
+            app.UseAuthorization();
+            app.UseSession();
+            app.UseAuthentication();
+            app.UseStaticFiles();
+            app.UseHttpsRedirection();
+            app.UseRouting();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -56,6 +94,10 @@ namespace ArtaTiam
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+         
+
         }
     }
 }

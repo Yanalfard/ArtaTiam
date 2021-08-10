@@ -1,0 +1,40 @@
+﻿@model TblConfig
+
+@{
+    ViewData["Title"] = " معرفی شرکت";
+}
+
+<div class="row flex-div">
+    <div class="col-md-12 flex-div pb-3 pt-3">
+        <div class="card flex-div border-0 main-shadow">
+            <div class="card-header bg-white">
+            </div>
+            <div id="card-table" class="card-body flex-div">
+                <form class="form-row mt-3 fixed overflow-auto" asp-action="MoarefyeSherkat" asp-controller="Config" enctype="multipart/form-data">
+                    <div class="form-group col-lg-12 mt-lg-3">
+                        <label> معرفی شرکت :</label>
+                        <textarea asp-for="Value" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="Value"></span>
+                    </div>
+                    <div class="form-group col-lg-12 mt-lg-3">
+                        <img style="max-width:250px;margin:0 auto;display:block" src="~/Images/MoarefyeSherkatImg/@ViewBag.SelectedConfigImg" alt="Alternate Text" />
+                    </div>
+                    <label class="mt-2">تصویر </label>
+                    <br />
+                    <div class="custom-file col-md-12">
+                        <input type="file" name="ImageUrl" id="ImageUrl" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg" required onchange="inputChanged(this)">
+                        <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب تصویر</label>
+                    </div>
+
+                    <div class="modal-footer justify-content-end">
+                        <button type="submit" class="btn btn-success btn-sm text-white">ثبت<span class="icon-holder uk-margin-small-right" uk-icon="add-circle-outline"></span></button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

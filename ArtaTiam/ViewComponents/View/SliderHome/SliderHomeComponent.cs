@@ -16,7 +16,7 @@ namespace ArtaTiam.ViewComponents.View.SliderHome
         {
             List<TblBanner> list = _core.Baner.Get(i => i.IsSlider).ToList();
             list.ShuffleList();
-            return await Task.FromResult((IViewComponentResult)View("~/Views/Shared/Components/SliderHomeComponent/SliderHomeComponent.cshtml", list));
+            return await Task.FromResult((IViewComponentResult)View("~/Views/Shared/Components/SliderHomeComponent/SliderHomeComponent.cshtml", list.Take(3)));
         }
     }
 }

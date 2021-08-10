@@ -35,6 +35,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="ViewComponents\View\" />
     <Folder Include="wwwroot\Images\Country\" />
+    <Folder Include="wwwroot\Images\MoarefyeSherkatImg\" />
     <Folder Include="wwwroot\Images\Slider\" />
     <Folder Include="wwwroot\img\flag\" />
     <Folder Include="wwwroot\img\index\Slideshow\" />

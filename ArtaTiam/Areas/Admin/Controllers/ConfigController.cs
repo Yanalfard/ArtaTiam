@@ -21,6 +21,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
             ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "MoarefyeSherkatImg").Value;
             return View(config);
         }
+      
         [HttpPost]
         public async Task<IActionResult> MoarefyeSherkat(TblConfig config, IFormFile ImageUrl)
         {
@@ -57,6 +58,48 @@ namespace ArtaTiam.Areas.Admin.Controllers
             _core.Config.Update(SelectedConfigImg);
             _core.Save();
             return RedirectToAction("MoarefyeSherkat");
+        }
+
+
+        public IActionResult VideoSectionHome()
+        {
+            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeText");
+            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeImg").Value;
+            return View(config);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VideoSectionHome(TblConfig config, IFormFile ImageUrl)
+        {
+            TblConfig SelectedConfigText = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeText");
+            SelectedConfigText.Value = config.Value;
+            TblConfig SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeImg");
+            if (ImageUrl != null)
+            {
+                try
+                {
+                    var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", SelectedConfigImg.Value);
+                    if (System.IO.File.Exists(deleteImagePath))
+                    {
+                        System.IO.File.Delete(deleteImagePath);
+                    }
+                }
+                catch
+                {
+
+                }
+                SelectedConfigImg.Value = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
+                string savePath = Path.Combine(
+                                        Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", SelectedConfigImg.Value
+                                    );
+                using (var stream = new FileStream(savePath, FileMode.Create))
+                {
+                    await ImageUrl.CopyToAsync(stream);
+                };
+            }
+            _core.Config.Update(SelectedConfigText);
+            _core.Config.Update(SelectedConfigImg);
+            _core.Save();
+            return RedirectToAction("VideoSectionHome");
         }
     }
 }

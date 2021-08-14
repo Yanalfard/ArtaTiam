@@ -238,7 +238,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
             ConfigVm config = new ConfigVm();
             config.DarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single().Value;
             config.DarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single().Value;
-            config.DarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single().Value;
+            //config.DarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single().Value;
             return View(config);
         }
 
@@ -250,7 +250,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 IEnumerable<TblConfig> configs = _core.Config.Get();
                 TblConfig ConfigLinkDarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single();
                 TblConfig ConfigLinkDarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single();
-                TblConfig ConfigLinkDarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single();
+                //TblConfig ConfigLinkDarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single();
                 if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
                 {
                     try
@@ -276,11 +276,11 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 }
 
                 ConfigLinkDarbareMaText.Value = configVm.DarbareMaText;
-                ConfigLinkDarbareMaMavared.Value = configVm.DarbareMaMavared;
+                //ConfigLinkDarbareMaMavared.Value = configVm.DarbareMaMavared;
 
                 _core.Config.Update(ConfigLinkDarbareMaImg);
                 _core.Config.Update(ConfigLinkDarbareMaText);
-                _core.Config.Update(ConfigLinkDarbareMaMavared);
+                //_core.Config.Update(ConfigLinkDarbareMaMavared);
 
 
                 _core.Save();

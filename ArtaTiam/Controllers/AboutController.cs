@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models;
+using DataLayer.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Services.Services;
 using System;
@@ -17,7 +18,12 @@ namespace ArtaTiam.Controllers
         }
         public IActionResult AboutUs()
         {
-            return View();
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.DarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single().Value;
+            config.DarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single().Value;
+            config.DarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single().Value;
+            return View(config);
         }
         public IActionResult AboutCEO()
         {

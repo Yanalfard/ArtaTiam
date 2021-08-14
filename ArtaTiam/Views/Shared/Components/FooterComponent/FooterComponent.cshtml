@@ -1,0 +1,124 @@
+﻿@model ConfigVm
+
+    <div class="col-lg-4 col-sm-12">
+        <div class="footer-widget">
+            <!-- Brand -->
+            <h5 href="/" class="text-white text-right footer-titr pb-0 BNARM">
+                شرکت بازرگانی <span class="mytext-gold footer-titr">آرتا تیام مهام</span>
+            </h5>
+            <hr />
+            <p class="paragragh text-white IRANYekan text-08 d-none d-md-block">
+                @Model.TozihatShekatFooter
+                @*شرکت آرتا تیام مهام بر خود تعهد می داند با عقد قراردادهای منتفع الطرفین با گارانتی کامل، تامین و صادر کلیه سفارشات کشورهای مقصد را با بهترین شرکت های حمل و نقل زمینی و دریایی در اسرع وقت با نازلترین قیمت و برترین کیفیت در اختیار تجار محترم قرار دهد*@
+            </p>
+        </div>
+    </div>
+
+    <div class="col-lg-3 mr-lg-auto col-sm-12">
+        <div class="footer-widget text-right">
+            <h6 class="text-white">اطلاعات تماس</h6>
+            <hr />
+            <!-- Links -->
+            <ul class="footer-links ">
+                <li>
+
+                    <i class="mytext-gold footer-icon" uk-icon="location" width="18"></i>
+                    <span class="text-white text-08">
+                        @Model.Address
+
+                        @*ایران / استان آذربایجان شرقی / تبریز / بلوار استاد شهریار / جنب اداره کل بهزیستی / ساختمان 22 / طبقه 5 / واحد E*@
+                    </span>
+
+                </li>
+                <li>
+
+                    <i class=" mytext-gold gly-rotate-270" uk-icon="call" width="18"></i>
+                    <span class="text-white text-08">
+                        @Model.TellHome1 -  @Model.TellHome2
+                    </span>
+
+                </li>
+                <li>
+                    <a href="mailto:@Model.Email">
+                        <i class=" mytext-gold" uk-icon="mail" width="18"></i>
+                        <span class="text-white text-08">
+                           @Model.Email
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=@(Model.Whatsapp)" target="_blank">
+                        <i class=" mytext-gold" uk-icon="logo-whatsapp" width="18"></i>
+                        <span class="text-white text-08">
+                            @Model.Whatsapp
+                        </span>
+                    </a>
+                    <span class="vertical-divider"></span>
+                    <i class="mytext-gold" uk-icon="phone-portrait-outline" width="18"></i>
+                    <span class="text-white text-08">
+                        @Model.TellMobile
+                    </span>
+
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/@Model.Inista/" target="_blank">
+                        <i class=" mytext-gold" uk-icon="logo-instagram" width="18"></i>
+                        <span class="text-white text-08">
+                            @Model.Inista
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-2 col-sm-6 d-none d-md-block">
+        <div class="footer-widget text-right">
+            <h6 class="text-white">دسترسی سریع</h6>
+            <hr />
+            <!-- Links -->
+            <ul class="footer-links ">
+                <li>
+                    <a href="/">
+                        صفحه اصلی
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Services">
+                        خدمات
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/#Export">
+                        صادرات و واردات
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-sm-6 d-none d-md-block">
+        <div class="footer-widget text-right">
+            <h6 class="text-white">ارتباط با ما</h6>
+            <hr />
+            <!-- Links -->
+            <ul class="footer-links ">
+                <li>
+                    <a href="/About/AboutUs">
+                        درباره ما
+                    </a>
+                </li>
+                <li>
+                    <a href="/Contact/ContactUs">
+                        تماس با ما
+                    </a>
+                </li>
+                <li>
+                    <a href="/Contact/Cooperation">
+                        فرم درخواست مذاکره
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>

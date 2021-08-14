@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataLayer.Models;
+using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,7 @@ namespace ArtaTiam.Controllers
 {
     public class AboutController : Controller
     {
+        private Core _core = new Core();
         public IActionResult Index()
         {
             return View();
@@ -18,7 +21,10 @@ namespace ArtaTiam.Controllers
         }
         public IActionResult AboutCEO()
         {
-            return View();
+            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelText");
+            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelImg").Value;
+            ViewBag.SelectedWhatsapp = _core.Config.Get().FirstOrDefault(i => i.Key == "Whatsapp").Value;
+            return View(config);
         }
 
         public IActionResult EnAboutUs()

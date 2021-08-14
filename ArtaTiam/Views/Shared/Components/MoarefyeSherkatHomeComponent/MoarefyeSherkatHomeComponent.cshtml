@@ -29,10 +29,13 @@
             </div>
         </div>
     </div>
-    <div class="edit-admin pb-2">
-        <hr />
-        <a href="/Admin/Config/MoarefyeSherkat" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-2">
+            <hr />
+            <a href="/Admin/Config/MoarefyeSherkat" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
 </section>
 
 

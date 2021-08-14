@@ -1,4 +1,5 @@
-﻿
+﻿@model ConfigVm
+
 @{
     ViewData["Title"] = "تماس با ما";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,24 +24,24 @@
                 <div class="my-row col-md-5 text-left">
                     <i class="mytext-green mt-2" uk-icon="call" width="30"></i>
                     <div class="my-column" dir="rtl">
-                        <span class="mytext-bold ml-1 text-1">1047 3310 041</span>
-                        <span class="mytext-bold ml-1 text-1">1099 3310 041</span>
+                        <span class="mytext-bold ml-1 text-1">@Model.TellHome1</span>
+                        <span class="mytext-bold ml-1 text-1">@Model.TellHome2</span>
                     </div>
                 </div>
                 <div class="my-row col-md-5 text-left">
                     <i class="mytext-green" uk-icon="mail" width="30"></i>
-                    <a href="mailto:artatiyammaham@chmail.ir" class="mytext-bold ml-1 text-1 mt-1">artatiyammaham@chmail.ir</a>
+                    <a href="mailto:@Model.Email" class="mytext-bold ml-1 text-1 mt-1">@Model.Email</a>
                 </div>
 
             </div>
             <div class="row mt-4">
                 <div class="my-row  col-md-5 text-left">
                     <i class="mytext-green" uk-icon="logo-instagram" width="30"></i>
-                    <a href="https://www.instagram.com/arta.tiyammaham/" class="mytext-bold ml-1 text-1 mt-1">arta.tiyammaham</a>
+                    <a href="https://www.instagram.com/@Model.Inista/" class="mytext-bold ml-1 text-1 mt-1">@Model.Inista</a>
                 </div>
                 <div class="my-row col-md-5 text-left">
                     <i class="mytext-green" uk-icon="logo-whatsapp" width="30"></i>
-                    <a href="https://wa.me/+989141245761" class="mytext-bold ml-1 text-1 mt-1">+98 9141245761</a>
+                    <a href="https://api.whatsapp.com/send?phone=@(Model.Whatsapp)" target="_blank" class="mytext-bold ml-1 text-1 mt-1">@Model.Whatsapp</a>
                 </div>
             </div>
         </div>
@@ -53,10 +54,10 @@
     <div class="white-card pt-4 pb-4 pr-2 pl-2 p-md-4 my-center" dir="rtl">
         <div class="row">
             <div class="col-md-6 text-right">
-                <span class="mytext-bold text-1 mytext-green"> مدیر عامل (مهندس صفری): </span><span class="mr-1"> 9141245761 98+ </span>
+                <span class="mytext-bold text-1 mytext-green"> مدیر عامل (مهندس صفری): </span><span class="mr-1"> @Model.TellModirAmel </span>
             </div>
             <div class="col-md-6 text-right mt-2 mt-md-0">
-                <span class="mytext-bold text-1 mytext-green"> رئیس هیأت مدیره  (آقای اصغری): </span><span class="mr-1"> 9144239397 98+ </span>
+                <span class="mytext-bold text-1 mytext-green"> رئیس هیأت مدیره  (آقای اصغری): </span><span class="mr-1"> @Model.TellRaisHyatModire </span>
             </div>
         </div>
     </div>

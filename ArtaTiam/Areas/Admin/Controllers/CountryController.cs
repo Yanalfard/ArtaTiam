@@ -50,6 +50,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
                 TblBanner NewSlider = new TblBanner();
                 NewSlider.Name = slider.Name;
+                NewSlider.NameEn = slider.NameEn;
                 NewSlider.Title = slider.Title;
                 NewSlider.Link = slider.Link;
                 NewSlider.IsSlider = false;
@@ -91,7 +92,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(TblBanner slider, IFormFile ImageUrl)
+        public async Task<IActionResult> Edit(TblBanner slider, IFormFile image)
         {
             try
             {
@@ -102,7 +103,8 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 FirstSlider.Title = slider.Title;
                 FirstSlider.IsSlider = false;
                 FirstSlider.Link = slider.Link;
-                if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
+                FirstSlider.NameEn = slider.NameEn;
+                if (image != null && image.IsImages() && image.Length < 3000000)
                 {
                     try
                     {
@@ -116,13 +118,13 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     {
 
                     }
-                    FirstSlider.ImageUrl = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
+                    FirstSlider.ImageUrl = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
                     string savePath = Path.Combine(
                                                Directory.GetCurrentDirectory(), "wwwroot/Images/Country", FirstSlider.ImageUrl
                                            );
                     using (var stream = new FileStream(savePath, FileMode.Create))
                     {
-                        await ImageUrl.CopyToAsync(stream);
+                        await image.CopyToAsync(stream);
                     };
                 }
 

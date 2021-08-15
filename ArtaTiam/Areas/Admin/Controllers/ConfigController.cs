@@ -31,10 +31,12 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 config.TellHome2 = configs.Where(c => c.Key == "TellHome2").Single().Value;
                 config.TellMobile = configs.Where(c => c.Key == "TellMobile").Single().Value;
                 config.Address = configs.Where(c => c.Key == "Address").Single().Value;
+                config.AddressEn = configs.Where(c => c.Key == "AddressEn").Single().Value;
                 config.Whatsapp = configs.Where(c => c.Key == "Whatsapp").Single().Value;
                 config.TellModirAmel = configs.Where(c => c.Key == "TellModirAmel").Single().Value;
                 config.TellRaisHyatModire = configs.Where(c => c.Key == "TellRaisHyatModire").Single().Value;
                 config.TozihatShekatFooter = configs.Where(c => c.Key == "TozihatShekatFooter").Single().Value;
+                config.TozihatShekatFooterEn = configs.Where(c => c.Key == "TozihatShekatFooterEn").Single().Value;
                 return await Task.FromResult(View(config));
             }
             catch
@@ -61,6 +63,8 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     TblConfig ConfigLinkTellHome2 = configs.Where(c => c.Key == "TellHome2").Single();
                     TblConfig ConfigLinkTellModirAmel = configs.Where(c => c.Key == "TellModirAmel").Single();
                     TblConfig ConfigLinkTellRaisHyatModire = configs.Where(c => c.Key == "TellRaisHyatModire").Single();
+                    TblConfig ConfigLinkAddressEn = configs.Where(c => c.Key == "AddressEn").Single();
+                    TblConfig ConfigLinkTozihatShekatFooterEn = configs.Where(c => c.Key == "TozihatShekatFooterEn").Single();
 
 
                     ConfigLinkEmail.Value = configVm.Email;
@@ -73,8 +77,12 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     ConfigLinkTellHome2.Value = configVm.TellHome2;
                     ConfigLinkTellModirAmel.Value = configVm.TellModirAmel;
                     ConfigLinkTellRaisHyatModire.Value = configVm.TellRaisHyatModire;
+                    ConfigLinkAddressEn.Value = configVm.AddressEn;
+                    ConfigLinkTozihatShekatFooterEn.Value = configVm.TozihatShekatFooterEn;
 
 
+                    _core.Config.Update(ConfigLinkTozihatShekatFooterEn);
+                    _core.Config.Update(ConfigLinkAddressEn);
                     _core.Config.Update(ConfigLinkEmail);
                     _core.Config.Update(ConfigLinkInista);
                     _core.Config.Update(ConfigLinkTellMobile);
@@ -100,19 +108,23 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
         public IActionResult DarnareModiamel()
         {
-            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelText");
-            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelImg").Value;
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.DarnareModiamelText = configs.Where(c => c.Key == "DarnareModiamelText").Single().Value;
+            config.DarnareModiamelImg = configs.Where(c => c.Key == "DarnareModiamelImg").Single().Value;
+            config.DarnareModiamelTextEn = configs.Where(c => c.Key == "DarnareModiamelTextEn").Single().Value;
             return View(config);
         }
 
         [HttpPost]
-        public async Task<IActionResult> DarnareModiamel(TblConfig config, IFormFile ImageUrl)
+        public async Task<IActionResult> DarnareModiamel(ConfigVm configVm, IFormFile ImageUrl)
         {
-            TblConfig SelectedConfigText = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelText");
-            SelectedConfigText.Value = config.Value;
-
-
-            TblConfig SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelImg");
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            TblConfig DarnareModiamelText = configs.Where(c => c.Key == "DarnareModiamelText").Single();
+            TblConfig SelectedConfigImg = configs.Where(c => c.Key == "DarnareModiamelImg").Single();
+            TblConfig DarnareModiamelTextEn = configs.Where(c => c.Key == "DarnareModiamelTextEn").Single();
+            DarnareModiamelText.Value = configVm.DarnareModiamelText;
+            DarnareModiamelTextEn.Value = configVm.DarnareModiamelTextEn;
 
             if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
             {
@@ -137,9 +149,12 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     await ImageUrl.CopyToAsync(stream);
                 };
             }
-            _core.Config.Update(SelectedConfigText);
+            _core.Config.Update(DarnareModiamelText);
             _core.Config.Update(SelectedConfigImg);
+            _core.Config.Update(DarnareModiamelTextEn);
             _core.Save();
+
+
             return RedirectToAction("DarnareModiamel");
         }
 
@@ -147,25 +162,30 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
         public IActionResult MoarefyeSherkat()
         {
-            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "MoarefyeSherkatText");
-            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "MoarefyeSherkatImg").Value;
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.MoarefyeSherkatText = configs.Where(c => c.Key == "MoarefyeSherkatText").Single().Value;
+            config.MoarefyeSherkatImg = configs.Where(c => c.Key == "MoarefyeSherkatImg").Single().Value;
+            config.MoarefyeSherkatTextEn = configs.Where(c => c.Key == "MoarefyeSherkatTextEn").Single().Value;
             return View(config);
         }
 
         [HttpPost]
-        public async Task<IActionResult> MoarefyeSherkat(TblConfig config, IFormFile ImageUrl)
+        public async Task<IActionResult> MoarefyeSherkat(ConfigVm configVm, IFormFile ImageUrl)
         {
-            TblConfig SelectedConfigText = _core.Config.Get().FirstOrDefault(i => i.Key == "MoarefyeSherkatText");
-            SelectedConfigText.Value = config.Value;
 
-
-            TblConfig SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "MoarefyeSherkatImg");
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            TblConfig MoarefyeSherkatText = configs.Where(c => c.Key == "MoarefyeSherkatText").Single();
+            TblConfig MoarefyeSherkatImg = configs.Where(c => c.Key == "MoarefyeSherkatImg").Single();
+            TblConfig MoarefyeSherkatTextEn = configs.Where(c => c.Key == "MoarefyeSherkatTextEn").Single();
+            MoarefyeSherkatText.Value = configVm.MoarefyeSherkatText;
+            MoarefyeSherkatTextEn.Value = configVm.MoarefyeSherkatTextEn;
 
             if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
             {
                 try
                 {
-                    var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/MoarefyeSherkatImg", SelectedConfigImg.Value);
+                    var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/MoarefyeSherkatImg", MoarefyeSherkatImg.Value);
                     if (System.IO.File.Exists(deleteImagePath))
                     {
                         System.IO.File.Delete(deleteImagePath);
@@ -175,17 +195,18 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 {
 
                 }
-                SelectedConfigImg.Value = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
+                MoarefyeSherkatImg.Value = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
                 string savePath = Path.Combine(
-                                        Directory.GetCurrentDirectory(), "wwwroot/Images/MoarefyeSherkatImg", SelectedConfigImg.Value
+                                        Directory.GetCurrentDirectory(), "wwwroot/Images/MoarefyeSherkatImg", MoarefyeSherkatImg.Value
                                     );
                 using (var stream = new FileStream(savePath, FileMode.Create))
                 {
                     await ImageUrl.CopyToAsync(stream);
                 };
             }
-            _core.Config.Update(SelectedConfigText);
-            _core.Config.Update(SelectedConfigImg);
+            _core.Config.Update(MoarefyeSherkatText);
+            _core.Config.Update(MoarefyeSherkatImg);
+            _core.Config.Update(MoarefyeSherkatTextEn);
             _core.Save();
             return RedirectToAction("MoarefyeSherkat");
         }
@@ -193,21 +214,28 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
         public IActionResult VideoSectionHome()
         {
-            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeText");
-            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeImg").Value;
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.VideoSectionHomeText = configs.Where(c => c.Key == "VideoSectionHomeText").Single().Value;
+            config.VideoSectionHomeImg = configs.Where(c => c.Key == "VideoSectionHomeImg").Single().Value;
+            config.VideoSectionHomeTextEn = configs.Where(c => c.Key == "VideoSectionHomeTextEn").Single().Value;
             return View(config);
+
         }
         [HttpPost]
-        public async Task<IActionResult> VideoSectionHome(TblConfig config, IFormFile ImageUrl)
+        public async Task<IActionResult> VideoSectionHome(ConfigVm configVm, IFormFile ImageUrl)
         {
-            TblConfig SelectedConfigText = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeText");
-            SelectedConfigText.Value = config.Value;
-            TblConfig SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "VideoSectionHomeImg");
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            TblConfig VideoSectionHomeText = configs.Where(c => c.Key == "VideoSectionHomeText").Single();
+            TblConfig VideoSectionHomeImg = configs.Where(c => c.Key == "VideoSectionHomeImg").Single();
+            TblConfig VideoSectionHomeTextEn = configs.Where(c => c.Key == "VideoSectionHomeTextEn").Single();
+            VideoSectionHomeText.Value = configVm.VideoSectionHomeText;
+            VideoSectionHomeTextEn.Value = configVm.VideoSectionHomeTextEn;
             if (ImageUrl != null)
             {
                 try
                 {
-                    var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", SelectedConfigImg.Value);
+                    var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", VideoSectionHomeImg.Value);
                     if (System.IO.File.Exists(deleteImagePath))
                     {
                         System.IO.File.Delete(deleteImagePath);
@@ -217,18 +245,22 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 {
 
                 }
-                SelectedConfigImg.Value = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
+                VideoSectionHomeImg.Value = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
                 string savePath = Path.Combine(
-                                        Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", SelectedConfigImg.Value
+                                        Directory.GetCurrentDirectory(), "wwwroot/Images/VideoSectionHome", VideoSectionHomeImg.Value
                                     );
                 using (var stream = new FileStream(savePath, FileMode.Create))
                 {
                     await ImageUrl.CopyToAsync(stream);
                 };
             }
-            _core.Config.Update(SelectedConfigText);
-            _core.Config.Update(SelectedConfigImg);
+
+            _core.Config.Update(VideoSectionHomeText);
+            _core.Config.Update(VideoSectionHomeImg);
+            _core.Config.Update(VideoSectionHomeTextEn);
             _core.Save();
+        
+
             return RedirectToAction("VideoSectionHome");
         }
 
@@ -238,6 +270,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
             ConfigVm config = new ConfigVm();
             config.DarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single().Value;
             config.DarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single().Value;
+            config.DarbareMaTextEn = configs.Where(c => c.Key == "DarbareMaTextEn").Single().Value;
             //config.DarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single().Value;
             return View(config);
         }
@@ -250,6 +283,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 IEnumerable<TblConfig> configs = _core.Config.Get();
                 TblConfig ConfigLinkDarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single();
                 TblConfig ConfigLinkDarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single();
+                TblConfig ConfigLinkDarbareMaTextEn = configs.Where(c => c.Key == "DarbareMaTextEn").Single();
                 //TblConfig ConfigLinkDarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single();
                 if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
                 {
@@ -276,10 +310,10 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 }
 
                 ConfigLinkDarbareMaText.Value = configVm.DarbareMaText;
+                ConfigLinkDarbareMaTextEn.Value = configVm.DarbareMaTextEn;
                 //ConfigLinkDarbareMaMavared.Value = configVm.DarbareMaMavared;
 
                 _core.Config.Update(ConfigLinkDarbareMaImg);
-                _core.Config.Update(ConfigLinkDarbareMaText);
                 //_core.Config.Update(ConfigLinkDarbareMaMavared);
 
 

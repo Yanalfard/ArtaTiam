@@ -20,10 +20,20 @@
                         <textarea asp-for="TozihatShekatFooter" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
                         <br /><span class="text-danger" asp-validation-for="TozihatShekatFooter"></span>
                     </div>
+                    <div class="form-group col-lg-12 mt-lg-3">
+                        <label>  توضیحات کوتاه در فوتر انگلیسی :</label>
+                        <textarea  dir="ltr" asp-for="TozihatShekatFooterEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="TozihatShekatFooterEn"></span>
+                    </div>
                     <div class="form-group  col-lg-12 mt-lg-3">
                         <label>آدرس</label>
                         <input asp-for="Address" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
                         <br /><span class="text-danger" asp-validation-for="Address"></span>
+                    </div>
+                    <div class="form-group  col-lg-12 mt-lg-3">
+                        <label>آدرس انگلیسی</label>
+                        <input  dir="ltr" asp-for="AddressEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
+                        <br /><span class="text-danger" asp-validation-for="AddressEn"></span>
                     </div>
                     <div class="form-group col-lg-12 mt-lg-3">
                         <label>اینیستا</label>

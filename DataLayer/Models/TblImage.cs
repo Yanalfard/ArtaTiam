@@ -8,20 +8,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.Models
 {
-    public partial class TblNegotiation
+    [Table("TblImage")]
+    public partial class TblImage
     {
         [Key]
-        public int NegotiationId { get; set; }
+        public int ImageId { get; set; }
+        [Required]
+        [StringLength(500)]
+        public string ImageUrl { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime DateCreated { get; set; }
         [StringLength(150)]
         public string Name { get; set; }
-        [StringLength(150)]
-        public string Product { get; set; }
-        [StringLength(50)]
-        public string FromCountry { get; set; }
-        public string Amount { get; set; }
-        [StringLength(1000)]
+        [StringLength(4000)]
         public string Description { get; set; }
-        [StringLength(20)]
-        public string TellNo { get; set; }
+        public int Status { get; set; }
     }
 }

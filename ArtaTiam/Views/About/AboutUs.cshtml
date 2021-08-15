@@ -16,7 +16,7 @@
     </h3>
     <div class="about-container my-center pt-2">
         <div class="img-container">
-            <img src="~/img/about.png" width="300" />
+            <img src="~/Images/DarbareMaImg/@Model.DarbareMaImg" width="300" />
         </div>
         <div class="content-container pt-5 pt-md-0">
             <h3 class="text-center desktop-header">
@@ -24,13 +24,16 @@
                     درباره ما
                 </span>
             </h3>
-            @*@Html.Raw(Model.DarbareMaText)*@
             <p class=" paragragh pt-md-4 text-dark" dir="rtl">
-                شرکت بازرگانی آرتا تیام مهام به شماره ثبت 49969 (سهامی خاص) و شناسه ملی 14008888789 و تاسیس 1398 و بازرگانی تیام آذر سابق با 15 سال سابقه (در مجموع 17 سال  سابقه فعالیت مستمر ) در زمینه صادرات و واردات کالاهای مجاز بازرگانی ، ترخیص کالا ،تامین کالا ،ترخیص کاری ، اخذ تسهیلات بانکی لازم جهت انجام سرمایه گذاری ، شرکت در مناقصه ها و مزایده های دولتی و غیر دولتی ایرانی و خارجی مشغول به فعالیت می باشد
+                @Html.Raw(Model.DarbareMaText)
+
             </p>
-            <p class=" paragragh pt-md-2 text-dark" dir="rtl">
-                شرکت آرتا تیام مهام بر خود تعهد می داند با عقد قراردادهای منتفع الطرفین با گارانتی کامل، تامین و صادر کلیه سفارشات کشورهای مقصد را با بهترین شرکت های حمل و نقل زمینی و دریایی در اسرع وقت با نازلترین قیمت و برترین کیفیت در اختیار تجار محترم قرار دهد
-            </p>
+            @*<p class=" paragragh pt-md-4 text-dark" dir="rtl">
+                    شرکت بازرگانی آرتا تیام مهام به شماره ثبت 49969 (سهامی خاص) و شناسه ملی 14008888789 و تاسیس 1398 و بازرگانی تیام آذر سابق با 15 سال سابقه (در مجموع 17 سال  سابقه فعالیت مستمر ) در زمینه صادرات و واردات کالاهای مجاز بازرگانی ، ترخیص کالا ،تامین کالا ،ترخیص کاری ، اخذ تسهیلات بانکی لازم جهت انجام سرمایه گذاری ، شرکت در مناقصه ها و مزایده های دولتی و غیر دولتی ایرانی و خارجی مشغول به فعالیت می باشد
+                </p>
+                <p class=" paragragh pt-md-2 text-dark" dir="rtl">
+                    شرکت آرتا تیام مهام بر خود تعهد می داند با عقد قراردادهای منتفع الطرفین با گارانتی کامل، تامین و صادر کلیه سفارشات کشورهای مقصد را با بهترین شرکت های حمل و نقل زمینی و دریایی در اسرع وقت با نازلترین قیمت و برترین کیفیت در اختیار تجار محترم قرار دهد
+                </p>*@
         </div>
     </div>
     <div class="my-column mt-3" dir="rtl">
@@ -54,10 +57,13 @@
         </div>
     </div>
 
-    <div class="edit-admin pb-5 d-none">
-        <hr />
-        <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-5">
+            <hr />
+            <a href="/Admin/Config/DarbareMa" class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
 
     <h3 class="text-center title-h3 my-center mb-5 mt-5">
         <span class="my-center">

@@ -30,6 +30,25 @@ namespace DataLayer.ViewModels
         public string DarbareMaText { get; set; }
         public string DarbareMaImg { get; set; }
         public string DarbareMaMavared { get; set; }
+        public string DarnareModiamelText { get; set; }
+        public string DarnareModiamelImg { get; set; }
+        public string MoarefyeSherkatText { get; set; }
+        public string MoarefyeSherkatImg { get; set; }
+        public string VideoSectionHomeText { get; set; }
+        public string VideoSectionHomeImg { get; set; }
+
+
+
+        public string VideoSectionHomeTextEn { get; set; }
+        public string DarbareMaTextEn { get; set; }
+        public string MoarefyeSherkatTextEn { get; set; }
+        public string DarnareModiamelTextEn { get; set; }
+        [Required(ErrorMessage = "لطفا آدرس  انگلیسی را وارد کنید")]
+        public string AddressEn { get; set; }
+        [Required(ErrorMessage = "لطفا  توضیحات کوتاه انگلیسی در فوتر  را وارد کنید")]
+        public string TozihatShekatFooterEn { get; set; }
+
+
 
     }
 }

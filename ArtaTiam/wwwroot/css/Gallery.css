@@ -367,6 +367,43 @@ a:hover {
     border: 1px solid #0C590B;
     border-radius: 10px;
     padding: 15px 5px; }
+  .gallery-section .grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 0.5em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px 3vw; }
+  .gallery-section .white-gallery-card {
+    margin: 20px 10px;
+    width: 93%;
+    min-height: 450px;
+    background-image: url("/img/index/ex-im-bg.svg");
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 10px 0 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #d8d8d8; }
+    .gallery-section .white-gallery-card img, .gallery-section .white-gallery-card video {
+      padding: 8px;
+      border-radius: 5px; }
+    .gallery-section .white-gallery-card p {
+      /*     margin-top: 10px;*/
+      /* color: black !important;
+            width:90%;
+            @include my-center();
+            text-align: justify !important;
+            text-justify: kashida !important;
+            vertical-align:middle!important;*/
+      color: black !important;
+      display: flex;
+      height: 200px;
+      width: 90%;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      text-align: justify !important;
+      text-justify: kashida !important; }
 
 @media screen and (max-width: 780px) {
   .gallery-section .title-h3 {
@@ -379,6 +416,22 @@ a:hover {
     align-self: center;
     margin: 0 auto; } }
 
+/*#gallery {
+
+    img {
+        height: 30vw;
+        object-fit: contain;
+
+        @media (min-width: $bootstrap-sm) {
+            height: 20vw;
+        }
+
+        @media (min-width: $bootstrap-lg) {
+            height: 18vw;
+        }
+    }
+}
+*/
 #gallery img {
   height: 75vw;
   object-fit: contain; }
@@ -410,8 +463,6 @@ a:hover {
   transition: transform .2s; }
 
 .gallery-item img:hover, .gallery-item video:hover {
-  -ms-transform: scale(1.2);
-  /* IE 9 */
-  -webkit-transform: scale(1.2);
-  /* Safari 3-8 */
-  transform: scale(1.2); }
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05); }

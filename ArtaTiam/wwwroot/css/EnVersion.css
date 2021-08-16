@@ -89,6 +89,11 @@
   font-family: IranSans;
   font-size: 0.8rem !important; }
 
+.gallery-section .white-gallery-card {
+  min-height: 500px !important; }
+  .gallery-section .white-gallery-card p {
+    height: 250px; }
+
 .title-h3 span {
   font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-size: 16px;

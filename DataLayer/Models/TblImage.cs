@@ -22,6 +22,10 @@ namespace DataLayer.Models
         public string Name { get; set; }
         [StringLength(4000)]
         public string Description { get; set; }
+        [StringLength(150)]
+        public string NameEn { get; set; }
+        [StringLength(150)]
+        public string DescriptionEn { get; set; }
         public int Status { get; set; }
     }
 }

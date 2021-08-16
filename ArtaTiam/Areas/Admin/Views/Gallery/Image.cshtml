@@ -1,7 +1,6 @@
-﻿@model IEnumerable<DataLayer.Models.TblBanner>
+﻿@model IEnumerable<DataLayer.Models.TblImage>
 @{
-    ViewData["Title"] = "کشورها";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "عکس و ویدیو";
 }
 
 
@@ -11,36 +10,33 @@
             <div class="card-header bg-white">
                 <div class="pr-1 pt-2">
                     <div class="form-group pb-0 mb-0">
-                        <button id="Create" data-toggle="modal" data-target="#modalSave" class="btn btn-success btn-sm">افزودن<span class="icon-holder uk-margin-small-right" uk-icon="add-circle-outline"></span></button>
+                        <a asp-action="Create" asp-route-id="@ViewBag.idImage" class="btn btn-success btn-sm">افزودن<span class="icon-holder uk-margin-small-right" uk-icon="add-circle-outline"></span></a>
                     </div>
                 </div>
             </div>
+
             <div id="card-table" class="card-body flex-div">
                 <div class="table-responsive flex">
                     <table class="table fixed">
                         <thead class="thead-light">
                             <tr>
                                 <th>نام</th>
-                                <th>نام انگلیسی</th>
-                                <th>عکس</th>
+                                <th>توضیحات</th>
                                 <th>عملیات</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr id="sliderId_@item.BannerId">
+                                <tr id="sliderId_@item.ImageId">
                                     <td>@item.Name</td>
-                                    <td>@item.NameEn</td>
-                                    <td>
-                                        <img src="~/Images/Country/@item.ImageUrl" style="max-width:100px" alt="@item.Name" />
-                                    </td>
+                                    <td>@item.Description</td>
                                     <td>
                                         <span data-placement="top" data-toggle="tooltip" title="" data-original-title="ویرایش">
-                                            <a onclick="Edit(@item.BannerId)" data-toggle="modal" data-target="#modalSave" class="text-primary" uk-icon="create-outline"></a>
+                                            <a onclick="Edit(@item.ImageId)" data-toggle="modal" data-target="#modalSave" class="text-primary" uk-icon="create-outline"></a>
                                         </span>
                                         <span data-placement="top" data-toggle="tooltip" title="" data-original-title="حذف">
-                                            <a onclick="RemoveSlider(@item.BannerId)" class="text-danger" uk-icon="trash"></a>
+                                            <a onclick="RemoveSlider(@item.ImageId)" class="text-danger" uk-icon="trash"></a>
                                         </span>
                                     </td>
                                 </tr>
@@ -58,23 +54,28 @@
         </div>
     </div>
 </div>
+<input type="hidden" name="idImage" id="idImage" value="@ViewBag.idImage" />
 @section Script{
+
     <script>
+
         $("#Create").click(function () {
+            var id = $('#idImage').val();
+            alert(id);
             $(".modal-content").html("");
-            $.get("/Admin/Country/Create", function (result) {
+            $.get("/Admin/Gallery/Create", function (result) {
                 $(".modal-content").html(result);
             });
         });
         function Edit(id) {
             $(".modal-content").html("");
-            $.get("/Admin/Country/Edit/" + id, function (result) {
+            $.get("/Admin/Gallery/Edit/" + id, function (result) {
                 $(".modal-content").html(result);
             });
         }
         function RemoveSlider(Id) {
-            if (confirm('آیا از حذف کشور مورد نظر مطمئن هستید؟')) {
-                $.post("/Admin/Country/RemoveSlider/" + Id, function (result) {
+            if (confirm('آیا از حذف  مورد نظر مطمئن هستید؟')) {
+                $.post("/Admin/Gallery/RemoveSlider/" + Id, function (result) {
                     if (result == "true") {
                         /* window.location.reload();*/
                         $('#sliderId_' + Id).addClass('text-danger');

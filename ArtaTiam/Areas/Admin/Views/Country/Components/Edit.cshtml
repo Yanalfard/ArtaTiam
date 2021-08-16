@@ -21,6 +21,11 @@
                 <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: اسلایدر1">
                 <span class="text-danger" asp-validation-for="Name"></span>
             </div>
+            <div class="form-group col-md-3">
+                <label>نام انگلیسی</label>
+                <input class="form-control form-control-sm" asp-for="NameEn" placeholder="SLider ">
+                <span class="text-danger" asp-validation-for="NameEn"></span>
+            </div>
         </div>
         <label class="mt-2">تصویر اسلایدر</label>
         <br />
@@ -28,8 +33,8 @@
             <img src="~/Images/Country/@Model.ImageUrl" alt="@Model.Name" style="max-height: 150px !important;display:block; margin: 0 auto" />
         </div>
         <div class="custom-file col-md-7">
-            <input type="file" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg"  asp-for="ImageUrl" onchange="inputChanged(this)">
-            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب تصویر</label>
+            <input type="file" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg"  onchange="inputChanged(this)" name="image" id="image">
+            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileNameimage">انتخاب تصویر</label>
         </div>
     </div>
     <div class="modal-footer justify-content-end">

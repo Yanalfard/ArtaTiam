@@ -1,5 +1,6 @@
 ﻿using ArtaTiam.Utilities;
 using DataLayer.Models;
+using DataLayer.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ReflectionIT.Mvc.Paging;
@@ -9,32 +10,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+
 namespace ArtaTiam.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CountryController : Controller
+    public class GalleryController : Controller
     {
         Core _core = new Core();
-        [HttpGet]
-        public async Task<IActionResult> Index(int page = 1)
+        public IActionResult Image(int id, int page = 1)
         {
-            try
-            {
-                IEnumerable<TblBanner> AllSlider = PagingList.Create(_core.Baner.Get(i => i.IsSlider == false).OrderByDescending(bas => bas.BannerId), 10, page);
-                return await Task.FromResult(View(AllSlider));
-            }
-            catch
-            {
-                return await Task.FromResult(Redirect("Error"));
-            }
+            List<TblImage> list = _core.Image.Get().ToList();
+            ViewBag.idImage = id;
+            return View(PagingList.Create(list, 10, page));
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(int id)
         {
             try
             {
-                return await Task.FromResult(ViewComponent("CreateCountryAdmin"));
+                TblImage image = new TblImage();
+                image.Status = id;
+                return await Task.FromResult(View(image));
             }
             catch
             {
@@ -43,22 +40,22 @@ namespace ArtaTiam.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(TblBanner slider, IFormFile ImageUrl)
+        public async Task<IActionResult> CreateAsync(TblImage slider, IFormFile ImageUrl)
         {
             try
             {
 
-                TblBanner NewSlider = new TblBanner();
+                TblImage NewSlider = new TblImage();
                 NewSlider.Name = slider.Name;
                 NewSlider.NameEn = slider.NameEn;
-                NewSlider.Title = slider.Title;
-                NewSlider.Link = slider.Link;
-                NewSlider.IsSlider = false;
-                if (ImageUrl != null && ImageUrl.IsImages() && ImageUrl.Length < 3000000)
+                NewSlider.Description = slider.Description;
+                NewSlider.DescriptionEn = slider.DescriptionEn;
+                NewSlider.Status = slider.Status;
+                if (ImageUrl != null)
                 {
                     NewSlider.ImageUrl = Guid.NewGuid().ToString() + Path.GetExtension(ImageUrl.FileName);
                     string savePath = Path.Combine(
-                                            Directory.GetCurrentDirectory(), "wwwroot/Images/Country", NewSlider.ImageUrl
+                                            Directory.GetCurrentDirectory(), "wwwroot/Images/Gallery", NewSlider.ImageUrl
                                         );
                     using (var stream = new FileStream(savePath, FileMode.Create))
                     {
@@ -66,9 +63,9 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     };
                 }
 
-                _core.Baner.Add(NewSlider);
+                _core.Image.Add(NewSlider);
                 _core.Save();
-                return Redirect("/Admin/Country");
+                return Redirect("/Admin/Gallery");
             }
             catch
             {
@@ -82,7 +79,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
         {
             try
             {
-                return await Task.FromResult(ViewComponent("EditCountryAdmin", new { id = id }));
+                return await Task.FromResult(View(_core.Image.GetById(id)));
             }
             catch
             {
@@ -152,5 +149,6 @@ namespace ArtaTiam.Areas.Admin.Controllers
             _core.Save();
             return "true";
         }
+
     }
 }

@@ -20,6 +20,24 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Cooperation(NegotiationVm negotiation)
+        {
+            if (ModelState.IsValid)
+            {
+                TblNegotiation addNegotiation1 = new TblNegotiation();
+                addNegotiation1.FromCountry = negotiation.FromCountry;
+                addNegotiation1.Name = negotiation.Name;
+                addNegotiation1.Product = negotiation.Product;
+                addNegotiation1.TellNo = negotiation.TellNo;
+                addNegotiation1.Description = negotiation.Description;
+                addNegotiation1.Amount = negotiation.Amount;
+                _core.Negotiation.Add(addNegotiation1);
+                _core.Save();
+                return Redirect("/Contact/Cooperation?SendForm=true");
+            }
+            return View(negotiation);
+        }
         public IActionResult ContactUs()
         {
             IEnumerable<TblConfig> configs = _core.Config.Get();

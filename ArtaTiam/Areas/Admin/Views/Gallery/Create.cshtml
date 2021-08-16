@@ -1,33 +1,48 @@
-﻿@model DataLayer.Models.TblBanner
+﻿@model DataLayer.Models.TblImage
+@{
+    ViewData["Title"] = "عکس و ویدیو";
+}
 <div class="modal-header">
     <h6 class="modal-title" id="modalCenterTitle">
-        افزودن اسلایدر
+        افزودن فایل
     </h6>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
 </div>
-<form asp-action="Create" asp-controller="Country" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
+<form asp-action="Create" asp-controller="Gallery" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
       data-ajax-method="POST"
       data-ajax-mode="replace"
       data-ajax-complete="EndCatagoryCreate()"
       data-ajax-update="#ajaxresult">
+    <input name="Status" value="@Model.Status" type="hidden" asp-for="Status" />
     <div class="modal-body">
         <div class="form-row">
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-12">
                 <label>نام</label>
-                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: اسلایدر1">
+                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: عکس1">
                 <span class="text-danger" asp-validation-for="Name"></span>
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-12">
                 <label>نام انگلیسی</label>
-                <input class="form-control form-control-sm" asp-for="NameEn" placeholder="Slider1 ">
+                <input dir="ltr" class="form-control form-control-sm" asp-for="NameEn" placeholder="image1">
                 <span class="text-danger" asp-validation-for="NameEn"></span>
             </div>
         </div>
-        <label class="mt-2">تصویر اسلایدر</label>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>توضیحات</label>
+                <textarea asp-for="Description" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>توضیحات انگلیسی</label>
+                <textarea dir="ltr" asp-for="DescriptionEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                <span class="text-danger" asp-validation-for="DescriptionEn"></span>
+            </div>
+        </div>
+        <label class="mt-2">فایل مورد نظر </label>
         <br />
         <div class="custom-file col-md-7">
             <input type="file" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg" required asp-for="ImageUrl" onchange="inputChanged(this)">
@@ -41,7 +56,8 @@
 
 <script src="~/Validate/jquery.validate.min.js"></script>
 <script src="~/Validate/jquery.validate.unobtrusive.js"></script>
-<script> 
+<script>
+
     function inputChanged(sender) {
         var fileName = sender.files[0].name;
         sender.parentElement.querySelector('.custom-file-label').innerHTML = fileName;

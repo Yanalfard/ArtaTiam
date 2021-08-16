@@ -8,22 +8,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataLayer.Models
 {
-    [Table("TblBanner")]
-    public partial class TblBanner
+    [Table("TblImage")]
+    public partial class TblImage
     {
         [Key]
-        public int BannerId { get; set; }
+        public int ImageId { get; set; }
         [Required]
         [StringLength(500)]
         public string ImageUrl { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime DateCreated { get; set; }
         [StringLength(150)]
         public string Name { get; set; }
-        [StringLength(150)]
-        public string Title { get; set; }
-        [StringLength(500)]
-        public string Link { get; set; }
-        public bool IsSlider { get; set; }
+        [StringLength(4000)]
+        public string Description { get; set; }
         [StringLength(150)]
         public string NameEn { get; set; }
+        [StringLength(150)]
+        public string DescriptionEn { get; set; }
+        public int Status { get; set; }
     }
 }

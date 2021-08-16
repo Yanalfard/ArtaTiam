@@ -1,4 +1,4 @@
-﻿@model TblConfig
+﻿@model ConfigVm
 
 @{
     ViewData["Title"] = " درباره مدیرعامل ";
@@ -13,11 +13,16 @@
                 <form class="form-row mt-3 fixed overflow-auto" asp-action="DarnareModiamel" asp-controller="Config" enctype="multipart/form-data">
                     <div class="form-group col-lg-12 mt-lg-3">
                         <label> درباره مدیرعامل  :</label>
-                        <textarea asp-for="Value" id="Value" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
-                        <br /><span class="text-danger" asp-validation-for="Value"></span>
+                        <textarea asp-for="DarnareModiamelText" id="DarnareModiamelText" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="DarnareModiamelText"></span>
                     </div>
                     <div class="form-group col-lg-12 mt-lg-3">
-                        <img style="max-width:250px;margin:0 auto;display:block" src="~/Images/DarnareModiamelImg/@ViewBag.SelectedConfigImg" alt="Alternate Text" />
+                        <label> درباره مدیرعامل انگلیسی  :</label>
+                        <textarea asp-for="DarnareModiamelTextEn" id="DarnareModiamelTextEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="DarnareModiamelTextEn"></span>
+                    </div>
+                    <div class="form-group col-lg-12 mt-lg-3">
+                        <img style="max-width:250px;margin:0 auto;display:block" src="~/Images/DarnareModiamelImg/@Model.DarnareModiamelImg" alt="Alternate Text" />
                     </div>
                     <label class="mt-2">تصویر </label>
                     <br />
@@ -42,7 +47,8 @@
     <script src="~/js/ckeditor/adapters/jquery.js"></script>
     <script>
         $(function () {
-            $('#Value').ckeditor();
+            $('#DarnareModiamelText').ckeditor();
+            $('#DarnareModiamelTextEn').ckeditor();
         });
 
 

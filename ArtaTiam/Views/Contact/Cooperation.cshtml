@@ -1,4 +1,4 @@
-﻿
+﻿@model NegotiationVm
 @{
     ViewData["Title"] = "اعلام همکاری";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -52,53 +52,68 @@
         </span>
     </h3>
     <div class="form-container white-card p-4" dir="rtl">
-        <form>
+        @if (Context.Request.Query["SendForm"].ToString() == "true")
+        {
+            <div class="alert alert-success">
+                <p class="help-block">پیام شما ارسال شد</p>
+            </div>
+        }
+        <form asp-action="Cooperation" method="post">
             <div class="form-row mt-md-2">
                 <div class="form-group col-md-6 col-lg-5 ">
-                    <input type="text" class="form-control" id="name" placeholder="نام و نام خانوادگی: ">
+                    <input type="text" class="form-control" asp-for="Name" id="Name" placeholder="نام و نام خانوادگی: ">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+
                 </div>
                 <div class="form-group col-md-6 col-lg-5 mr-lg-auto">
-                    <input type="text" class="form-control" id="country" placeholder="نام کشور:">
+                    <input type="text" class="form-control" asp-for="FromCountry" id="FromCountry" placeholder="نام کشور:">
+                    <span class="text-danger" asp-validation-for="FromCountry"></span>
                 </div>
             </div>
             <div class="form-row mt-md-2">
                 <div class="form-group col-md-6 col-lg-5">
-                    <input type="number" class="form-control" id="PersonalCode" placeholder="کد ملی:">
+                    <input type="tel" class="form-control" asp-for="TellNo" id="TellNo" placeholder="شماره واتساپ جهت ارتباط: ">
+                    <span class="text-danger" asp-validation-for="TellNo"></span>
+
                 </div>
                 <div class="form-group col-md-4 col-lg-3 mr-lg-auto">
-                    <select id="ProductType" class="form-control">
-                        <option selected>نوع محصول درخواستی:</option>
-                        <option>میوه جات</option>
-                        <option>گروه مواد غذایی</option>
-                        <option>سایر</option>
+                    <select id="Product" class="form-control" asp-for="Product">
+                        <option selected value="">نوع محصول درخواستی:</option>
+                        <option value="میوه جات">میوه جات</option>
+                        <option value="گروه مواد غذایی">گروه مواد غذایی</option>
+                        <option value="سایر">سایر</option>
                     </select>
+                    <span class="text-danger" asp-validation-for="Product"></span>
+
                 </div>
                 <div class="form-group col-md-2 col-lg-2">
-                    <select id="Tonnage" class="form-control">
-                        <option selected>تناژ مورد نیاز:</option>
-                        <option>20-40</option>
-                        <option>41-100</option>
-                        <option>101-500</option>
-                        <option>سایر</option>
+                    <select id="Amount" class="form-control" asp-for="Amount">
+                        <option selected value="">تناژ مورد نیاز:</option>
+                        <option value="20-40">20-40</option>
+                        <option value="41-100">41-100</option>
+                        <option value="101-500">101-500</option>
+                        <option value="سایر">سایر</option>
                     </select>
-                </div>
+                    <span class="text-danger" asp-validation-for="Amount"></span>
 
-            </div>
-            <div class="form-row mt-md-2">
-                <div class="form-group col-md-6 col-lg-5">
-                    <input type="tel" class="form-control" id="name" placeholder="شماره واتساپ جهت ارتباط: ">
                 </div>
             </div>
+
 
             <div class="form-group purple-border mt-md-2">
-                <textarea class="form-control" id="Description" rows="3" placeholder="مشخصات مختصری از محصول درخواستی :"></textarea>
+                <textarea class="form-control" id="Description" rows="3" asp-for="Description" placeholder="مشخصات مختصری از محصول درخواستی :"></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
             </div>
 
             <button type="submit" class="btn bgMyGreen text-white col-12 mt-2">ارسال</button>
         </form>
     </div>
-    <div class="edit-admin pb-5 d-none">
-        <hr />
-        <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+    @*<div class="edit-admin pb-5 d-none">
+            <hr />
+            <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>*@
 </section>
+
+@section Script {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

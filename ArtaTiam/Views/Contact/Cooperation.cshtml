@@ -113,3 +113,7 @@
             <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
         </div>*@
 </section>
+
+@section Script {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

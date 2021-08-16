@@ -27,10 +27,10 @@ namespace ArtaTiam.Controllers
             {
                 TblNegotiation addNegotiation1 = new TblNegotiation();
                 addNegotiation1.FromCountry = negotiation.FromCountry;
-                addNegotiation1.Name = negotiation.FromCountry;
-                addNegotiation1.Product = negotiation.FromCountry;
-                addNegotiation1.TellNo = negotiation.FromCountry;
-                addNegotiation1.Description = negotiation.FromCountry;
+                addNegotiation1.Name = negotiation.Name;
+                addNegotiation1.Product = negotiation.Product;
+                addNegotiation1.TellNo = negotiation.TellNo;
+                addNegotiation1.Description = negotiation.Description;
                 addNegotiation1.Amount = negotiation.Amount;
                 _core.Negotiation.Add(addNegotiation1);
                 _core.Save();

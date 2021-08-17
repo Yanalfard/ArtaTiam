@@ -27,4 +27,29 @@ namespace DataLayer.ViewModels
         [Required(ErrorMessage = "لطفا شماره تلفن  را وارد کنید")]
         public string TellNo { get; set; }
     }
+
+
+
+    public class NegotiationEnVm
+    {
+        [Key]
+        public int NegotiationId { get; set; }
+        [StringLength(150)]
+        [Required(ErrorMessage = "Please Type Name")]
+        public string Name { get; set; }
+        [StringLength(150)]
+        [Required(ErrorMessage = "Please Type Product")]
+        public string Product { get; set; }
+        [StringLength(50)]
+        [Required(ErrorMessage = "Please Type FromCountry")]
+        public string FromCountry { get; set; }
+        [Required(ErrorMessage = "Please Type Amount")]
+        public string Amount { get; set; }
+        [StringLength(1000)]
+        [Required(ErrorMessage = "Please Type Description")]
+        public string Description { get; set; }
+        [StringLength(20)]
+        [Required(ErrorMessage = "Please Type Tell")]
+        public string TellNo { get; set; }
+    }
 }

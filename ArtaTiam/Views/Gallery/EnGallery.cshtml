@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<TblImage>
 @{
     ViewData["Title"] = "Gallery";
     Layout = "~/Views/Shared/_EnLayout.cshtml";
@@ -50,42 +50,27 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample3.png" data-toggle="lightbox" data-gallery="example-gallery">
-                                    <span class="mt-2 mytext-gray text-09">Title</span>
-                                    <img src="/img/Gallery/sample3.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="ltr">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="white-gallery-card  gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample1.png" data-toggle="lightbox" data-gallery="example-gallery">
-
-                                    <span class="mt-2 mytext-gray text-09">Title</span>
-                                    <img src="/img/Gallery/sample1.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="ltr">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample2.png" data-toggle="lightbox" data-gallery="example-gallery">
-
-                                    <span class="mt-2 mytext-gray text-09">Title</span>
-                                    <img src="/img/Gallery/sample2.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="ltr">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                    </p>
-                                </a>
-                            </div>
-
+                            @foreach (var item in Model.Where(i => i.Status == 1))
+                            {
+                                <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                    <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
+                                        <span class="mt-2 mytext-gray text-09">@item.NameEn</span>
+                                        <img src="~/Images/Gallery/@item.ImageUrl" class="img-fluid">
+                                        <p class="p-2 text-08" dir="rtl">
+                                            @item.DescriptionEn
+                                        </p>
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
-                    <div class="edit-admin pb-5 d-none">
-                        <hr />
-                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="edit-admin pb-5 ">
+                            <hr />
+                            <a href="/Admin/Home" class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                        </div>
+                    }
                 </div>
                 <!--videos section-->
                 <div class="card-with-border mb-4" id="gallery-video">
@@ -96,59 +81,35 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
-                                    </div>
+                            @foreach (var item in Model.Where(i => i.Status == 2))
+                            {
+                                <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                    <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
+                                        <span class="mt-2 mytext-gray text-09"> @item.Name</span>
+                                        <video class="img-fluid" controls>
+                                            <source src="~/Images/Gallery/@item.ImageUrl" type="video/mp4" />
+                                        </video>
+                                        <div>
+                                            <p class="p-2 text-08" dir="rtl">
+                                                @item.Description
+                                            </p>
+                                        </div>
 
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
-
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
 
-
-                    <div class="edit-admin pb-5 d-none">
-                        <hr />
-                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="edit-admin pb-5 ">
+                            <hr />
+                            <a href="/Admin/Home" class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                        </div>
+                    }
                 </div>
                 <!--archive section-->
                 <div class="card-with-border mb-4" id="gallery-archive">
@@ -159,58 +120,50 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
-
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
+                            @foreach (var item in Model.Where(i => i.Status == 3 || i.Status == 4))
+                            {
+                                if (item.Status == 3)
+                                {
+                                    <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                        <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
+                                            <span class="mt-2 mytext-gray text-09">@item.Name</span>
+                                            <img src="~/Images/Gallery/@item.ImageUrl" class="img-fluid">
+                                            <p class="p-2 text-08" dir="rtl">
+                                                @item.Description
+                                            </p>
+                                        </a>
                                     </div>
+                                }
+                                else if (item.Status == 4)
+                                {
+                                    <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                        <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
+                                            <span class="mt-2 mytext-gray text-09"> @item.Name</span>
+                                            <video class="img-fluid" controls>
+                                                <source src="~/Images/Gallery/@item.ImageUrl" type="video/mp4" />
+                                            </video>
+                                            <div>
+                                                <p class="p-2 text-08" dir="rtl">
+                                                    @item.Description
+                                                </p>
+                                            </div>
 
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
+                                        </a>
                                     </div>
+                                }
 
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/video/video-sample.mp4" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                    <span class="mt-2 mytext-gray text-09">title</span>
-                                    <video class="img-fluid" controls>
-                                        <source src="/img/Gallery/video/video-sample.mp4" type="video/mp4" />
-                                    </video>
-                                    <div>
-                                        <p class="p-2 text-08" dir="ltr">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
-                                        </p>
-                                    </div>
-
-                                </a>
-                            </div>
+                            }
                         </div>
                     </div>
-
-                    <div class="edit-admin pb-5 d-none">
-                        <hr />
-                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="edit-admin pb-5 ">
+                            <hr />
+                            <a href="/Admin/Home" class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

@@ -14,13 +14,31 @@ using System.Threading.Tasks;
 namespace ArtaTiam.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [PermissionChecker("admin")]
     public class GalleryController : Controller
     {
         Core _core = new Core();
         public IActionResult Image(int id, int page = 1)
         {
-            List<TblImage> list = _core.Image.Get().ToList();
+            List<TblImage> list = _core.Image.Get(i => i.Status == id).ToList();
             ViewBag.idImage = id;
+            ViewBag.name = "";
+            if (id == 1)
+            {
+                ViewBag.name = "عکس ها";
+            }
+            else if (id == 2)
+            {
+                ViewBag.name = "ویدیوها";
+            }
+            else if (id == 3)
+            {
+                ViewBag.name = "عکس بارگیری";
+            }
+            else if (id == 4)
+            {
+                ViewBag.name = "ویدیو بارگیری";
+            }
             return View(PagingList.Create(list, 10, page));
         }
 
@@ -29,6 +47,23 @@ namespace ArtaTiam.Areas.Admin.Controllers
         {
             try
             {
+                ViewBag.name = "";
+                if (id == 1)
+                {
+                    ViewBag.name = "عکس ";
+                }
+                else if (id == 2)
+                {
+                    ViewBag.name = "ویدیو";
+                }
+                else if (id == 3)
+                {
+                    ViewBag.name = "عکس بارگیری";
+                }
+                else if (id == 4)
+                {
+                    ViewBag.name = "ویدیو بارگیری";
+                }
                 TblImage image = new TblImage();
                 image.Status = id;
                 return await Task.FromResult(View(image));
@@ -65,7 +100,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
                 _core.Image.Add(NewSlider);
                 _core.Save();
-                return Redirect("/Admin/Gallery");
+                return Redirect("/Admin/Gallery/Image/" + slider.Status);
             }
             catch
             {
@@ -79,7 +114,25 @@ namespace ArtaTiam.Areas.Admin.Controllers
         {
             try
             {
-                return await Task.FromResult(View(_core.Image.GetById(id)));
+                TblImage image = _core.Image.GetById(id);
+                ViewBag.name = "";
+                if (image.Status == 1)
+                {
+                    ViewBag.name = "عکس ";
+                }
+                else if (image.Status == 2)
+                {
+                    ViewBag.name = "ویدیو";
+                }
+                else if (image.Status == 3)
+                {
+                    ViewBag.name = "عکس بارگیری";
+                }
+                else if (image.Status == 4)
+                {
+                    ViewBag.name = "ویدیو بارگیری";
+                }
+                return await Task.FromResult(View(image));
             }
             catch
             {
@@ -89,23 +142,22 @@ namespace ArtaTiam.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(TblBanner slider, IFormFile image)
+        public async Task<IActionResult> Edit(TblImage slider, IFormFile image)
         {
             try
             {
 
 
-                TblBanner FirstSlider = _core.Baner.GetById(slider.BannerId);
-                FirstSlider.Name = slider.Name;
-                FirstSlider.Title = slider.Title;
-                FirstSlider.IsSlider = false;
-                FirstSlider.Link = slider.Link;
-                FirstSlider.NameEn = slider.NameEn;
-                if (image != null && image.IsImages() && image.Length < 3000000)
+                TblImage NewSlider = _core.Image.GetById(slider.ImageId);
+                NewSlider.Name = slider.Name;
+                NewSlider.NameEn = slider.NameEn;
+                NewSlider.Description = slider.Description;
+                NewSlider.DescriptionEn = slider.DescriptionEn;
+                if (image != null)
                 {
                     try
                     {
-                        var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/Country", FirstSlider.ImageUrl);
+                        var deleteImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/Gallery", NewSlider.ImageUrl);
                         if (System.IO.File.Exists(deleteImagePath))
                         {
                             System.IO.File.Delete(deleteImagePath);
@@ -115,9 +167,9 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     {
 
                     }
-                    FirstSlider.ImageUrl = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+                    NewSlider.ImageUrl = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
                     string savePath = Path.Combine(
-                                               Directory.GetCurrentDirectory(), "wwwroot/Images/Country", FirstSlider.ImageUrl
+                                               Directory.GetCurrentDirectory(), "wwwroot/Images/Gallery", NewSlider.ImageUrl
                                            );
                     using (var stream = new FileStream(savePath, FileMode.Create))
                     {
@@ -125,9 +177,10 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     };
                 }
 
-                _core.Baner.Update(FirstSlider);
+                _core.Image.Update(NewSlider);
                 _core.Save();
-                return await Task.FromResult(Redirect("/Admin/Country"));
+                return Redirect("/Admin/Gallery/Image/" + slider.Status);
+
             }
             catch
             {
@@ -137,15 +190,15 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
         public string RemoveSlider(int id)
         {
-            TblBanner slider = _core.Baner.GetById(id);
+            TblImage slider = _core.Image.GetById(id);
 
-            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/Country", slider.ImageUrl);
+            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/Gallery", slider.ImageUrl);
 
             if (System.IO.File.Exists(imagePath))
             {
                 System.IO.File.Delete(imagePath);
             }
-            _core.Baner.DeleteById(id);
+            _core.Image.DeleteById(id);
             _core.Save();
             return "true";
         }

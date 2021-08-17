@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataLayer.Models;
+using DataLayer.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +11,19 @@ namespace ArtaTiam.Controllers
 {
     public class GalleryController : Controller
     {
+        private Core _core = new Core();
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult Gallery()
         {
-            return View();
+            return View(_core.Image.Get());
         }
 
         public IActionResult EnGallery()
         {
-            return View();
+            return View(_core.Image.Get());
         }
     }
 }

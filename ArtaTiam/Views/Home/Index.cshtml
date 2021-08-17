@@ -16,67 +16,15 @@
     <div id="carousel-thumb" class="carousel carousel-thumbnails slide" data-ride="carousel" data-interval="5000" data-pause="false">
         <!--Slides-->
         @await Component.InvokeAsync("SliderHomeComponent")
-        @*<div class="carousel-inner" role="listbox">
-
-                <div class="carousel-item carousel-item1 active carousel-banner">
-                    <img class="d-block w-100 carousel-img-fit" src="~/img/index/Slideshow/header-sample.jpg" alt="First slide">
-                    <div class="row carousel-ban-text-adj my-center">
-                        <div class="row col-12 my-center">
-                            <h1 class="col-12 carousel-header-adj my-center BNARM "><span class="text-white BNARM ">شرکت بازرگانی</span> آرتا تیام مهام</h1>
-                            <p class="col-12 carousel-paragraph IRANYekan">"حضور به موقع در آغاز کار، کل راه را تضمین می کند"</p>
-                            <a href="/Contact/Cooperation" class="greenButton btn-large col-md-3 my-center text-08 mt-3 mb-1">فرم درخواست مذاکره</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item carousel-item2 carousel-banner">
-                    <img class="d-block w-100 carousel-img-fit" src="~/img/index/Slideshow/sample6.jpg" alt="Second slide">
-                    <div class="row carousel-ban-text-adj my-center">
-                        <div class="row col-12 my-center">
-                            <h1 class="col-12 carousel-header-adj my-center BNARM "><span class="text-white BNARM ">شرکت بازرگانی</span> آرتا تیام مهام</h1>
-                            <p class="col-12 carousel-paragraph IRANYekan">"حضور به موقع در آغاز کار، کل راه را تضمین می کند"</p>
-                            <a href="/Contact/Cooperation" class="greenButton btn-large col-md-3 my-center text-08 mt-3 mb-1">فرم درخواست مذاکره</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item carousel-item3 carousel-banner">
-                    <img class="d-block w-100 carousel-img-fit" src="~/img/index/Slideshow/sample7.jpg" alt="Third slide">
-                    <div class="row carousel-ban-text-adj my-center">
-                        <div class="row col-12 my-center">
-                            <h1 class="col-12 carousel-header-adj my-center BNARM "><span class="text-white BNARM ">شرکت بازرگانی</span> آرتا تیام مهام</h1>
-                            <p class="col-12 carousel-paragraph IRANYekan">"حضور به موقع در آغاز کار، کل راه را تضمین می کند"</p>
-                            <a href="/Contact/Cooperation" class="greenButton btn-large col-md-3 my-center text-08 mt-3 mb-1">فرم درخواست مذاکره</a>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-        <!--/.Slides-->
-        <!--Controls-->
-        @*<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>*@
-        <!--/.Controls-->
-        @*<ol class="carousel-indicators carousel-swap-adjuster carousel-banner-indicator">
-                <li data-target="#carousel-thumb" data-slide-to="0" class="active tile_3">
-                    <img class="d-block w-100 img-fluid" src="~/img/index/Slideshow/header-sample.jpg" alt="img1">
-                </li>
-                <li data-target="#carousel-thumb" data-slide-to="1" class="tile_2">
-                    <img class="d-block w-100 img-fluid" src="~/img/index/Slideshow/sample6.jpg" alt="img2">
-                </li>
-                <li data-target="#carousel-thumb" data-slide-to="2" class="tile_1">
-                    <img class="d-block w-100 img-fluid" src="~/img/index/Slideshow/sample7.jpg" alt="img3">
-                </li>
-            </ol>*@
     </div>
     <!--/.Carousel Wrapper-->
-    <div class="edit-admin pb-2 pl-2 pr-2 d-none">
-        <hr />
-        <a class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-2 pl-2 pr-2">
+            <hr />
+            <a href="/Admin/Slider" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
 </section>
 
 <!--introduction section-->

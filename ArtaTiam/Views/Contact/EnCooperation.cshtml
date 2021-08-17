@@ -1,4 +1,4 @@
-﻿
+﻿@model NegotiationEnVm
 @{
     ViewData["Title"] = "Cooperation";
     Layout = "~/Views/Shared/_EnLayout.cshtml";
@@ -55,46 +55,53 @@
         </span>
     </h3>
     <div class="form-container white-card p-4" dir="ltr">
-        <form>
+        @if (Context.Request.Query["SendForm"].ToString() == "true")
+        {
+            <div class="alert alert-success">
+                <p class="help-block">Your message has been sent</p>
+            </div>
+        }
+        <form  asp-action="EnCooperation" method="post">
             <div class="form-row mt-md-2">
                 <div class="form-group col-md-6 col-lg-5 ">
-                    <input type="text" class="form-control" id="name" placeholder="Name and surname:  ">
+                    <input type="text" class="form-control" asp-for="Name" id="Name" placeholder="Name and surname:  ">
+                    <span class="text-danger" asp-validation-for="Name"></span>
                 </div>
                 <div class="form-group col-md-6 col-lg-5 ml-lg-auto">
-                    <input type="text" class="form-control" id="country" placeholder="From the country: ">
+                    <input type="text" class="form-control" asp-for="FromCountry" id="FromCountry"  placeholder="From the country: ">
+                    <span class="text-danger" asp-validation-for="FromCountry"></span>
                 </div>
             </div>
             <div class="form-row mt-md-2">
                 <div class="form-group col-md-6 col-lg-5">
-                    <input type="number" class="form-control" id="PersonalCode" placeholder="Personality Code:">
+                    <input type="tel" class="form-control" asp-for="TellNo" id="TellNo"  placeholder="WhatsApp number for communication:  ">
+                    <span class="text-danger" asp-validation-for="TellNo"></span>
                 </div>
                 <div class="form-group col-md-4 col-lg-3 ml-lg-auto">
-                    <select id="ProductType" class="form-control">
-                        <option selected>Requested product type: </option>
-                        <option>Fruitage</option>
-                        <option>Food group</option>
-                        <option>Other</option>
+                    <select id="Product" class="form-control" asp-for="Product">
+                        <option selected value="">Requested product type: </option>
+                        <option value="Fruitage">Fruitage</option>
+                        <option value="Food group">Food group</option>
+                        <option value="Other">Other</option>
                     </select>
+                    <span class="text-danger" asp-validation-for="Product"></span>
                 </div>
                 <div class="form-group col-md-2 col-lg-2 ">
-                    <select id="Tonnage" class="form-control">
-                        <option selected>Required tonnage: </option>
-                        <option>20-40</option>
-                        <option>41-100</option>
-                        <option>101-500</option>
-                        <option>Other</option>
+                    <select id="Amount" class="form-control" asp-for="Amount">
+                        <option selected value="">Required tonnage: </option>
+                        <option value="20-40">20-40</option>
+                        <option value="41-100">41-100</option>
+                        <option value="101-500">101-500</option>
+                        <option value="Other">Other</option>
                     </select>
+                    <span class="text-danger" asp-validation-for="Amount"></span>
                 </div>
 
-            </div>
-            <div class="form-row mt-md-2">
-                <div class="form-group col-md-6 col-lg-5">
-                    <input type="tel" class="form-control" id="name" placeholder="WhatsApp number for communication:  ">
-                </div>
             </div>
 
             <div class="form-group purple-border mt-md-2">
-                <textarea class="form-control" id="Description" rows="3" placeholder="Brief specifications of the requested product: "></textarea>
+                <textarea class="form-control" id="Description" rows="3" asp-for="Description" placeholder="Brief specifications of the requested product: "></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
             </div>
 
             <button type="submit" class="btn bgMyGreen text-white col-12 mt-2">Send</button>
@@ -106,3 +113,6 @@
     </div>
 </section>
 
+@section Script {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

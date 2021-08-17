@@ -1,4 +1,4 @@
-﻿
+﻿@model TblConfig
 @{
     ViewData["Title"] = "About CEO";
     Layout = "~/Views/Shared/_EnLayout.cshtml";
@@ -15,60 +15,29 @@
     </h3>
     <div class="about-container pt-2" dir="rtl">
         <div class="img-container ml-md-5">
-            <img src="~/img/CEO.png" width="300" />
+            <img src="~/Images/DarnareModiamelImg/@ViewBag.SelectedConfigImg" width="300" />
         </div>
         <div class="content-container pt-5 pt-md-0 my-column text-left" dir="ltr">
-            <span class="mytext-bold mytext-green Sens-serif">
-                Engineer: Roya Safari
-            </span>
-            <span class="text-08">
-                Master of International Business
-            </span>
-            <span class="mytext-green text-09">
-                With 17 years of management experience
-            </span>
-            <span>
-                Holds services marketing certification from Ics group academy
-            </span>
-            <span>
-                Services marketing certification from Anccp Academy
-            </span>
-            <span>
-                C.MBA Certificate, Sales Management major from BRS Academy
-            </span>
-            <span>
-                Certificate in sales management and marketing from TUV NORD Academy
-            </span>
-            <span>
-                Sales & marketing certification from ANCCP Academy
-            </span>
-            <span>
-                ISO Customer Relationships management certification from IQS Academy
-            </span>
-            <span class="mytext-bold mytext-green Sens-serif">
-                Certificates:
-            </span>
-            <span>
-                M.B.A Marketing and Sales Orientation, C.M.BA, Guerrilla Marketing From Iran Business Training Center
-            </span>
-            <span>
-                Certificate of expertise in foreign public relations from the country's management and planning organization
-                <br /><br />  And ...
+            @Html.Raw(Model.Value)
 
-            </span>
+          
         </div>
     </div>
     <div class="text-md-right mr-md-1 mt-3 mb-3">
-        <a class="btn bgMyGold" href="https://wa.me/+989141245761">
+        <a class="btn bgMyGold" href="https://api.whatsapp.com/send?phone=@(ViewBag.SelectedWhatsapp)">
             <i class="mytext-green" uk-icon="logo-whatsapp" width="30"></i>
             Direct communication with the CEO
 
         </a>
     </div>
-    <div class="edit-admin pb-5 d-none">
-        <hr />
-        <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-5">
+            <hr />
+            <a href="/Admin/Config/DarnareModiamel" class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
 </section>
 
 

@@ -1,32 +1,32 @@
 ﻿@model DataLayer.Models.TblImage
+@{
+    ViewData["Title"] = " ویرایش " + "  " + ViewBag.name;
+}
 <div class="modal-header">
     <h6 class="modal-title" id="modalCenterTitle">
-        ویرایش اسلایدر
+        ویرایش  @ViewBag.name
     </h6>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
 </div>
-<form asp-action="Edit" asp-controller="Gallery" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
+<form  style="overflow:auto" asp-action="Edit" asp-controller="Gallery" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
       data-ajax-method="POST"
       data-ajax-mode="replace"
       data-ajax-complete="EndCatagoryCreate()"
       data-ajax-update="#ajaxresult">
-    <input name="BannerId" value="@Model.ImageId" type="hidden" asp-for="ImageId" />
+    <input name="ImageId" value="@Model.ImageId" type="hidden" asp-for="ImageId" />
     <input name="ImageUrl" value="@Model.ImageUrl" type="hidden" asp-for="ImageUrl" />
     <input name="Status" value="@Model.Status" type="hidden" asp-for="Status" />
     <div class="modal-body">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>نام</label>
-                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: عکس1">
+                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: @ViewBag.name">
                 <span class="text-danger" asp-validation-for="Name"></span>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>نام انگلیسی</label>
-                <input class="form-control form-control-sm" asp-for="NameEn" placeholder=" image1">
+                <input dir="ltr" class="form-control form-control-sm" asp-for="NameEn" placeholder=" @ViewBag.name">
                 <span class="text-danger" asp-validation-for="NameEn"></span>
             </div>
         </div>
@@ -40,18 +40,27 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>توضیحات انگلیسی</label>
-                <textarea asp-for="DescriptionEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                <textarea dir="ltr" asp-for="DescriptionEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
                 <span class="text-danger" asp-validation-for="DescriptionEn"></span>
             </div>
         </div>
-        <label class="mt-2">تصویر اسلایدر</label>
+        <label class="mt-2">@ViewBag.name</label>
         <br />
         <div class="custom-file col-md-7" style="margin:70px;height:150px;">
-            <img src="~/Images/Slider/@Model.ImageUrl" alt="@Model.Name" style="max-height: 150px !important;display:block; margin: 0 auto" />
+            @if (Model.Status == 1 || Model.Status == 3)
+            {
+                <img src="~/Images/Gallery/@Model.ImageUrl" alt="@Model.Name" style="max-height: 150px !important;display:block; margin: 0 auto" />
+            }
+            else if (Model.Status == 2 || Model.Status == 4)
+            {
+                <video class="my-center" controls style="max-height:200px">
+                    <source src="~/Images/Gallery/@Model.ImageUrl" type="video/mp4" />
+                </video>
+            }
         </div>
         <div class="custom-file col-md-7">
-            <input type="file" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg" asp-for="ImageUrl" onchange="inputChanged(this)">
-            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب تصویر</label>
+            <input type="file" class="custom-file-input form-control form-control-sm" name="image"  id="image" onchange="inputChanged(this)">
+            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب @ViewBag.name</label>
         </div>
     </div>
     <div class="modal-footer justify-content-end">

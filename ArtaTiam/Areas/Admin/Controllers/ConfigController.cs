@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace ArtaTiam.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [PermissionChecker("admin")]
     public class ConfigController : Controller
     {
         Core _core = new Core();

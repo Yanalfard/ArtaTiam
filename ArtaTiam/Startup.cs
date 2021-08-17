@@ -45,7 +45,7 @@ namespace ArtaTiam
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             }).AddCookie(options =>
             {
-                options.LoginPath = "/Login";
+                options.LoginPath = "/Account";
                 options.LogoutPath = "/Logout";
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
             });

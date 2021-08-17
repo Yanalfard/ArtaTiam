@@ -49,7 +49,6 @@ namespace ArtaTiam.Controllers
             config.TellHome2 = configs.Where(c => c.Key == "TellHome2").Single().Value;
             config.Whatsapp = configs.Where(c => c.Key == "Whatsapp").Single().Value;
             config.TellMobile = configs.Where(c => c.Key == "TellMobile").Single().Value;
-            config.TozihatShekatFooter = configs.Where(c => c.Key == "TozihatShekatFooter").Single().Value;
             config.TellModirAmel = configs.Where(c => c.Key == "TellModirAmel").Single().Value;
             config.TellRaisHyatModire = configs.Where(c => c.Key == "TellRaisHyatModire").Single().Value;
             return View(config);
@@ -59,9 +58,38 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult EnCooperation(NegotiationEnVm negotiation)
+        {
+            if (ModelState.IsValid)
+            {
+                TblNegotiation addNegotiation1 = new TblNegotiation();
+                addNegotiation1.FromCountry = negotiation.FromCountry;
+                addNegotiation1.Name = negotiation.Name;
+                addNegotiation1.Product = negotiation.Product;
+                addNegotiation1.TellNo = negotiation.TellNo;
+                addNegotiation1.Description = negotiation.Description;
+                addNegotiation1.Amount = negotiation.Amount;
+                _core.Negotiation.Add(addNegotiation1);
+                _core.Save();
+                return Redirect("/Contact/EnCooperation?SendForm=true");
+            }
+            return View(negotiation);
+        }
         public IActionResult EnContactUs()
         {
-            return View();
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.Email = configs.Where(c => c.Key == "Email").Single().Value;
+            config.AddressEn = configs.Where(c => c.Key == "AddressEn").Single().Value;
+            config.Inista = configs.Where(c => c.Key == "Inista").Single().Value;
+            config.TellHome1 = configs.Where(c => c.Key == "TellHome1").Single().Value;
+            config.TellHome2 = configs.Where(c => c.Key == "TellHome2").Single().Value;
+            config.Whatsapp = configs.Where(c => c.Key == "Whatsapp").Single().Value;
+            config.TellMobile = configs.Where(c => c.Key == "TellMobile").Single().Value;
+            config.TellModirAmel = configs.Where(c => c.Key == "TellModirAmel").Single().Value;
+            config.TellRaisHyatModire = configs.Where(c => c.Key == "TellRaisHyatModire").Single().Value;
+            return View(config);
         }
     }
 }

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TblBanner>
+<div class="carousel-inner" role="listbox">
+
+    @{
+        int numberCarousel = 1;
+    }
+
+    @foreach (TblBanner item in Model)
+    {
+        string className = "carousel-item1";
+        if (numberCarousel == 1)
+        {
+            className = "carousel-item1 active";
+        }
+        else if (numberCarousel == 2)
+        {
+            className = "carousel-item2";
+        }
+        else if (numberCarousel == 3)
+        {
+            className = "carousel-item3";
+        }
+        numberCarousel++;
+        <div class="carousel-item carousel-banner @className">
+            <img class="d-block w-100 carousel-img-fit" src="~/Images/Slider/@item.ImageUrl" alt="First slide">
+            <div class="row carousel-ban-text-adj my-center">
+                <div class="row col-12 my-center">
+                    <h1 class="col-12 carousel-header-adj my-center">Arta Tiyam Maham <span class="text-white">Trading Company </span> </h1>
+                    <p class="col-12 carousel-paragraph">"being first there on the way, insures the whole way"</p>
+                    <a href="/Contact/EnCooperation" class="greenButton btn-large col-md-3 my-center text-08 mt-3 mb-1">Negotiation request form</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<!--/.Slides-->
+<!--Controls-->
+<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+<!--/.Controls-->
+<ol class="carousel-indicators carousel-swap-adjuster carousel-banner-indicator">
+    @{
+        int numberslideCarousel = 0;
+    }
+    @foreach (TblBanner item in Model)
+    {
+
+        string classNameCar = "tile_1";
+        if (numberslideCarousel == 0)
+        {
+            classNameCar = "active tile_3 ml-0";
+        }
+        else if (numberslideCarousel == 1)
+        {
+            classNameCar = "tile_2";
+        }
+        else if (numberslideCarousel == 2)
+        {
+            classNameCar = "tile_1";
+        }
+
+
+        <li data-target="#carousel-thumb" data-slide-to="@numberslideCarousel" class="@classNameCar">
+            <img class="d-block w-100 img-fluid" src="~/Images/Slider/@item.ImageUrl" alt="img1">
+        </li>
+        numberslideCarousel++;
+
+    }
+</ol>

@@ -22,7 +22,6 @@ namespace ArtaTiam.Controllers
             ConfigVm config = new ConfigVm();
             config.DarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single().Value;
             config.DarbareMaText = configs.Where(c => c.Key == "DarbareMaText").Single().Value;
-            config.DarbareMaMavared = configs.Where(c => c.Key == "DarbareMaMavared").Single().Value;
             return View(config);
         }
         public IActionResult AboutCEO()
@@ -35,12 +34,19 @@ namespace ArtaTiam.Controllers
 
         public IActionResult EnAboutUs()
         {
-            return View();
+            IEnumerable<TblConfig> configs = _core.Config.Get();
+            ConfigVm config = new ConfigVm();
+            config.DarbareMaImg = configs.Where(c => c.Key == "DarbareMaImg").Single().Value;
+            config.DarbareMaTextEn = configs.Where(c => c.Key == "DarbareMaTextEn").Single().Value;
+            return View(config);
         }
 
         public IActionResult EnAboutCEO()
         {
-            return View();
+            TblConfig config = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelTextEn");
+            ViewBag.SelectedConfigImg = _core.Config.Get().FirstOrDefault(i => i.Key == "DarnareModiamelImg").Value;
+            ViewBag.SelectedWhatsapp = _core.Config.Get().FirstOrDefault(i => i.Key == "Whatsapp").Value;
+            return View(config);
         }
     }
 }

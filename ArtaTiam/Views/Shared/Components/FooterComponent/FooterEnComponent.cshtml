@@ -1,21 +1,21 @@
 ﻿@model ConfigVm
 
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-5 col-sm-12">
         <div class="footer-widget">
             <!-- Brand -->
-            <h5 href="/" class="text-white text-right footer-titr pb-0 BNARM">
-                شرکت بازرگانی <span class="mytext-gold footer-titr">آرتا تیام مهام</span>
+            <h5 href="/Home/EnIndex" class="mytext-gold text-left footer-titr pb-0">
+                Arta Tiyam Maham <span class="text-white">Trading Company </span>
             </h5>
             <hr />
-            <p class="paragragh text-white IRANYekan text-08 d-none d-md-block">
-                @Model.TozihatShekatFooter
+            <p class="paragragh text-white text-08 d-none d-md-block">
+                @Model.TozihatShekatFooterEn
             </p>
         </div>
     </div>
 
     <div class="col-lg-3 mr-lg-auto col-sm-12">
-        <div class="footer-widget text-right">
-            <h6 class="text-white">اطلاعات تماس</h6>
+        <div class="footer-widget text-left">
+            <h6 class="text-white">Contacts</h6>
             <hr />
             <!-- Links -->
             <ul class="footer-links ">
@@ -23,8 +23,7 @@
 
                     <i class="mytext-gold footer-icon" uk-icon="location" width="18"></i>
                     <span class="text-white text-08">
-                        @Model.Address
-
+                        @Model.AddressEn
                     </span>
 
                 </li>
@@ -40,7 +39,7 @@
                     <a href="mailto:@Model.Email">
                         <i class=" mytext-gold" uk-icon="mail" width="18"></i>
                         <span class="text-white text-08">
-                           @Model.Email
+                            @Model.Email
                         </span>
                     </a>
                 </li>
@@ -70,24 +69,24 @@
         </div>
     </div>
     <div class="col-lg-2 col-sm-6 d-none d-md-block">
-        <div class="footer-widget text-right">
-            <h6 class="text-white">دسترسی سریع</h6>
+        <div class="footer-widget text-left">
+            <h6 class="text-white">Quick Access</h6>
             <hr />
             <!-- Links -->
             <ul class="footer-links ">
                 <li>
-                    <a href="/">
-                        صفحه اصلی
+                    <a href="/Home/EnIndex">
+                        Home
                     </a>
                 </li>
                 <li>
-                    <a href="/Home/Services">
-                        خدمات
+                    <a href="/Home/EnServices">
+                        Services
                     </a>
                 </li>
                 <li>
-                    <a href="/Home/#Export">
-                        صادرات و واردات
+                    <a href="/Home/EnIndex/#Export">
+                        Export & Import
                     </a>
                 </li>
 
@@ -96,24 +95,24 @@
     </div>
 
     <div class="col-lg-2 col-sm-6 d-none d-md-block">
-        <div class="footer-widget text-right">
-            <h6 class="text-white">ارتباط با ما</h6>
+        <div class="footer-widget text-left">
+            <h6 class="text-white">Useful links</h6>
             <hr />
             <!-- Links -->
             <ul class="footer-links ">
                 <li>
-                    <a href="/About/AboutUs">
-                        درباره ما
+                    <a href="/About/EnAboutUs">
+                        About Us
                     </a>
                 </li>
                 <li>
-                    <a href="/Contact/ContactUs">
-                        تماس با ما
+                    <a href="/Contact/EnContactUs">
+                        Contact Us
                     </a>
                 </li>
                 <li>
-                    <a href="/Contact/Cooperation">
-                        فرم درخواست مذاکره
+                    <a href="/Contact/EnCooperation">
+                        Cooperation
                     </a>
                 </li>
 

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace ArtaTiam.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [PermissionChecker("admin")]
     public class CountryController : Controller
     {
         Core _core = new Core();

@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Admin\Views\Gallery\Components\Create.cshtml" />
-    <Content Remove="Areas\Admin\Views\Gallery\Components\Edit.cshtml" />
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
@@ -39,6 +37,7 @@
     <Folder Include="wwwroot\Images\MoarefyeSherkatImg\" />
     <Folder Include="wwwroot\Images\DarnareModiamelImg\" />
     <Folder Include="wwwroot\Images\DarbareMaImg\" />
+    <Folder Include="wwwroot\Images\Gallery\" />
     <Folder Include="wwwroot\Images\VideoSectionHome\" />
     <Folder Include="wwwroot\Images\Slider\" />
     <Folder Include="wwwroot\img\flag\" />
@@ -47,8 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Gallery\Components\Create.cshtml" />
-    <None Include="Areas\Admin\Views\Gallery\Components\Edit.cshtml" />
     <None Include="Areas\Admin\Views\Shared\Components\Pager\Paging.cshtml" />
     <None Include="Areas\Admin\Views\Slider\Components\Create.cshtml" />
     <None Include="Areas\Admin\Views\Slider\Components\Edit.cshtml" />

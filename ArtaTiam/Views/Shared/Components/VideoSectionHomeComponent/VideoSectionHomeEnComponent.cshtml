@@ -1,0 +1,22 @@
+﻿@model TblConfig
+<section class="video-section my-center" dir="rtl">
+    <div class="video-section-container my-center pt-2 my-center">
+        <div class="img-container pt-md-4">
+            <video class="my-center" controls>
+                <source src="~/Images/VideoSectionHome/@ViewBag.SelectedConfigImg" type="video/mp4" />
+            </video>
+        </div>
+        <div class="content-container pt-5 pt-md-0">
+            <p class="paragragh pt-md-4" dir="ltr">
+                @Model.Value
+            </p>
+        </div>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-2">
+            <hr />
+            <a href="/Admin/Config/VideoSectionHome" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
+</section>

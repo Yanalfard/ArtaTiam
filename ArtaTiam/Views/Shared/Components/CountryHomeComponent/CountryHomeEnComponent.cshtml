@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TblBanner>
+
+<section class="flag-section bg-white">
+    <h6 class="text-center pt-5 pb-3 text-Bold">Proud to cooperate with </h6>
+
+
+    <div class="owl-carousel owl-theme col-10 my-center">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <img class="my-center" src="~/Images/Country/@item.ImageUrl" alt="flag-img" />
+                <label>@item.NameEn</label>
+            </div>
+        }
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-5 col-md-11 col-lg-10 my-center">
+            <hr />
+            <a href="/Admin/Country" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
+</section>

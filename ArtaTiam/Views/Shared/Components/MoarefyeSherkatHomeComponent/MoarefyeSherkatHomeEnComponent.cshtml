@@ -1,0 +1,39 @@
+﻿@model TblConfig
+
+<section class="Introduction-section my-center">
+    <h3 class="text-center title-h3 d-none mobile-header">
+        <span>
+            About Us
+        </span>
+    </h3>
+    <div class="Introduction-container my-center pt-2" dir="rtl">
+        <div class="img-container pt-md-4">
+            <img src="~/Images/MoarefyeSherkatImg/@ViewBag.SelectedConfigImg" width="480" alt="img" />
+        </div>
+        <div class="content-container pt-5 pt-md-0">
+            <h3 class="text-center title-h3 desktop-header">
+                <span>
+                    About Us
+                </span>
+            </h3>
+            <p class="paragragh pt-md-4 text-09" dir="ltr">
+                @Model.Value
+            </p>
+            <div class="row my-center col-md-12 mt-5">
+                <a class="col-md-5 greenButton" href="/About/EnAboutUS">
+                    About us
+                </a>
+                <a class="col-md-5 greenButton mr-auto mt-3 mt-md-0" href="/Contact/EnContactUs">
+                    Contact us
+                </a>
+            </div>
+        </div>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-2">
+            <hr />
+            <a href="/Admin/Config/MoarefyeSherkat" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
+</section>

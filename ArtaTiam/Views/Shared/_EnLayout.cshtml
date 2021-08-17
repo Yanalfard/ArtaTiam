@@ -13,12 +13,8 @@
     <section class="Header navbar-section">
         <nav id="menu" class="navbar navbar-expand-xl navbar-light fixed-top pt-0 pb-0 border-bottom">
             <ul class=" header-flag navbar-brand navbar-nav my-row pb-2 pl-1 pl-md-4 mt-2" dir="rtl">
-                <li class="nav-item">
-                    <a class="nav-link mytext-light" href="https://www.instagram.com/arta.tiyammaham/" uk-icon="logo-instagram" width="18"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mytext-light" href="https://wa.me/+989141245761" uk-icon="logo-whatsapp" width="18"></a>
-                </li>
+                @await Component.InvokeAsync("LogoHeaderWatsappInstagramEnComponent")
+                
             </ul>
             <span class="vertical-divider"></span>
             <ul class="navbar-brand navbar-nav my-row pb-2" dir="rtl">
@@ -70,7 +66,7 @@
                     </li>
                     <li class="nav-item my-nav-item">
                         <a class="nav-link" href="/Contact/EnCooperation">
-                           Cooperation
+                            Cooperation
                         </a>
                     </li>
                     <li class="nav-item my-nav-item">
@@ -92,9 +88,8 @@
 
     </section>
     <div class=" my-column left-side-logo">
-
-        <a href="https://www.instagram.com/arta.tiyammaham/"><img class="side-item" src="~/img/static-layout/Instagram-logo-PNG.png" /></a>
-        <a href="https://wa.me/+989141245761"><img class="mt-2 side-item" src="~/img/static-layout/watsapp.png" /></a>
+        @await Component.InvokeAsync("LogoWatsappInstagramEnComponent")
+       
     </div>
     <div class="">
         @RenderBody()
@@ -107,125 +102,8 @@
         <footer class="">
             <div class="container">
                 <div class="row justify-content-start">
-                    <div class="col-lg-5 col-sm-12">
-                        <div class="footer-widget">
-                            <!-- Brand -->
-                            <h5 href="/Home/EnIndex" class="mytext-gold text-left footer-titr pb-0">
-                                Arta Tiyam Maham <span class="text-white">Trading Company </span>
-                            </h5>
-                            <hr />
-                            <p class="paragragh text-white text-08 d-none d-md-block">
-                                We are proud to gain your satisfaction and profit, dear ones. We hope to be able to provide you with the best services in the ultimate in security and quality, and we try to be with you always and provide you with the pleasure of real business.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mr-lg-auto col-sm-12">
-                        <div class="footer-widget text-left">
-                            <h6 class="text-white">Contacts</h6>
-                            <hr />
-                            <!-- Links -->
-                            <ul class="footer-links ">
-                                <li>
-
-                                    <i class="mytext-gold footer-icon" uk-icon="location" width="18"></i>
-                                    <span class="text-white text-08">
-                                        Iran / East Azarbaijan Province / Tabriz / Ostad Shahriyar Boulevard / Next to the General Welfare Office / Building 22 / 5th Floor / Unit E
-                                    </span>
-
-                                </li>
-                                <li>
-
-                                    <i class=" mytext-gold gly-rotate-270" uk-icon="call" width="18"></i>
-                                    <span class="text-white text-08">
-                                        041 3310 1047 - 041 3310 1099
-                                    </span>
-
-                                </li>
-                                <li>
-                                    <a href="mailto:artatiyammaham@chmail.ir">
-                                        <i class=" mytext-gold" uk-icon="mail" width="18"></i>
-                                        <span class="text-white text-08">
-                                            artatiyammaham@chmail.ir
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://wa.me/+989141245761">
-                                        <i class=" mytext-gold" uk-icon="logo-whatsapp" width="18"></i>
-                                        <span class="text-white text-08">
-                                            +98 9141245761
-                                        </span>
-                                    </a>
-                                    <span class="vertical-divider"></span>
-                                    <i class="mytext-gold" uk-icon="phone-portrait-outline" width="18"></i>
-                                    <span class="text-white text-08">
-                                        +98 9144239397
-                                    </span>
-
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/arta.tiyammaham/">
-                                        <i class=" mytext-gold" uk-icon="logo-instagram" width="18"></i>
-                                        <span class="text-white text-08">
-                                            arta.tiyammaham
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-6 d-none d-md-block">
-                        <div class="footer-widget text-left">
-                            <h6 class="text-white">Quick Access</h6>
-                            <hr />
-                            <!-- Links -->
-                            <ul class="footer-links ">
-                                <li>
-                                    <a href="/Home/EnIndex">
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/Home/EnServices">
-                                        Services
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/Home/EnIndex/#Export">
-                                        Export & Import
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-sm-6 d-none d-md-block">
-                        <div class="footer-widget text-left">
-                            <h6 class="text-white">Useful links</h6>
-                            <hr />
-                            <!-- Links -->
-                            <ul class="footer-links ">
-                                <li>
-                                    <a href="/About/EnAboutUs">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/Contact/EnContactUs">
-                                        Contact Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/Contact/EnCooperation">
-                                       Cooperation
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("FooterEnComponent")
+                    
                 </div> <!-- / .row -->
                 <hr class="mt-0 pt-0" />
                 <div class="my-center">
@@ -262,6 +140,7 @@
         });
     </script>
 
+    @RenderSection("Script", false)
 
 </body>
 </html>

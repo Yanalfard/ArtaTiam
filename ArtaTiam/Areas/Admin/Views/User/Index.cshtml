@@ -1,0 +1,101 @@
+﻿@model IEnumerable<DataLayer.Models.TblUser>
+@{
+    ViewData["Title"] = "   کاربران  ";
+}
+
+
+
+<div class="row flex-div">
+    <div class="col-md-12 flex-div pb-3 pt-3">
+        <div class="card flex-div border-0 main-shadow">
+            <div class="card-header bg-white">
+                <div class="pr-1 pt-2">
+                    <div class="card-form form-row">
+                        <div class="form-input">
+
+                        </div>
+                        <div class="form-toolbar mr-md-3 mr-1">
+                            <a asp-action="Create"  class="btn btn-success btn-sm float-left mr-2">افزودن<span class="icon-holder uk-margin-small-right" uk-icon="add-circle-outline"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--list region-->
+            <div id="card-table" class="card-body flex-div">
+                <!--list region-->
+                <div id="card-table" class="card-body flex-div">
+                    <div class="table-responsive flex">
+                        <table class="table fixed">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">ردیف </th>
+                                    <th scope="col">نام </th>
+                                    <th scope="col">شماره تماس یا نام کاربری </th>
+                                    <th scope="col">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int skip = 0;
+                                }
+
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr id="userId_@item.UserId">
+                                        <td>@(skip + 1)</td>
+                                        @{
+                                            skip += 1;
+                                        }
+                                        <td>@item.Name</td>
+                                        <td>@item.TellNo</td>
+                                        <td>
+                                            <span data-placement="top" data-toggle="tooltip" title="" data-original-title="ویرایش">
+                                                <a asp-action="Edit" asp-route-id="@item.UserId"><i class="btn fas fa-edit mr-2 text-primary">ویرایش</i></a>
+                                            </span>
+                                            <span data-placement="top" data-toggle="tooltip" title="" data-original-title="حذف">
+                                                <a onclick="deleteUser(@item.UserId)"><i class="btn fas fa-trash mr-2 text-danger">حذف</i></a>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@section Script{
+
+    <script src="~/Validate/jquery.validate.min.js"></script>
+    <script src="~/Validate/jquery.validate.unobtrusive.js"></script>
+
+    <script>
+        function deleteUser(id) {
+            if (confirm('آیا از حذف   مورد نظر مطمئن هستید؟')) {
+                $.post("/Admin/User/Delete/" + id, function (result) {
+                    if (result == "true") {
+                        $('#userId_' + id).addClass('text-danger');
+                        $("#userId_" + id).hide('slow');
+                    } else {
+                        alert("کاربر مورد نظر حذف نمی شود");
+                    }
+                });
+            } else {
+                // Do nothing!
+            }
+        }
+    </script>
+}
+
+
+

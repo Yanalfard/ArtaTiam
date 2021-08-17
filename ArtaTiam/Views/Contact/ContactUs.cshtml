@@ -17,7 +17,7 @@
     <div class="white-card  pr-2 pl-2 pt-4 pb-4 p-md-4">
         <div class="text-right" dir="rtl">
             <i class="mytext-red" uk-icon="location" width="35"></i>
-            <span class="mytext-bold text-1"> آدرس دفتر مرکزی </span>: ایران / استان آذربایجان شرقی / تبریز / بلوار استاد شهریار / جنب اداره کل بهزیستی / ساختمان 22 / طبقه 5 / واحد<span> E     </span>
+            <span class="mytext-bold text-1"> آدرس دفتر مرکزی </span>: @Model.Address
         </div>
         <div class="col-md-10 mt-5 my-center text-left pr-0 pl-0">
             <div class="row">
@@ -54,17 +54,20 @@
     <div class="white-card pt-4 pb-4 pr-2 pl-2 p-md-4 my-center" dir="rtl">
         <div class="row">
             <div class="col-md-6 text-right">
-                <span class="mytext-bold text-1 mytext-green"> مدیر عامل (مهندس صفری): </span><span class="mr-1"> @Model.TellModirAmel </span>
+                <span class="mytext-bold text-1 mytext-green"> مدیر عامل (مهندس صفری): </span><span class="mr-1" dir="ltr"> @Model.TellModirAmel </span>
             </div>
             <div class="col-md-6 text-right mt-2 mt-md-0">
-                <span class="mytext-bold text-1 mytext-green"> رئیس هیأت مدیره  (آقای اصغری): </span><span class="mr-1"> @Model.TellRaisHyatModire </span>
+                <span class="mytext-bold text-1 mytext-green"> رئیس هیأت مدیره  (آقای اصغری): </span><span class="mr-1" dir="ltr"> @Model.TellRaisHyatModire </span>
             </div>
         </div>
     </div>
-    <div class="edit-admin pb-5 d-none">
-        <hr />
-        <a class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="edit-admin pb-5">
+            <hr />
+            <a href="/Admin/Config" class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+        </div>
+    }
 </section>
 
 @*map section*@

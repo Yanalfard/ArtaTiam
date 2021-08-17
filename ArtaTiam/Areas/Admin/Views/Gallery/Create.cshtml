@@ -1,13 +1,13 @@
 ﻿@model DataLayer.Models.TblImage
 @{
-    ViewData["Title"] = "عکس و ویدیو";
+    ViewData["Title"] = "   افزودن  " + "  " + ViewBag.name;
 }
 <div class="modal-header">
     <h6 class="modal-title" id="modalCenterTitle">
-        افزودن فایل
+        افزودن @ViewBag.name
     </h6>
 </div>
-<form asp-action="Create" asp-controller="Gallery" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
+<form style="overflow:auto" asp-action="Create" asp-controller="Gallery" asp-area="Admin" data-ajax="true" enctype="multipart/form-data"
       data-ajax-method="POST"
       data-ajax-mode="replace"
       data-ajax-complete="EndCatagoryCreate()"
@@ -17,7 +17,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label>نام</label>
-                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: عکس1">
+                <input class="form-control form-control-sm" asp-for="Name" placeholder="مثال: @ViewBag.name">
                 <span class="text-danger" asp-validation-for="Name"></span>
             </div>
         </div>
@@ -42,11 +42,11 @@
                 <span class="text-danger" asp-validation-for="DescriptionEn"></span>
             </div>
         </div>
-        <label class="mt-2">فایل مورد نظر </label>
+        <label class="mt-2">@ViewBag.name </label>
         <br />
         <div class="custom-file col-md-7">
-            <input type="file" class="custom-file-input form-control form-control-sm" accept="image/x-png,image/gif,image/jpeg" required asp-for="ImageUrl" onchange="inputChanged(this)">
-            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب تصویر</label>
+            <input type="file" class="custom-file-input form-control form-control-sm"  required asp-for="ImageUrl" onchange="inputChanged(this)">
+            <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب @ViewBag.name</label>
         </div>
     </div>
     <div class="modal-footer justify-content-end">

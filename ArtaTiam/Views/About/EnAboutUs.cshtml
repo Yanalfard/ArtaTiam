@@ -1,4 +1,4 @@
-﻿
+﻿@model ConfigVm
 @{
     ViewData["Title"] = "About Us";
     Layout = "~/Views/Shared/_EnLayout.cshtml";
@@ -16,7 +16,7 @@
     </h3>
     <div class="about-container my-center pt-2">
         <div class="img-container">
-            <img src="~/img/about.png" width="300" />
+            <img src="~/Images/DarbareMaImg/@Model.DarbareMaImg" width="300" />
         </div>
         <div class="content-container pt-5 pt-md-0">
             <h3 class="text-center title-h3 desktop-header">
@@ -25,7 +25,7 @@
                 </span>
             </h3>
             <p class="paragragh pt-md-4 text-dark" dir="ltr">
-                Arta Tiyam Maham Trading Company with registration number 49969 (Private Joint Stock) established in 1398 and former Tiyam Azar Trading with 15 years of experience (17 years of continuous experience) in the field of export and import of authorized commercial goods, clearance, supply of goods, clearance Kari, obtaining the necessary banking facilities to make investments, participate in tenders and auctions of Iranian and foreign governments and non-governmental organizations.
+                @Html.Raw(Model.DarbareMaTextEn)
             </p>
         </div>
     </div>
@@ -48,6 +48,14 @@
                 In direct contact with more than 700 Iranian four-season farmers and producers with products subject to export licenses and standards of exportable goods.
             </label>
         </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="edit-admin pb-5">
+                <hr />
+                <a href="/Admin/Config/DarbareMa" class="btn btn-info mr-auto pl-3 float-left pr-3 text-white mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+            </div>
+        }
     </div>
     <h3 class="text-center title-h3 my-center mb-5 mt-5">
         <span class="my-center">

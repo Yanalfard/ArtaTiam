@@ -22,5 +22,9 @@
   {
     "outputFile": "wwwroot/css/EnVersion.css",
     "inputFile": "wwwroot/css/EnVersion.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Product.css",
+    "inputFile": "wwwroot/css/Product.scss"
   }
 ]

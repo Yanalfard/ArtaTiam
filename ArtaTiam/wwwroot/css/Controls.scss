@@ -319,7 +319,7 @@ a:hover {
         width: 2px;
         height: 90px;
         border-left: 1px solid #d4cfcf;
-        padding-right: 15px;
+        padding-right: 10px;
     }
 
     .my-nav-item {
@@ -406,65 +406,77 @@ a:hover {
         transform: scale(1.4);
     }
 }
-//////////////////////////////////////
-.footer-space {
-height:500px;
-}
-/*footer style section*/
-.footer-section {
-    position: relative;
-    width: 100%;
-    bottom: 0;
 
-    footer {
-        background-image: url('/img/footer-bg.svg');
-        background-size: cover;
-        padding: 50px 0px 20px 0px;
+@media only screen and (max-width: 600px) {
+    .right-side-logo {
+        top: 300px;
 
-        .footer-titr {
-            font-family: BNARM ;
-            font-size: 24px;
-        }
-
-        .footer-widget {
-            hr {
-                border: 2px groove #E3AC34;
-            }
-
-            h6 {
-                padding-bottom: 0.45rem;
-                font-family: IRANYekan;
-            }
-
-            .vertical-divider {
-                width: 0.5px;
-                height: 40px;
-                border-left: 1px solid #d4cfcf;
-                padding-right: 1px;
-            }
-
-            li {
-                padding: 3px 0;
-                font-family: IranSans;
-
-                a {
-                    color: white;
-                    font-size: 0.8rem;
-                }
-
-                a:hover {
-                    color: gray;
-
-                    span {
-                        color: gray !important;
-                    }
-                }
-            }
-        }
-
-        .footer-icon {
-            width: 18px !important;
+        .side-item {
+            width: 30px;
         }
     }
 }
-/////////////////////////////////
+
+
+    //////////////////////////////////////
+    .footer-space {
+        height: 500px;
+    }
+    /*footer style section*/
+    .footer-section {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+
+        footer {
+            background-image: url('/img/footer-bg.svg');
+            background-size: cover;
+            padding: 50px 0px 20px 0px;
+
+            .footer-titr {
+                font-family: BNARM;
+                font-size: 24px;
+            }
+
+            .footer-widget {
+                hr {
+                    border: 2px groove #E3AC34;
+                }
+
+                h6 {
+                    padding-bottom: 0.45rem;
+                    font-family: IRANYekan;
+                }
+
+                .vertical-divider {
+                    width: 0.5px;
+                    height: 40px;
+                    border-left: 1px solid #d4cfcf;
+                    padding-right: 1px;
+                }
+
+                li {
+                    padding: 3px 0;
+                    font-family: IranSans;
+
+                    a {
+                        color: white;
+                        font-size: 0.8rem;
+                    }
+
+                    a:hover {
+                        color: gray;
+
+                        span {
+                            color: gray !important;
+                        }
+                    }
+                }
+            }
+
+            .footer-icon {
+                width: 18px !important;
+            }
+        }
+    }
+    /////////////////////////////////

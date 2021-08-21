@@ -234,7 +234,7 @@ a:hover {
   width: 2px;
   height: 90px;
   border-left: 1px solid #d4cfcf;
-  padding-right: 15px; }
+  padding-right: 10px; }
 
 .navbar-section .my-nav-item .nav-link {
   color: black;
@@ -298,6 +298,12 @@ a:hover {
     -webkit-transform: scale(1.4);
     /* Safari 3-8 */
     transform: scale(1.4); }
+
+@media only screen and (max-width: 600px) {
+  .right-side-logo {
+    top: 300px; }
+    .right-side-logo .side-item {
+      width: 30px; } }
 
 .footer-space {
   height: 500px; }

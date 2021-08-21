@@ -234,7 +234,7 @@ a:hover {
   width: 2px;
   height: 90px;
   border-left: 1px solid #d4cfcf;
-  padding-right: 15px; }
+  padding-right: 10px; }
 
 .navbar-section .my-nav-item .nav-link {
   color: black;
@@ -299,6 +299,12 @@ a:hover {
     /* Safari 3-8 */
     transform: scale(1.4); }
 
+@media only screen and (max-width: 600px) {
+  .right-side-logo {
+    top: 300px; }
+    .right-side-logo .side-item {
+      width: 30px; } }
+
 .footer-space {
   height: 500px; }
 
@@ -342,11 +348,17 @@ a:hover {
   /* Standard syntax */
   /* Standard syntax */
   /* Standard syntax */
-  /*h1, p {
-    color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}*/ }
+  /*    @media (max-width: 550px) {
+        .carousel-swap-adjuster {
+            bottom: -70px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .carousel-swap-adjuster {
+            bottom: -15px;
+        }
+    }*/ }
   .header-section .carousel-thumbnails {
     padding-top: 90px; }
   .header-section .carousel-item1 .carousel-ban-text-adj {
@@ -554,18 +566,57 @@ a:hover {
   .header-section .carousel-banner.carousel-item-prev {
     display: flex;
     justify-content: center; }
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
+    .header-section .carousel-swap-adjuster {
+      bottom: -126px; }
+      .header-section .carousel-swap-adjuster li {
+        width: 50px;
+        margin-left: 0px; }
+    .header-section .carousel-ban-text-adj {
+      /*width: 90% !important;*/ }
+    .header-section .carousel-control-next, .header-section .carousel-control-prev {
+      top: 60px; }
+    .header-section .carousel-img-fit {
+      min-width: 100% !important;
+      /*max-width: 1000px;*/
+      max-height: 150px;
+      min-height: 150px;
+      object-fit: cover;
+      object-position: top !important; }
+    .header-section .carousel-banner {
+      max-height: 500px !important;
+      min-height: 150px !important; }
+    .header-section carousel-thumbnails {
+      max-height: 500px !important;
+      min-height: 150px !important; }
+    .header-section .carousel-ban-text-adj {
+      position: absolute;
+      width: 210px !important;
+      display: flex;
+      bottom: 40px;
+      padding: 10px 0 !important; }
+      .header-section .carousel-ban-text-adj h1 {
+        font-size: 14px;
+        padding-right: 0 !important; }
+      .header-section .carousel-ban-text-adj p {
+        font-size: 8px;
+        margin: 11px 0 8px 0;
+        padding-right: 0 !important; }
+      .header-section .carousel-ban-text-adj .greenButton {
+        width: 30% !important;
+        font-size: 6px !important;
+        margin-top: 2px !important;
+        min-width: 100px; }
+    .header-section .carousel-swap-adjuster {
+      /* bottom: 200px !important;*/ } }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
     .header-section .carousel-swap-adjuster {
       bottom: -40px; }
       .header-section .carousel-swap-adjuster li {
         width: 90px;
-        margin-left: 0px; } }
-  @media (max-width: 550px) {
-    .header-section .carousel-swap-adjuster {
-      bottom: -70px; } }
-  @media (max-width: 380px) {
-    .header-section .carousel-swap-adjuster {
-      bottom: -15px; } }
+        margin-left: 0px; }
+    .header-section .carousel-ban-text-adj {
+      /*width: 90% !important;*/ } }
   .header-section .tile_1 {
     z-index: 14; }
   .header-section .tile_2 {
@@ -637,6 +688,7 @@ a:hover {
 
 .flag-section .owl-carousel .owl-item img {
   width: 50px !important;
+  height: 50px;
   border: 1px solid #cccccc;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 4px;

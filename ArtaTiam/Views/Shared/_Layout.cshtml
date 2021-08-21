@@ -11,16 +11,19 @@
 <body>
     <section class="Header navbar-section">
         <nav id="menu" class="navbar navbar-expand-xl navbar-light fixed-top pt-0 pb-0 border-bottom">
-            <ul class=" header-flag navbar-brand navbar-nav my-row pb-2 pl-1 pl-md-4 mt-2" dir="rtl">
+            <ul class=" header-flag navbar-brand navbar-nav my-row pb-2 pl-md-4 mt-2 mr-1" dir="rtl">
                 @await Component.InvokeAsync("LogoHeaderWatsappInstagramComponent")
-
-                
             </ul>
             <span class="vertical-divider"></span>
             <ul class="navbar-brand navbar-nav my-row pb-0" dir="rtl">
                 <li class="nav-item pl-2 pl-xl-0">
                     <a class="nav-link flag" href="/Home/EnIndex">
                         <img src="~/img/flag/UK-flag.png" width="18" />
+                    </a>
+                </li>
+                <li class="nav-item pl-2 pl-xl-0">
+                    <a class="nav-link flag" href="#">
+                        <img src="~/img/flag/Saudi_Arabia.png" width="21" />
                     </a>
                 </li>
                 <li class="nav-item">
@@ -54,6 +57,13 @@
                             واردات
                         </a>
                     </li>
+                @*<li class="nav-item my-nav-item">
+                    <a class="nav-link" href="/Product/Products">
+                        محصولات
+                    </a>
+                </li>*@
+                    
+                    
                     <li class="nav-item my-nav-item">
                         <a class="nav-link" href="/About/aboutCEO">
                             مدیریت
@@ -88,7 +98,7 @@
     </section>
     <div class=" my-column right-side-logo">
         @await Component.InvokeAsync("LogoWatsappInstagramComponent")
-       
+
     </div>
     <div class="">
         @RenderBody()
@@ -103,7 +113,7 @@
                 <div class="row justify-content-start">
 
                     @await Component.InvokeAsync("FooterComponent")
-                
+
                 </div> <!-- / .row -->
                 <hr class="mt-0 pt-0" />
                 <div class="my-center">
@@ -113,7 +123,7 @@
                 </div>
             </div>
         </footer>
-    
+
     </section>
     <!-- Footer -->
     <script src="~/Jquery/jquery-3.4.1.js"></script>
@@ -139,7 +149,14 @@
             $(this).ekkoLightbox();
         });
     </script>
-
+    <script>
+        $(function () {
+            var navMain = $("#navbarSupportedContent");
+            navMain.on("click", "a", null, function () {
+                navMain.collapse('hide');
+            });
+        });
+    </script>
     @RenderSection("Script", false)
 </body>
 </html>

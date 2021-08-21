@@ -43,6 +43,18 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .left-side-logo {
+        top: 300px;
+
+        .side-item {
+            width: 30px;
+        }
+    }
+}
+
+
+
 
 .footer-section {
     .footer-titr {
@@ -71,7 +83,7 @@
 
 .header-section {
     .greenButton {
-        min-width: 220px !important;
+        min-width: 220px;
     }
 
     .carousel-item4 {
@@ -109,8 +121,37 @@
         color: #EDB649 !important;
         font-size: 20px !important;
     }
+
+    @media only screen and (max-width: 600px) {
+        .carousel-ban-text-adj {
+            position: absolute;
+            width: 230px !important;
+            display: flex;
+            bottom: 40px;
+            padding: 10px 0 !important;
+
+            h1 {
+                font-size: 9px !important;
+                padding-right: 0 !important;
+            }
+
+            p {
+                font-size: 7px !important;
+                margin: 11px 0 8px 0;
+                padding-right: 0 !important;
+            }
+
+            .greenButton {
+                width: 30% !important;
+                font-size: 6px !important;
+                margin-top: 2px !important;
+                min-width: 100px;
+            }
+        }
+    }
 }
 
+///////////////////////////////////////////////////
 .service-section {
 
     .service-container {

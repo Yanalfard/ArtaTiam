@@ -23,5 +23,7 @@ namespace DataLayer.Models
         public string Description { get; set; }
         [StringLength(20)]
         public string TellNo { get; set; }
+        [StringLength(20)]
+        public string PersonalityCode { get; set; }
     }
 }

@@ -26,6 +26,9 @@ namespace DataLayer.ViewModels
         [StringLength(20)]
         [Required(ErrorMessage = "لطفا شماره تلفن  را وارد کنید")]
         public string TellNo { get; set; }
+        [StringLength(20)]
+        [Required(ErrorMessage = "لطفا کد ملی را وارد کنید")]
+        public string PersonalityCode { get; set; }
     }
 
 
@@ -51,5 +54,8 @@ namespace DataLayer.ViewModels
         [StringLength(20)]
         [Required(ErrorMessage = "Please Type Tell")]
         public string TellNo { get; set; }
+        [StringLength(20)]
+        [Required(ErrorMessage = "Please Type Personality Code")]
+        public string PersonalityCode { get; set; }
     }
 }

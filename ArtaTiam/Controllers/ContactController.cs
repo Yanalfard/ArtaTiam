@@ -32,6 +32,7 @@ namespace ArtaTiam.Controllers
                 addNegotiation1.TellNo = negotiation.TellNo;
                 addNegotiation1.Description = negotiation.Description;
                 addNegotiation1.Amount = negotiation.Amount;
+                addNegotiation1.PersonalityCode = negotiation.PersonalityCode;
                 _core.Negotiation.Add(addNegotiation1);
                 _core.Save();
                 return Redirect("/Contact/Cooperation?SendForm=true");
@@ -70,6 +71,7 @@ namespace ArtaTiam.Controllers
                 addNegotiation1.TellNo = negotiation.TellNo;
                 addNegotiation1.Description = negotiation.Description;
                 addNegotiation1.Amount = negotiation.Amount;
+                addNegotiation1.PersonalityCode = negotiation.PersonalityCode;
                 _core.Negotiation.Add(addNegotiation1);
                 _core.Save();
                 return Redirect("/Contact/EnCooperation?SendForm=true");

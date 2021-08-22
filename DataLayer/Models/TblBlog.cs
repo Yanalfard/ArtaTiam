@@ -41,7 +41,9 @@ namespace DataLayer.Models
         public string BodyHtmlAr { get; set; }
         public int LikeCount { get; set; }
         public int ViewCount { get; set; }
+        public int CatagoryId { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime DateCreated { get; set; }
+
     }
 }

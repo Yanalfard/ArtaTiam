@@ -45,6 +45,8 @@ namespace ArtaTiam.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Parentcatagories = _core.Catagory.Get(c => c.ParentId == null);
+
             return View();
         }
 
@@ -80,11 +82,14 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 _core.Save();
                 return await Task.FromResult(Redirect("/Admin/Blog"));
             }
+            ViewBag.Parentcatagories = _core.Catagory.Get(c => c.ParentId == null);
+
             return View(blog);
         }
 
         public IActionResult Edit(int id)
         {
+            ViewBag.Parentcatagories = _core.Catagory.Get(c => c.ParentId == null);
             return View(_core.Blog.GetById(id));
         }
 
@@ -146,10 +151,12 @@ namespace ArtaTiam.Areas.Admin.Controllers
                     Editblog.BodyHtmlAr = blog.BodyHtmlAr;
                     Editblog.BodyHtmlEn = blog.BodyHtmlEn;
                     Editblog.MainImage = blog.MainImage;
+                    Editblog.CatagoryId = blog.CatagoryId;
                     _core.Blog.Update(Editblog);
                     _core.Save();
                     return await Task.FromResult(Redirect("/Admin/Blog"));
                 }
+                ViewBag.Parentcatagories = _core.Catagory.Get(c => c.ParentId == null);
 
                 return await Task.FromResult(View(blog));
             }

@@ -1,0 +1,76 @@
+﻿
+@import "Controls.scss";
+
+.products-section {
+    padding-top: 130px;
+    padding-bottom: 20px;
+
+
+    .grid {
+        @include grid-gap(300px,2em);
+        padding: 10px 3vw;
+    }
+
+    .white-gallery-card {
+        @include my-column();
+        width: 300px;
+        min-height: 450px;
+        background-image: url('/img/index/ex-im-bg.svg');
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 10px 0 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid #d8d8d8;
+
+
+        img, video {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            transition: transform .2s;
+        }
+
+        img:hover, video:hover {
+            -ms-transform: scale(1.05); //IE 9
+            -webkit-transform: scale(1.05); //Safari 3-8
+            transform: scale(1.05);
+        }
+
+        p {
+            color: black !important;
+            width: 90%;
+            margin:10px auto 25px auto;
+            align-items: center;
+            justify-content: center;
+            text-align: justify !important;
+            text-justify: kashida !important;
+        }
+    }
+
+    .product-item-img {
+        border-radius: 5px;
+    }
+
+    .product-item-img:hover {
+    }
+
+    .greenButton {
+        margin-bottom:10px;
+        background: linear-gradient(141.6deg, #126634 13.63%, #248864 38.22%, #126634 65.2%, #286534 73.35%, #126634 82.01%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 6px 20px;
+        width:90%!important;
+        a{
+          color: white !important;
+          font-size:0.9rem;
+        }
+    }
+
+    .greenButton:hover {
+        background: #e1e1e1;
+        a{
+        color: #126634 !important;}
+    }
+}

@@ -33,6 +33,12 @@
     /* Safari 3-8 */
     transform: scale(1.4); }
 
+@media only screen and (max-width: 600px) {
+  .left-side-logo {
+    top: 300px; }
+    .left-side-logo .side-item {
+      width: 30px; } }
+
 .footer-section .footer-titr {
   /*   font-family: !important;*/
   font-size: 20px !important; }
@@ -48,7 +54,7 @@
 .header-section {
   /* Standard syntax */ }
   .header-section .greenButton {
-    min-width: 220px !important; }
+    min-width: 220px; }
   .header-section .carousel-item4 .carousel-ban-text-adj {
     -webkit-animation: mymove5 1.2s;
     /* Safari 4.0 - 8.0 */
@@ -72,6 +78,25 @@
     text-align: center;
     color: #EDB649 !important;
     font-size: 20px !important; }
+  @media only screen and (max-width: 600px) {
+    .header-section .carousel-ban-text-adj {
+      position: absolute;
+      width: 230px !important;
+      display: flex;
+      bottom: 40px;
+      padding: 10px 0 !important; }
+      .header-section .carousel-ban-text-adj h1 {
+        font-size: 9px !important;
+        padding-right: 0 !important; }
+      .header-section .carousel-ban-text-adj p {
+        font-size: 7px !important;
+        margin: 11px 0 8px 0;
+        padding-right: 0 !important; }
+      .header-section .carousel-ban-text-adj .greenButton {
+        width: 30% !important;
+        font-size: 6px !important;
+        margin-top: 2px !important;
+        min-width: 100px; } }
 
 .service-section .service-container {
   width: 90%; }

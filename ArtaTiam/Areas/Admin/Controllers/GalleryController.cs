@@ -83,8 +83,10 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 TblImage NewSlider = new TblImage();
                 NewSlider.Name = slider.Name;
                 NewSlider.NameEn = slider.NameEn;
+                NewSlider.NameAr = slider.NameAr;
                 NewSlider.Description = slider.Description;
                 NewSlider.DescriptionEn = slider.DescriptionEn;
+                NewSlider.DescriptionAr = slider.DescriptionAr;
                 NewSlider.Status = slider.Status;
                 if (ImageUrl != null)
                 {
@@ -151,8 +153,10 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 TblImage NewSlider = _core.Image.GetById(slider.ImageId);
                 NewSlider.Name = slider.Name;
                 NewSlider.NameEn = slider.NameEn;
+                NewSlider.NameAr = slider.NameAr;
                 NewSlider.Description = slider.Description;
                 NewSlider.DescriptionEn = slider.DescriptionEn;
+                NewSlider.DescriptionAr = slider.DescriptionAr;
                 if (image != null)
                 {
                     try

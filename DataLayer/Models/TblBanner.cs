@@ -25,5 +25,7 @@ namespace DataLayer.Models
         public bool IsSlider { get; set; }
         [StringLength(150)]
         public string NameEn { get; set; }
+        [StringLength(150)]
+        public string NameAr { get; set; }
     }
 }

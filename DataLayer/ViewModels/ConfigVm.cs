@@ -40,14 +40,21 @@ namespace DataLayer.ViewModels
 
 
         public string VideoSectionHomeTextEn { get; set; }
+        public string VideoSectionHomeTextAr { get; set; }
         public string DarbareMaTextEn { get; set; }
+        public string DarbareMaTextAr { get; set; }
         public string MoarefyeSherkatTextEn { get; set; }
+        public string MoarefyeSherkatTextAr { get; set; }
         public string DarnareModiamelTextEn { get; set; }
+        public string DarnareModiamelTextAr { get; set; }
         [Required(ErrorMessage = "لطفا آدرس  انگلیسی را وارد کنید")]
         public string AddressEn { get; set; }
         [Required(ErrorMessage = "لطفا  توضیحات کوتاه انگلیسی در فوتر  را وارد کنید")]
         public string TozihatShekatFooterEn { get; set; }
-
+        [Required(ErrorMessage = "لطفا آدرس  عربی را وارد کنید")]
+        public string AddressAr { get; set; }
+        [Required(ErrorMessage = "لطفا  توضیحات کوتاه عربی در فوتر  را وارد کنید")]
+        public string TozihatShekatFooterAr { get; set; }
 
 
     }

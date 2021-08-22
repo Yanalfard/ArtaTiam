@@ -16,7 +16,11 @@
                         <textarea asp-for="DarbareMaText" id="DarbareMaText" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
                         <br /><span class="text-danger" asp-validation-for="DarbareMaText"></span>
                     </div>
-
+                    <div class="form-group col-lg-12 mt-lg-3">
+                        <label> متن درباره ما عربی   :</label>
+                        <textarea asp-for="DarbareMaTextAr" id="DarbareMaText" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="DarbareMaText"></span>
+                    </div>
 
                     <div class="form-group col-lg-12 mt-lg-3">
                         <label> متن درباره ما انگلیسی   :</label>
@@ -56,6 +60,7 @@
         $(function () {
             $('#DarbareMaText').ckeditor();
             $('#DarbareMaTextEn').ckeditor();
+            $('#DarbareMaTextAr').ckeditor();
             //$('#DarbareMaMavared').ckeditor();
         });
 

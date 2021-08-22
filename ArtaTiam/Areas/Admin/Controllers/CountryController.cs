@@ -51,6 +51,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
                 TblBanner NewSlider = new TblBanner();
                 NewSlider.Name = slider.Name;
+                NewSlider.NameAr = slider.NameAr;
                 NewSlider.NameEn = slider.NameEn;
                 NewSlider.Title = slider.Title;
                 NewSlider.Link = slider.Link;
@@ -105,6 +106,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 FirstSlider.IsSlider = false;
                 FirstSlider.Link = slider.Link;
                 FirstSlider.NameEn = slider.NameEn;
+                FirstSlider.NameAr = slider.NameAr;
                 if (image != null && image.IsImages() && image.Length < 3000000)
                 {
                     try

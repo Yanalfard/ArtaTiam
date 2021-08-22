@@ -21,18 +21,29 @@
                         <br /><span class="text-danger" asp-validation-for="TozihatShekatFooter"></span>
                     </div>
                     <div class="form-group col-lg-12 mt-lg-3">
+                        <label>  توضیحات کوتاه در فوتر عربی :</label>
+                        <textarea asp-for="TozihatShekatFooterAr" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <br /><span class="text-danger" asp-validation-for="TozihatShekatFooterAr"></span>
+                    </div>
+                    <div class="form-group col-lg-12 mt-lg-3">
                         <label>  توضیحات کوتاه در فوتر انگلیسی :</label>
-                        <textarea  dir="ltr" asp-for="TozihatShekatFooterEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                        <textarea dir="ltr" asp-for="TozihatShekatFooterEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
                         <br /><span class="text-danger" asp-validation-for="TozihatShekatFooterEn"></span>
                     </div>
+
                     <div class="form-group  col-lg-12 mt-lg-3">
                         <label>آدرس</label>
                         <input asp-for="Address" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
                         <br /><span class="text-danger" asp-validation-for="Address"></span>
                     </div>
                     <div class="form-group  col-lg-12 mt-lg-3">
+                        <label>آدرس عربی</label>
+                        <input asp-for="AddressAr" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
+                        <br /><span class="text-danger" asp-validation-for="AddressAr"></span>
+                    </div>
+                    <div class="form-group  col-lg-12 mt-lg-3">
                         <label>آدرس انگلیسی</label>
-                        <input  dir="ltr" asp-for="AddressEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
+                        <input dir="ltr" asp-for="AddressEn" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12 float-left">
                         <br /><span class="text-danger" asp-validation-for="AddressEn"></span>
                     </div>
                     <div class="form-group col-lg-12 mt-lg-3">
@@ -93,15 +104,7 @@
 @section Script{
     <script src="~/js/bootstrap-tagsinput.js"></script>
     <script src="~/js/Auto_Formatting_Currency.js"></script>
-    <script>
-        $(function () {
-            $('#SharyeteErsal').ckeditor();
-            $('#OrderDetails').ckeditor();
-            $('#DarBareyeMa').ckeditor();
-        });
 
-
-    </script>
     <script src="~/Validate/jquery.validate.min.js"></script>
     <script src="~/Validate/jquery.validate.unobtrusive.js"></script>
 }

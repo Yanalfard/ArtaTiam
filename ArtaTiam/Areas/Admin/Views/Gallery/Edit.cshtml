@@ -25,6 +25,13 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
+                <label>نام عربی</label>
+                <input class="form-control form-control-sm" asp-for="NameAr" placeholder="مثال: @ViewBag.name">
+                <span class="text-danger" asp-validation-for="NameAr"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
                 <label>نام انگلیسی</label>
                 <input dir="ltr" class="form-control form-control-sm" asp-for="NameEn" placeholder=" @ViewBag.name">
                 <span class="text-danger" asp-validation-for="NameEn"></span>
@@ -35,6 +42,13 @@
                 <label>توضیحات</label>
                 <textarea asp-for="Description" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
                 <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>توضیحات عربی</label>
+                <textarea asp-for="DescriptionAr" class="form-control form-control-sm d-inline-block d-sm-block col-lg-12" placeholder="..."></textarea>
+                <span class="text-danger" asp-validation-for="DescriptionAr"></span>
             </div>
         </div>
         <div class="form-row">
@@ -59,7 +73,7 @@
             }
         </div>
         <div class="custom-file col-md-7">
-            <input type="file" class="custom-file-input form-control form-control-sm" name="image"  id="image" onchange="inputChanged(this)">
+            <input type="file" class="custom-file-input form-control form-control-sm" name="image" id="image" onchange="inputChanged(this)">
             <label class="custom-file-label" for="Image" data-browse="انتخاب" id="FileName">انتخاب @ViewBag.name</label>
         </div>
     </div>

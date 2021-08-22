@@ -35,7 +35,7 @@
 
 @media only screen and (max-width: 600px) {
   .left-side-logo {
-    top: 300px; }
+    top: 360px; }
     .left-side-logo .side-item {
       width: 30px; } }
 
@@ -80,11 +80,7 @@
     font-size: 20px !important; }
   @media only screen and (max-width: 600px) {
     .header-section .carousel-ban-text-adj {
-      position: absolute;
-      width: 230px !important;
-      display: flex;
-      bottom: 40px;
-      padding: 10px 0 !important; }
+      width: 230px !important; }
       .header-section .carousel-ban-text-adj h1 {
         font-size: 9px !important;
         padding-right: 0 !important; }

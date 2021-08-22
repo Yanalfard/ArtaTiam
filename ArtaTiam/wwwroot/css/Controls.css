@@ -301,7 +301,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .right-side-logo {
-    top: 300px; }
+    top: 360px; }
     .right-side-logo .side-item {
       width: 30px; } }
 
@@ -342,3 +342,9 @@ a:hover {
           color: gray !important; }
     .footer-section footer .footer-icon {
       width: 18px !important; }
+
+@media only screen and (max-width: 1200px) {
+  .my-mobile-nav {
+    max-height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; } }

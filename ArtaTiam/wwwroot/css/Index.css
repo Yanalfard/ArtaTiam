@@ -301,7 +301,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .right-side-logo {
-    top: 300px; }
+    top: 360px; }
     .right-side-logo .side-item {
       width: 30px; } }
 
@@ -342,6 +342,12 @@ a:hover {
           color: gray !important; }
     .footer-section footer .footer-icon {
       width: 18px !important; }
+
+@media only screen and (max-width: 1200px) {
+  .my-mobile-nav {
+    max-height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; } }
 
 .header-section {
   /* Standard syntax */
@@ -568,32 +574,32 @@ a:hover {
     justify-content: center; }
   @media only screen and (max-width: 600px) {
     .header-section .carousel-swap-adjuster {
-      bottom: -126px; }
+      bottom: -115px; }
       .header-section .carousel-swap-adjuster li {
         width: 50px;
         margin-left: 0px; }
     .header-section .carousel-ban-text-adj {
       /*width: 90% !important;*/ }
     .header-section .carousel-control-next, .header-section .carousel-control-prev {
-      top: 60px; }
+      top: 70px; }
     .header-section .carousel-img-fit {
       min-width: 100% !important;
       /*max-width: 1000px;*/
       max-height: 150px;
-      min-height: 150px;
+      min-height: 200px;
       object-fit: cover;
       object-position: top !important; }
     .header-section .carousel-banner {
       max-height: 500px !important;
-      min-height: 150px !important; }
+      min-height: 200px !important; }
     .header-section carousel-thumbnails {
       max-height: 500px !important;
-      min-height: 150px !important; }
+      min-height: 200px !important; }
     .header-section .carousel-ban-text-adj {
       position: absolute;
       width: 210px !important;
       display: flex;
-      bottom: 40px;
+      bottom: 60px;
       padding: 10px 0 !important; }
       .header-section .carousel-ban-text-adj h1 {
         font-size: 14px;

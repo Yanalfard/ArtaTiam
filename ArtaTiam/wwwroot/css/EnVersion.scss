@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 600px) {
     .left-side-logo {
-        top: 300px;
+        top: 360px;
 
         .side-item {
             width: 30px;
@@ -124,11 +124,7 @@
 
     @media only screen and (max-width: 600px) {
         .carousel-ban-text-adj {
-            position: absolute;
             width: 230px !important;
-            display: flex;
-            bottom: 40px;
-            padding: 10px 0 !important;
 
             h1 {
                 font-size: 9px !important;

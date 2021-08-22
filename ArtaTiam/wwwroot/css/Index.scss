@@ -287,7 +287,7 @@
 
     @media only screen and (max-width: 600px) {
         .carousel-swap-adjuster {
-            bottom: -126px;
+            bottom: -115px;
 
             li {
                 width: 50px;
@@ -300,7 +300,7 @@
         }
 
         .carousel-control-next, .carousel-control-prev {
-            top: 60px;
+            top: 70px;
         }
 
 
@@ -308,26 +308,26 @@
             min-width: 100% !important;
             /*max-width: 1000px;*/
             max-height: 150px;
-            min-height: 150px;
+            min-height: 200px;
             object-fit: cover;
             object-position: top !important;
         }
 
         .carousel-banner {
             max-height: 500px !important;
-            min-height: 150px !important;
+            min-height: 200px !important;
         }
 
         carousel-thumbnails {
             max-height: 500px !important;
-            min-height: 150px !important;
+            min-height: 200px !important;
         }
 
         .carousel-ban-text-adj {
             position: absolute;
             width: 210px !important;
             display: flex;
-            bottom: 40px;
+            bottom: 60px;
             padding: 10px 0 !important;
 
             h1 {

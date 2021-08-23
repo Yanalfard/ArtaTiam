@@ -62,38 +62,7 @@
                             محصولات
                         </a>
                         <ul class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item mytext-gray" href="/Product/Products" style="color:#333!important;">سبزیجات</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item mytext-gray" href="#" style="color:#333!important;">سبزیجات<i class="float-left" uk-icon="chevron-back-outline" width="16"></i> </a>
-                                <ul class="dropdown-menu dropdown-submenu text-right">
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 1</a>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">میوه </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#" style="color:#333!important;">مواد غذایی<i class="float-left" uk-icon="chevron-back-outline" width="16"></i> </a>
-                                <ul class="dropdown-menu dropdown-submenu text-right">
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 1</a>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-
+                            @await Component.InvokeAsync("ProductInMenuHomeComponent")
                         </ul>
                     </li>
 

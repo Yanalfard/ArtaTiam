@@ -363,7 +363,8 @@ a:hover {
 .menu-bar .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: unset !important; }
+  left: unset !important;
+  min-width: 15rem; }
 
 .menu-bar .dropdown-menu li {
   position: relative;
@@ -386,6 +387,11 @@ a:hover {
   color: #126634 !important;
   text-decoration: none;
   background-color: #f2f2f2 !important; }
+
+@media only screen and (max-width: 768px) {
+  .dropdown-submenu {
+    right: 16% !important;
+    top: 25px !important; } }
 
 .mytext-bold {
   font-weight: 600; }

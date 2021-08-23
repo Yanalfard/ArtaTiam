@@ -16,6 +16,43 @@
     <input type="hidden" asp-for="BlogId" />
     <input type="hidden" asp-for="MainImage" />
     <div class="modal-body">
+
+        <ul uk-accordion class="bg-light mt-3 pt-3 pb-3 uk-text-small uk-border-rounded">
+            <li class="col-md-4">
+                <a class="uk-accordion-title uk-text-small" href="#">دسته بندی</a>
+                <div class="uk-accordion-content">
+                    <ul class="uk-margin-right" uk-accordion>
+                        @{
+                            IEnumerable<DataLayer.Models.TblCatagory> Parentcatagories = ViewBag.Parentcatagories;
+                        }
+                        @foreach (var item in Parentcatagories)
+                        {
+
+
+                            <li>
+                                @if (item.InverseParent.Any())
+                                {
+                                    <a class="uk-accordion-title uk-text-small">@item.Name</a>
+                                    <div class="uk-accordion-content">
+                                        <ul class="uk-margin-right" uk-accordion>
+                                            @await Component.InvokeAsync("ShowChildsCatagoryInCreateProduct", new { Id = item.CatagoryId })
+                                        </ul>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <a id="Cat-@item.CatagoryId" class="uk-accordion-title uk-text-small Cat" onclick="SelectCatagory(@item.CatagoryId)">@item.Name</a>
+                                }
+
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <input type="hidden" asp-for="CatagoryId" value="@Model.CatagoryId" />
+        <small class="text-success">دسته بندی انتخاب شده @Model.Catagory.Name</small>
+        <span id="CatagoryIdErorr" asp-validation-for="CatagoryId" class="text-danger"></span>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>عنوان</label>
@@ -116,6 +153,24 @@
 
     <script src="~/js/bootstrap-tagsinput.js"></script>
     <script src="~/js/Auto_Formatting_Currency.js"></script>
+    <script>
 
+        function SelectCatagory(Id) {
+            var idSelect = $("#CatagoryId").val();
+            $("#Cat-" + idSelect).css('color', '#666');
+            $("#Cat-" + idSelect).css('font-weight', 'normal');
+            $("#Cat-" + Id).css('color', '#3E9731');
+            $("#Cat-" + Id).css('font-weight', 'bold');
+            $("#CatagoryId").val(Id);
+            var CatagoryId = $("#CatagoryId").val();
+            if (CatagoryId == null || CatagoryId == "") {
+                $("#SubmitErorr").html("دسته بندی  اجباری است");
+                $("#SubmitCreateProduct").attr("disabled", "disabled");
+            } else {
+                $("#SubmitErorr").html("");
+                $("#SubmitCreateProduct").removeAttr("disabled");
+            }
+        };
+    </script>
 
 }

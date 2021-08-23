@@ -39,9 +39,15 @@ namespace DataLayer.Models
         public string DescriptionAr { get; set; }
         [Required(ErrorMessage = "توضیحات کامل عربی پست را وارد کنید")]
         public string BodyHtmlAr { get; set; }
+
         public int LikeCount { get; set; }
         public int ViewCount { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime DateCreated { get; set; }
+        public int CatagoryId { get; set; }
+
+        [ForeignKey(nameof(CatagoryId))]
+        [InverseProperty(nameof(TblCatagory.TblBlogs))]
+        public virtual TblCatagory Catagory { get; set; }
     }
 }

@@ -25,6 +25,7 @@ namespace DataLayer.Models
         public virtual DbSet<TblImage> TblImages { get; set; }
         public virtual DbSet<TblNegotiation> TblNegotiations { get; set; }
         public virtual DbSet<TblUser> TblUsers { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 => optionsBuilder
 .UseLazyLoadingProxies()
@@ -45,6 +46,12 @@ namespace DataLayer.Models
             modelBuilder.Entity<TblBlog>(entity =>
             {
                 entity.Property(e => e.DateCreated).HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.Catagory)
+                    .WithMany(p => p.TblBlogs)
+                    .HasForeignKey(d => d.CatagoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TblBlog_TblCatagory");
             });
 
             modelBuilder.Entity<TblCatagory>(entity =>

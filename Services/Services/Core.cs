@@ -11,6 +11,7 @@ namespace Services.Services
         private readonly ArtaTiamContext _context = new ArtaTiamContext();
 
         private MainRepo<TblBanner> _baner;
+        private MainRepo<TblCatagory> _catagory;
         private MainRepo<TblBlog> _blog;
         private MainRepo<TblConfig> _config;
         private MainRepo<TblContactU> _contactUs;
@@ -18,6 +19,7 @@ namespace Services.Services
         private MainRepo<TblImage> _image;
         private MainRepo<TblUser> _user;
 
+        public MainRepo<TblCatagory> Catagory => _catagory ??= new MainRepo<TblCatagory>(_context);
         public MainRepo<TblBlog> Blog => _blog ??= new MainRepo<TblBlog>(_context);
         public MainRepo<TblBanner> Baner => _baner ??= new MainRepo<TblBanner>(_context);
         public MainRepo<TblConfig> Config => _config ??= new MainRepo<TblConfig>(_context);

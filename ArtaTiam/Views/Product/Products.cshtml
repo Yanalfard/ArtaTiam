@@ -1,4 +1,4 @@
-﻿
+﻿@model List<TblBlog>
 @{
     ViewData["Title"] = "محصولات";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,57 +15,21 @@
     </h3>
     <div class="my-center">
         <div class="grid my-center" dir="rtl">
-            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                <a href="/Product/Product">
-                    <span class="mt-2 mytext-gray text-09">عنوان محصول</span>
-                    <img src="~/Images/Gallery/44258a99-2f8a-434a-a182-0716a8b4ae45.png">
-                </a>
-                <p class="p-2 text-08" dir="rtl">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-                </p>
-                <a href="/Product/Product" class="greenButton my-center mt-auto">
-                    مشاهده محصول
-                </a>
-            </div>
-            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                <a href="/Product/Product">
-                    <span class="mt-2 mytext-gray text-09">عنوان محصول</span>
-                    <img src="~/Images/Gallery/0e308f79-33b6-45e8-b8f2-75753805a520.jpg">
-                </a>
-                <p class="p-2 text-08" dir="rtl">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                </p>
-                <a href="/Product/Product" class="greenButton my-center mt-auto">
-                    مشاهده محصول
-                </a>
-
-            </div>
-            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                <a href="/Product/Product">
-                    <span class="mt-2 mytext-gray text-09">عنوان محصول</span>
-                    <img src="~/img/Gallery/sample1.png">
-                </a>
-                    <p class="p-2 text-08" dir="rtl">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                    </p>
-                    <a href="/Product/Product" class="greenButton my-center mt-auto">
-                            مشاهده محصول
+            @foreach (var item in Model)
+            {
+                <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                    <a href="/Product/Product/@item.BlogId">
+                        <span class="mt-2 mytext-gray text-09">@item.Title</span>
+                        <img src="~/Images/Blogs/@item.MainImage">
                     </a>
-              
-            </div>
-            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                <a href="/Product/Product">
-                    <span class="mt-2 mytext-gray text-09">عنوان محصول</span>
-                    <img src="~/img/Gallery/sample3.png">
-                </a>
-                <p class="p-2 text-08" dir="rtl">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                </p>
-                <a href="/Product/Product" class="greenButton my-center mt-auto">
-                    مشاهده محصول
-                </a>
-
-            </div>
+                    <p class="p-2 text-08" dir="rtl">
+                       @item.Description
+                    </p>
+                    <a href="/Product/Product/@item.BlogId" class="greenButton my-center mt-auto">
+                        مشاهده محصول
+                    </a>
+                </div>
+            }
         </div>
     </div>
 </section>

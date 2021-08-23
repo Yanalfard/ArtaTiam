@@ -22,6 +22,12 @@ namespace DataLayer.Models
         [Required]
         [StringLength(256)]
         public string Name { get; set; }
+        [Required]
+        [StringLength(256)]
+        public string NameEn { get; set; }
+        [Required]
+        [StringLength(256)]
+        public string NameAr { get; set; }
         public int? ParentId { get; set; }
         public bool IsOnFirstPage { get; set; }
         [StringLength(150)]

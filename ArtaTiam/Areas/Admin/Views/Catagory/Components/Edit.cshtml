@@ -20,9 +20,21 @@
     <div class="modal-body">
         <div class="form-row">
             <div class="form-group col-md-4">
-                <input asp-for="Name" class="form-control form-control-sm" placeholder="نام" required>
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Name">نام</label>
+                <input asp-for="Name" class="form-control form-control-sm" placeholder="مثال : لوازم " required>
+                <span class="text-danger" asp-validation-for="Name"></span>
             </div>
+            <div class="form-group col-md-4">
+                <label asp-for="NameAr">نام عربی</label>
+                <input asp-for="NameAr" class="form-control form-control-sm" placeholder="مثال : لوازم " required>
+                <span class="text-danger" asp-validation-for="NameAr"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="NameEn">نام انگلیسی</label>
+                <input asp-for="NameEn" dir="ltr" class="form-control form-control-sm" placeholder="example" required>
+                <span class="text-danger" asp-validation-for="NameEn"></span>
+            </div>
+
         </div>
     </div>
     <div class="modal-footer justify-content-end">

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TblCatagory>
+@foreach (var item in Model)
+{
+    if (item.InverseParent.Any())
+    {
+        <li>
+            <a class="dropdown-item mytext-gray" href="#" style="color:#333!important;"><i class="float-right" uk-icon="chevron-forward-outline" width="16"></i> @item.NameEn </a>
+
+            <ul class="dropdown-menu dropdown-submenu" style="right: unset !important; left:100% !important">
+                @foreach (var j in item.InverseParent)
+                {
+
+                    <li>
+                        <a class="dropdown-item" href="/Product/EnProducts/@j.CatagoryId" style="color:#333!important;">@j.NameEn</a>
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a class="dropdown-item mytext-gray" href="/Product/EnProducts/@item.CatagoryId" style="color:#333!important;">@item.NameEn</a>
+        </li>
+    }
+}
+

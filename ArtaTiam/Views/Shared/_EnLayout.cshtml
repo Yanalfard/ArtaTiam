@@ -70,45 +70,15 @@
                         </li>*@
 
 
-                    <li class="nav-item my-nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor-pointer" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item mytext-gray" href="/Product/EnProducts" style="color:#333!important;">case1</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item mytext-gray" href="#" style="color:#333!important;"><i class="float-right" uk-icon="chevron-forward-outline" width="16"></i> case1 </a>
-                                <ul class="dropdown-menu dropdown-submenu" style="right: unset !important; left:100% !important">
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products1</a>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">fruit </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="#" style="color:#333!important;"><i class="float-right" uk-icon="chevron-forward-outline" width="16"></i>case3 </a>
-                                <ul class="dropdown-menu dropdown-submenu" style="right: unset !important; left:100% !important">
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products1</a>
-                                    </li>
-
-                                    <li>
-                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products2</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
+                <li class="nav-item my-nav-item dropdown">
+                    <a class="nav-link dropdown-toggle cursor-pointer" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @await Component.InvokeAsync("ProductInMenuHomeEnComponent")
+                    
+                    </ul>
+                </li>
 
 
 

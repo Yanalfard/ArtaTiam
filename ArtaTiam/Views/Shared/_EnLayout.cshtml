@@ -38,53 +38,107 @@
                 <span class="navbar-toggler-icon font-weight-bold"></span>
             </button>
 
-            <div class="collapse navbar-collapse my-mobile-nav" id="navbarSupportedContent">
+            <div class="menu-bar collapse navbar-collapse my-mobile-nav" id="navbarSupportedContent">
 
                 <ul class="navbar-nav my-center pb-0 mt-1">
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Home/EnIndex">Home</a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Home/EnServices">
                             Services
                         </a>
                     </li>
-                    @*<li class="nav-item my-nav-item">
+                    @*<li class="nav-item my-nav-item my-nav-link">
                             <a class="nav-link" href="/Home/EnIndex/#Export">
                                 Exports
                             </a>
                         </li>
-                        <li class="nav-item my-nav-item">
+                        <li class="nav-item my-nav-item my-nav-link">
                             <a class="nav-link" href="/Home/EnIndex/#Import">
                                 Importation
                             </a>
                         </li>*@
-                    <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="/Product/EnProducts">
+
+
+
+
+                    @*<li class="nav-item my-nav-item">
+                            <a class="nav-link" href="/Product/EnProducts">
+                                Products
+                            </a>
+                        </li>*@
+
+
+                    <li class="nav-item my-nav-item dropdown">
+                        <a class="nav-link dropdown-toggle cursor-pointer" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
                             Products
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item mytext-gray" href="/Product/EnProducts" style="color:#333!important;">case1</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mytext-gray" href="#" style="color:#333!important;"><i class="float-right" uk-icon="chevron-forward-outline" width="16"></i> case1 </a>
+                                <ul class="dropdown-menu dropdown-submenu" style="right: unset !important; left:100% !important">
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products1</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">fruit </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="#" style="color:#333!important;"><i class="float-right" uk-icon="chevron-forward-outline" width="16"></i>case3 </a>
+                                <ul class="dropdown-menu dropdown-submenu" style="right: unset !important; left:100% !important">
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products1</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/EnProducts" style="color:#333!important;">products2</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
                     </li>
-                    <li class="nav-item my-nav-item">
+
+
+
+
+
+
+
+
+
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/About/EnAboutCEO">
                             Management
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Gallery/EnGallery">
                             Gallery
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Contact/EnCooperation">
                             Cooperation
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/About/EnAboutUs">
                             About us
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Contact/EnContactUs">
                             Contact us
                         </a>
@@ -153,11 +207,22 @@
     <script>
         $(function () {
             var navMain = $("#navbarSupportedContent");
-            navMain.on("click", "a", null, function () {
+            navMain.on("click", ".my-nav-link", null, function () {
                 navMain.collapse('hide');
             });
         });
     </script>
+    @*<script>
+        $(document).ready(function () {
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var _opened = $(".navbar-collapse").hasClass("show");
+                if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                    $(".navbar-toggler").click();
+                }
+            });
+        });
+    </script>*@
 
     @RenderSection("Script", false)
 

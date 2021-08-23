@@ -36,55 +36,89 @@
                 <span class="navbar-toggler-icon font-weight-bold"></span>
             </button>
 
-            <div class="collapse navbar-collapse my-mobile-nav" id="navbarSupportedContent">
+            <div class="menu-bar collapse navbar-collapse my-mobile-nav" id="navbarSupportedContent">
 
                 <ul class="navbar-nav my-center pb-0 " dir="rtl">
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/">صفحه اصلی</a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Home/Services">
                             خدمات
                         </a>
                     </li>
-                    @*<li class="nav-item my-nav-item">
+                    @*<li class="nav-item my-nav-item my-nav-link">
                             <a class="nav-link" href="/Home/#Export">
                                 صادرات
                             </a>
                         </li>
-                        <li class="nav-item my-nav-item">
+                        <li class="nav-item my-nav-item my-nav-link">
                             <a class="nav-link" href="/Home/#Import">
                                 واردات
                             </a>
                         </li>*@
-                    <li class="nav-item my-nav-item">
-                        <a class="nav-link" href="/Product/Products">
+                    <li class="nav-item my-nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
                             محصولات
                         </a>
+                        <ul class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item mytext-gray" href="/Product/Products" style="color:#333!important;">سبزیجات</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mytext-gray" href="#" style="color:#333!important;">سبزیجات<i class="float-left" uk-icon="chevron-back-outline" width="16"></i> </a>
+                                <ul class="dropdown-menu dropdown-submenu text-right">
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 1</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">میوه </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="#" style="color:#333!important;">مواد غذایی<i class="float-left" uk-icon="chevron-back-outline" width="16"></i> </a>
+                                <ul class="dropdown-menu dropdown-submenu text-right">
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 1</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="/Product/Products" style="color:#333!important;">محصولات 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
                     </li>
 
 
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/About/aboutCEO">
                             مدیریت
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Gallery/Gallery">
                             گالری
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Contact/Cooperation">
                             اعلام همکاری
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/About/aboutUs">
                             درباره ما
                         </a>
                     </li>
-                    <li class="nav-item my-nav-item">
+                    <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/Contact/ContactUs">
                             تماس با ما
                         </a>
@@ -152,11 +186,22 @@
     <script>
         $(function () {
             var navMain = $("#navbarSupportedContent");
-            navMain.on("click", "a", null, function () {
+            navMain.on("click", ".my-nav-link", null, function () {
                 navMain.collapse('hide');
             });
         });
     </script>
+    @*<script>
+        $(document).ready(function () {
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var _opened = $(".navbar-collapse").hasClass("show");
+                if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                    $(".navbar-toggler").click();
+                }
+            });
+        });
+    </script>*@
     @RenderSection("Script", false)
 </body>
 </html>

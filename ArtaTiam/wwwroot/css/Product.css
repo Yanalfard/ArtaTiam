@@ -345,9 +345,47 @@ a:hover {
 
 @media only screen and (max-width: 1200px) {
   .my-mobile-nav {
+    height: 100vh;
     max-height: 100vh;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; } }
+
+.menu-bar .dropdown:hover > .dropdown-menu {
+  display: block; }
+
+.menu-bar .dropdown-toggle::after {
+  /*display:none!important;*/
+  display: inline-block;
+  margin-left: .255em;
+  margin-right: .255em;
+  vertical-align: 0; }
+
+.menu-bar .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: unset !important; }
+
+.menu-bar .dropdown-menu li {
+  position: relative;
+  font-size: 0.9rem; }
+
+.menu-bar .dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: -7px; }
+
+.menu-bar .dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto; }
+
+.menu-bar .dropdown-menu > li:hover > .dropdown-submenu {
+  display: block; }
+
+.menu-bar .dropdown-item.active, .menu-bar .dropdown-item:active {
+  color: #126634 !important;
+  text-decoration: none;
+  background-color: #f2f2f2 !important; }
 
 .products-section {
   padding-top: 130px;

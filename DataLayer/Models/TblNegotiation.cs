@@ -18,6 +18,7 @@ namespace DataLayer.Models
         public string Product { get; set; }
         [StringLength(50)]
         public string FromCountry { get; set; }
+        [StringLength(50)]
         public string Amount { get; set; }
         [StringLength(1000)]
         public string Description { get; set; }

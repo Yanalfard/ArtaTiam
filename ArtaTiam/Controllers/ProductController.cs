@@ -15,13 +15,23 @@ namespace ArtaTiam.Controllers
         {
             return View();
         }
-        public IActionResult Products()
+        public IActionResult Products(int id = 0)
         {
-            return View(_core.Blog.Get(orderBy: i => i.OrderByDescending(i => i.BlogId)));
+            List<TblBlog> list = _core.Blog.Get(orderBy: i => i.OrderByDescending(i => i.BlogId)).ToList();
+            if (id != 0)
+            {
+                list = list.Where(i => i.CatagoryId == id || i.Catagory.ParentId == id).ToList();
+            }
+            return View(list);
         }
-        public IActionResult EnProducts()
+        public IActionResult EnProducts(int id = 0)
         {
-            return View(_core.Blog.Get(orderBy: i => i.OrderByDescending(i => i.BlogId)));
+            List<TblBlog> list = _core.Blog.Get(orderBy: i => i.OrderByDescending(i => i.BlogId)).ToList();
+            if (id != 0)
+            {
+                list = list.Where(i => i.CatagoryId == id || i.Catagory.ParentId == id).ToList();
+            }
+            return View(list);
         }
         public IActionResult Product(int id)
         {

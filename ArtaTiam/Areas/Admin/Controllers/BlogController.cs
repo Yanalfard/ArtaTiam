@@ -173,7 +173,6 @@ namespace ArtaTiam.Areas.Admin.Controllers
 
             TblBlog blog = _core.Blog.GetById(id);
             var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images/Blogs", blog.MainImage);
-
             if (System.IO.File.Exists(imagePath))
             {
                 System.IO.File.Delete(imagePath);
@@ -186,6 +185,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
             }
             _core.Blog.Delete(blog);
             _core.Save();
+
         }
 
 

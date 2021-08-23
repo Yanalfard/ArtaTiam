@@ -128,30 +128,30 @@ namespace ArtaTiam.Areas.Admin.Controllers
             }
         }
 
-        //public string Delete(int id)
-        //{
-        //    if (_core.Catagory.GetById(id).InverseParent.Count() > 0 || _core.Catagory.GetById(id).TblProducts.Count() > 0)
-        //    {
-        //        return "false";
-        //    }
-        //    else
-        //    {
-        //        TblCatagory selectedCategory = _core.Catagory.GetById(id);
-        //        if (selectedCategory.ParentId != null)
-        //        {
-        //            if (!_core.Catagory.Any(i => i.ParentId == selectedCategory.ParentId && i.CatagoryId != selectedCategory.CatagoryId))
-        //            {
-        //                TblCatagory update = _core.Catagory.GetById(selectedCategory.ParentId);
-        //                update.IsOnFirstPage = false;
-        //                _core.Catagory.Update(update);
-        //                _core.Save();
-        //            }
-        //        }
-        //        _core.Catagory.DeleteById(id);
-        //        _core.Save();
-        //        return "true";
-        //    }
-        //}
+        public string Delete(int id)
+        {
+            if (_core.Catagory.GetById(id).InverseParent.Count() > 0 || _core.Catagory.GetById(id).TblBlogs.Count() > 0)
+            {
+                return "false";
+            }
+            else
+            {
+                TblCatagory selectedCategory = _core.Catagory.GetById(id);
+                if (selectedCategory.ParentId != null)
+                {
+                    if (!_core.Catagory.Any(i => i.ParentId == selectedCategory.ParentId && i.CatagoryId != selectedCategory.CatagoryId))
+                    {
+                        TblCatagory update = _core.Catagory.GetById(selectedCategory.ParentId);
+                        update.IsOnFirstPage = false;
+                        _core.Catagory.Update(update);
+                        _core.Save();
+                    }
+                }
+                _core.Catagory.DeleteById(id);
+                _core.Save();
+                return "true";
+            }
+        }
 
         protected override void Dispose(bool disposing)
         {

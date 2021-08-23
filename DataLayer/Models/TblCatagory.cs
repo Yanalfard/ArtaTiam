@@ -14,6 +14,7 @@ namespace DataLayer.Models
         public TblCatagory()
         {
             InverseParent = new HashSet<TblCatagory>();
+            TblBlogs = new HashSet<TblBlog>();
         }
 
         [Key]
@@ -31,5 +32,7 @@ namespace DataLayer.Models
         public virtual TblCatagory Parent { get; set; }
         [InverseProperty(nameof(TblCatagory.Parent))]
         public virtual ICollection<TblCatagory> InverseParent { get; set; }
+        [InverseProperty(nameof(TblBlog.Catagory))]
+        public virtual ICollection<TblBlog> TblBlogs { get; set; }
     }
 }

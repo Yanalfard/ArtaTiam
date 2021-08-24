@@ -59,14 +59,14 @@
                         </li>*@
                     <li class="nav-item my-nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
-                           href="#"
+                           href="javascript:Showhide();"
                            id="navbarDropdownMenuLink"
                            role="button"
                            data-mdb-toggle="dropdown"
-                           aria-expanded="false"  >
+                           aria-expanded="false">
                             محصولات
                         </a>
-                        <ul class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink" id="myDropDown">
                             @await Component.InvokeAsync("ProductInMenuHomeComponent")
                         </ul>
                     </li>
@@ -164,6 +164,20 @@
                 navMain.collapse('hide');
             });
         });
+    </script>
+    <script>
+        function Showhide() {
+            const mq = window.matchMedia("(max-width: 1200px)");
+            var element = document.getElementById("myDropDown");
+            if (mq.matches) {
+                if (element.style.display != "none") {
+                    element.style.display = "none"
+
+                } else {
+                    element.style.display = "block"
+                }
+            }
+        }
     </script>
     @RenderSection("Script", false)
 </body>

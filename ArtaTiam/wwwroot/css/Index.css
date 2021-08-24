@@ -345,7 +345,6 @@ a:hover {
 
 @media only screen and (max-width: 1200px) {
   .my-mobile-nav {
-    height: 100vh;
     max-height: 100vh;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; } }
@@ -365,6 +364,9 @@ a:hover {
   top: 100%;
   left: unset !important;
   min-width: 15rem; }
+
+.menu-bar .dropdown-submenu {
+  min-width: 10rem !important; }
 
 .menu-bar .dropdown-menu li {
   position: relative;
@@ -390,7 +392,7 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
   .dropdown-submenu {
-    right: 16% !important;
+    right: 50% !important;
     top: 25px !important; } }
 
 .header-section {

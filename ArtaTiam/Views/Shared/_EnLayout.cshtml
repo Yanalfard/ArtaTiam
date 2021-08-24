@@ -70,24 +70,15 @@
                         </li>*@
 
 
-                <li class="nav-item my-nav-item dropdown">
-                    <a class="nav-link dropdown-toggle cursor-pointer" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    @await Component.InvokeAsync("ProductInMenuHomeEnComponent")
-                    
-                    </ul>
-                </li>
+                    <li class="nav-item my-nav-item dropdown">
+                        <a href="javascript:Showhide();" class="nav-link dropdown-toggle cursor-pointer" id="navbarDropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="myDropDown">
+                            @await Component.InvokeAsync("ProductInMenuHomeEnComponent")
 
-
-
-
-
-
-
-
-
+                        </ul>
+                    </li>
                     <li class="nav-item my-nav-item my-nav-link">
                         <a class="nav-link" href="/About/EnAboutCEO">
                             Management
@@ -182,17 +173,31 @@
             });
         });
     </script>
-    @*<script>
-        $(document).ready(function () {
-            $(document).click(function (event) {
-                var clickover = $(event.target);
-                var _opened = $(".navbar-collapse").hasClass("show");
-                if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-                    $(".navbar-toggler").click();
+    <script>
+        function Showhide() {
+            const mq = window.matchMedia("(max-width: 1200px)");
+            var element = document.getElementById("myDropDown");
+            if (mq.matches) {
+                if (element.style.display != "none") {
+                    element.style.display = "none"
+
+                } else {
+                    element.style.display = "block"
                 }
+            }
+        }
+    </script>
+    @*<script>
+            $(document).ready(function () {
+                $(document).click(function (event) {
+                    var clickover = $(event.target);
+                    var _opened = $(".navbar-collapse").hasClass("show");
+                    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                        $(".navbar-toggler").click();
+                    }
+                });
             });
-        });
-    </script>*@
+        </script>*@
 
     @RenderSection("Script", false)
 

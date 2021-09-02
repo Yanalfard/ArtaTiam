@@ -358,7 +358,7 @@ a:hover {
             /*padding: 0 0.5rem 0.3rem;*/
             padding:0.1rem .6rem .3rem;
             margin: 0 3px;
-            color: red !important;
+          
         }
     }
 
@@ -484,7 +484,7 @@ a:hover {
     .my-mobile-nav {
         
         max-height: 100vh;
-        overflow-y: scroll;
+        overflow-y: scroll !important;
         -webkit-overflow-scrolling: touch; // mobile safari
     }
 }
@@ -549,6 +549,42 @@ a:hover {
         right: 50% !important;
         top: 25px !important;
     }
+
+    .header-flag {
+        .nav-link {
+            padding: 0.1rem .3rem .4rem !important;
+            margin: 0 !important;
+        }
+    }
+
 }
 
 /////////////////////////////////////////////////////////
+
+.logo-mobile-header {
+    img {
+        width: 25vw!important;
+    }
+}
+@media only screen and (max-width :370px) {
+    .logo-mobile-header {
+        img {
+            width: 20vw !important;
+        }
+    }
+
+}
+@media only screen and (min-width :760px) and (max-width :1200px) {
+    .logo-mobile-header {
+        img {
+            width: 18vw !important;
+        }
+    }
+}
+@media only screen and (min-width :371px) and (max-width :759px) {
+    .logo-mobile-header {
+        img {
+            width: 25vw!important;
+        }
+    }
+}

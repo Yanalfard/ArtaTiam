@@ -61,11 +61,11 @@
         <label class="mt-2">@ViewBag.name</label>
         <br />
         <div class="custom-file col-md-7" style="margin:70px;height:150px;">
-            @if (Model.Status == 1 || Model.Status == 3)
+            @if (Model.Status == 1 || Model.Status == 3 || Model.Status == 5)
             {
                 <img src="~/Images/Gallery/@Model.ImageUrl" alt="@Model.Name" style="max-height: 150px !important;display:block; margin: 0 auto" />
             }
-            else if (Model.Status == 2 || Model.Status == 4)
+            else if (Model.Status == 2 || Model.Status == 4 || Model.Status == 6)
             {
                 <video class="my-center" controls style="max-height:200px">
                     <source src="~/Images/Gallery/@Model.ImageUrl" type="video/mp4" />

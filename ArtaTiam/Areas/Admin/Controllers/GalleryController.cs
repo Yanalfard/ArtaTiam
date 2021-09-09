@@ -39,6 +39,14 @@ namespace ArtaTiam.Areas.Admin.Controllers
             {
                 ViewBag.name = "ویدیو بارگیری";
             }
+            else if (id == 5)
+            {
+                ViewBag.name = "عکس محصولات";
+            }
+            else if (id == 6)
+            {
+                ViewBag.name = "ویدیو محصولات";
+            }
             return View(PagingList.Create(list, 10, page));
         }
 
@@ -63,6 +71,14 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 else if (id == 4)
                 {
                     ViewBag.name = "ویدیو بارگیری";
+                }
+                else if (id == 5)
+                {
+                    ViewBag.name = "عکس محصولات";
+                }
+                else if (id == 6)
+                {
+                    ViewBag.name = "ویدیو محصولات";
                 }
                 TblImage image = new TblImage();
                 image.Status = id;
@@ -133,6 +149,14 @@ namespace ArtaTiam.Areas.Admin.Controllers
                 else if (image.Status == 4)
                 {
                     ViewBag.name = "ویدیو بارگیری";
+                }
+                else if (image.Status == 5)
+                {
+                    ViewBag.name = "عکس محصولات";
+                }
+                else if (image.Status == 6)
+                {
+                    ViewBag.name = "ویدیو محصولات";
                 }
                 return await Task.FromResult(View(image));
             }

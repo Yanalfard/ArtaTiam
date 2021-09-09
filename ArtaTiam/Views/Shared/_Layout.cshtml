@@ -34,7 +34,7 @@
 
             </ul>
             <a href="/Home/Index" class="navbar-brand my-center pb-0 d-block d-xl-none logo-mobile-header">
-                <img src="~/img/Logo.png" style="width:25vw"/>
+                <img src="~/img/Logo.png" style="width:25vw" />
             </a>
             <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon font-weight-bold"></span>
@@ -52,15 +52,15 @@
                         </a>
                     </li>
                     @*<li class="nav-item my-nav-item my-nav-link">
-                    <a class="nav-link" href="/Home/#Export">
-                        صادرات
-                    </a>
-                </li>
-                <li class="nav-item my-nav-item my-nav-link">
-                    <a class="nav-link" href="/Home/#Import">
-                        واردات
-                    </a>
-                </li>*@
+                            <a class="nav-link" href="/Home/#Export">
+                                صادرات
+                            </a>
+                        </li>
+                        <li class="nav-item my-nav-item my-nav-link">
+                            <a class="nav-link" href="/Home/#Import">
+                                واردات
+                            </a>
+                        </li>*@
                     <li class="nav-item my-nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
                            href="javascript:Showhide();"
@@ -139,6 +139,7 @@
     </section>
     <!-- Footer -->
     <script src="~/Jquery/jquery-3.4.1.js"></script>
+    <script src="~/Jquery/popper.min.js"></script>
     <script src="~/Bootstrap/js/bootstrap.js"></script>
     <script src="~/js/uikit.min.js"></script>
     <script src="~/js/uikit-icons.js"></script>
@@ -182,6 +183,11 @@
                 }
             }
         }
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
     @RenderSection("Script", false)
 </body>

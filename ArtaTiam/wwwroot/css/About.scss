@@ -1,7 +1,9 @@
 ﻿@import "Controls.scss";
-.mytext-bold{
-    font-weight:600;
+
+.mytext-bold {
+    font-weight: 600;
 }
+
 .about-us-section {
     width: 80%;
     padding-top: 130px;
@@ -63,6 +65,42 @@
         }
     }
 }
+////////////////////////////////////////////
+/*certificate section*/
+.certificate {
+    .download-container {
+        border: 1px solid #126634;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+        padding: 7px 4px;
+        width: 100%;
+    }
+
+    .bgMyGreen {
+        border: 1px solid #126634;
+        border-right: none;
+        padding: 7px 15px;
+        border-radius: 5px 0 0 5px;
+        box-shadow: none !important;
+        left: 0;
+        top: 0;
+
+        .uk-icon {
+            color: white !important;
+            fill: white !important;
+        }
+    }
+
+    .bgMyGreen:hover {
+        background: #e1e1e1 !important;
+        color: #126634 !important;
+
+        a, .uk-icon {
+            color: #126634 !important;
+            fill: #126634 !important;
+        }
+    }
+}
 ///////////////////////////////////////////
 /*Staff section*/
 .about-us-section {
@@ -86,7 +124,7 @@
             border-radius: 50%;
             padding: 4px;
             border: 1px solid #808080;
-            
+
 
             img {
                 width: 120px;
@@ -171,6 +209,7 @@
         background: #e1e1e1 !important;
     }
 }
+
 @media screen and (max-width: 780px) {
     .about-ceo-section {
         width: 90%;
@@ -184,4 +223,4 @@
             }
         }
     }
-    }
+}

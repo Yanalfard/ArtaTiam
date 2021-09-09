@@ -48,6 +48,26 @@ html {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Homa';
+  src: url("/fonts/fontsite/BHOMA.TTF");
+  src: url("/fonts/fontsite/BHOMA.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Far_DastNevis';
+  src: url("/fonts/fontsite/Far_DastNevis.otf");
+  src: url("/fonts/fontsite/Far_DastNevis.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+.Homa {
+  font-family: 'Homa'; }
+
+.Far_DastNevis {
+  font-family: "Far_DastNevis"; }
+
 .Sahel {
   font-family: "Sahel"; }
 
@@ -434,7 +454,7 @@ a:hover {
     .gallery-section .white-card .title-h3 span {
       background: #FFFFFF !important; }
     .gallery-section .white-card .right-side-menu {
-      max-height: 300px; }
+      max-height: 370px; }
     .gallery-section .white-card .bgMyGreen {
       border-radius: 15px 15px 0 0; }
   .gallery-section .card-with-border {

@@ -53,24 +53,24 @@
                         </a>
                     </li>
                     @*<li class="nav-item my-nav-item my-nav-link">
-                    <a class="nav-link" href="/Home/EnIndex/#Export">
-                        Exports
-                    </a>
-                </li>
-                <li class="nav-item my-nav-item my-nav-link">
-                    <a class="nav-link" href="/Home/EnIndex/#Import">
-                        Importation
-                    </a>
-                </li>*@
+                            <a class="nav-link" href="/Home/EnIndex/#Export">
+                                Exports
+                            </a>
+                        </li>
+                        <li class="nav-item my-nav-item my-nav-link">
+                            <a class="nav-link" href="/Home/EnIndex/#Import">
+                                Importation
+                            </a>
+                        </li>*@
 
 
 
 
                     @*<li class="nav-item my-nav-item">
-                    <a class="nav-link" href="/Product/EnProducts">
-                        Products
-                    </a>
-                </li>*@
+                            <a class="nav-link" href="/Product/EnProducts">
+                                Products
+                            </a>
+                        </li>*@
 
 
                     <li class="nav-item my-nav-item dropdown">
@@ -145,6 +145,7 @@
     </section>
     <!-- Footer -->
     <script src="~/Jquery/jquery-3.4.1.js"></script>
+    <script src="~/Jquery/popper.min.js"></script>
     <script src="~/Bootstrap/js/bootstrap.js"></script>
     <script src="~/js/uikit.min.js"></script>
     <script src="~/js/uikit-icons.js"></script>
@@ -190,6 +191,11 @@
             }
         }
     </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     @*<script>
             $(document).ready(function () {
                 $(document).click(function (event) {
@@ -201,6 +207,7 @@
                 });
             });
         </script>*@
+
 
     @RenderSection("Script", false)
 

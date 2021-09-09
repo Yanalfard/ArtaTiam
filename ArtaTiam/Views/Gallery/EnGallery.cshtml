@@ -39,6 +39,11 @@
                     <i class="mytext-green" uk-icon="calendar" width="30"></i>
                     <a href="javascript:archive()" class="mytext-bold ml-1 mt-1 mytext-gray text-09 text-left">Download Archive</a>
                 </div>
+                <hr />
+                <div class="my-row pl-3">
+                    <i class="mytext-green" uk-icon="apps" width="30"></i>
+                    <a href="javascript:product()" class="mytext-bold ml-1 mt-1 mytext-gray text-09 text-left">Products</a>
+                </div>
             </div>
             <div class="col-md-9 my-column mt-4 mt-md-0" id="gallery-result">
                 <!--photos section-->
@@ -87,13 +92,13 @@
                                 <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
                                     <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                        <span class="mt-2 mytext-gray text-09"> @item.Name</span>
+                                        <span class="mt-2 mytext-gray text-09"> @item.NameEn</span>
                                         <video class="img-fluid" controls>
                                             <source src="~/Images/Gallery/@item.ImageUrl" type="video/mp4" />
                                         </video>
                                         <div>
                                             <p class="p-2 text-08" dir="rtl">
-                                                @item.Description
+                                                @item.DescriptionEn
                                             </p>
                                         </div>
 
@@ -126,10 +131,10 @@
                                 {
                                     <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
                                         <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
-                                            <span class="mt-2 mytext-gray text-09">@item.Name</span>
+                                            <span class="mt-2 mytext-gray text-09">@item.NameEn</span>
                                             <img src="~/Images/Gallery/@item.ImageUrl" class="img-fluid">
                                             <p class="p-2 text-08" dir="rtl">
-                                                @item.Description
+                                                @item.DescriptionEn
                                             </p>
                                         </a>
                                     </div>
@@ -139,13 +144,13 @@
                                     <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
                                         <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                            <span class="mt-2 mytext-gray text-09"> @item.Name</span>
+                                            <span class="mt-2 mytext-gray text-09"> @item.NameEn</span>
                                             <video class="img-fluid" controls>
                                                 <source src="~/Images/Gallery/@item.ImageUrl" type="video/mp4" />
                                             </video>
                                             <div>
                                                 <p class="p-2 text-08" dir="rtl">
-                                                    @item.Description
+                                                    @item.DescriptionEn
                                                 </p>
                                             </div>
 
@@ -165,35 +170,91 @@
                         </div>
                     }
                 </div>
+                <!--product section-->
+                <div class="card-with-border mb-4" id="gallery-product">
+                    <h3 class="text-center title-h3 my-center  mb-4 mt-3">
+                        <span class="my-center">
+                            Products
+                        </span>
+                    </h3>
+                    <div class="my-center">
+                        <div class="mb-3 grid">
+                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                <a href="/img/Gallery/sample3.png" data-toggle="lightbox" data-gallery="example-gallery">
+                                    <span class="mt-2 mytext-gray text-09">Title</span>
+                                    <img src="/img/Gallery/sample3.png" class="img-fluid">
+                                    <p class="p-2 text-08" dir="ltr">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="white-gallery-card  gallery-item mt-2 mt-md-0 my-center">
+                                <a href="/img/Gallery/sample1.png" data-toggle="lightbox" data-gallery="example-gallery">
+
+                                    <span class="mt-2 mytext-gray text-09">Title</span>
+                                    <img src="/img/Gallery/sample1.png" class="img-fluid">
+                                    <p class="p-2 text-08" dir="ltr">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                <a href="/img/Gallery/sample2.png" data-toggle="lightbox" data-gallery="example-gallery">
+
+                                    <span class="mt-2 mytext-gray text-09">Title</span>
+                                    <img src="/img/Gallery/sample2.png" class="img-fluid">
+                                    <p class="p-2 text-08" dir="ltr">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Egestas purus viverra accumsan in nisl nisi Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque In egestas erat imperdiet sed euismod nisi porta lorem mollis Morbi tristique senectus et netus
+                                    </p>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="edit-admin pb-5 d-none">
+                        <hr />
+                        <a class="btn btn-info mr-auto pl-3 float-right pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <script>
-
     var photoSection = document.getElementById("gallery-photo");
     var videoSection = document.getElementById("gallery-video");
     var archiveSection = document.getElementById("gallery-archive");
+    var productSection = document.getElementById("gallery-product");
 
     function archive() {
+        productSection.classList.add("d-none");
         photoSection.classList.add("d-none");
         videoSection.classList.add("d-none");
         archiveSection.classList.remove("d-none");
     }
     function photo() {
+        productSection.classList.add("d-none");
         archiveSection.classList.add("d-none");
         videoSection.classList.add("d-none");
         photoSection.classList.remove("d-none");
     }
     function video() {
+        productSection.classList.add("d-none");
         archiveSection.classList.add("d-none");
         photoSection.classList.add("d-none");
         videoSection.classList.remove("d-none");
+    }
+    function product() {
+        archiveSection.classList.add("d-none");
+        photoSection.classList.add("d-none");
+        videoSection.classList.add("d-none");
+        productSection.classList.remove("d-none");
     }
     function total() {
         archiveSection.classList.remove("d-none");
         photoSection.classList.remove("d-none");
         videoSection.classList.remove("d-none");
+        productSection.classList.remove("d-none");
     }
 
 </script>

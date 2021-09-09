@@ -52,6 +52,27 @@ html {
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Homa';
+    src: url('/fonts/fontsite/BHOMA.TTF');
+    src: url('/fonts/fontsite/BHOMA.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Far_DastNevis';
+    src: url('/fonts/fontsite/Far_DastNevis.otf');
+    src: url('/fonts/fontsite/Far_DastNevis.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Homa {
+    font-family: 'Homa';
+}
+.Far_DastNevis {
+    font-family: "Far_DastNevis";
+}
 
 
 .Sahel {

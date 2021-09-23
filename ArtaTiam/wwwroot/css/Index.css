@@ -624,12 +624,14 @@ a:hover {
     text-align: center;
     color: #EDB649 !important;
     font-size: 30px; }
+    .header-section .carousel-header-adj i {
+      font-weight: 800; }
   .header-section .carousel-paragraph {
     margin-left: 0;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 0;
-    font-size: 14px;
+    /*font-size: 14px;*/
     color: white; }
   .header-section .carousel-img-fit {
     min-width: 980px;
@@ -749,11 +751,14 @@ a:hover {
     border-radius: 12px;
     padding: 20px 0 !important; }
     .carousel-ban-text-adj h1 {
-      font-size: 2.5rem !important; }
+      font-size: 1.5rem !important; }
+      .carousel-ban-text-adj h1 i {
+        font-size: 2.5rem !important;
+        font-weight: 800; }
     .carousel-ban-text-adj p {
-      font-size: 1rem !important; }
+      font-size: 1rem; }
     .carousel-ban-text-adj .Far_DastNevis {
-      font-size: 1.4rem !important;
+      font-size: 1.4rem;
       word-spacing: 2px; }
     .carousel-ban-text-adj .greenButton {
       min-width: 300px !important;

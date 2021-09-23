@@ -237,6 +237,9 @@
         text-align: center;
         color: #EDB649 !important;
         font-size: 30px;
+        i{
+            font-weight:800;
+        }
     }
 
     .carousel-paragraph {
@@ -244,7 +247,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         padding-left: 0;
-        font-size: 14px;
+        /*font-size: 14px;*/
         color: white;
     }
 
@@ -441,15 +444,20 @@
         padding: 20px 0 !important;
 
         h1 {
-            font-size: 2.5rem !important;
+            font-size: 1.5rem !important;
+
+            i {
+                font-size: 2.5rem !important;
+                font-weight:800;
+            }
         }
 
         p {
-            font-size: 1rem !important;
+            font-size: 1rem;
         }
 
         .Far_DastNevis {
-            font-size: 1.4rem !important;
+            font-size: 1.4rem ;
             word-spacing: 2px;
         }
 

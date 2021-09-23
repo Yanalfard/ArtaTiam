@@ -187,42 +187,52 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample3.png" data-toggle="lightbox" data-gallery="example-gallery">
-                                    <span class="mt-2 mytext-gray text-09">عنوان عکس</span>
-                                    <img src="/img/Gallery/sample3.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="rtl">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="white-gallery-card  gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample1.png" data-toggle="lightbox" data-gallery="example-gallery">
+                            @foreach (var item in Model.Where(i => i.Status == 5 || i.Status == 6))
+                            {
+                                if (item.Status == 5)
+                                {
+                                    <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                        <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                    <span class="mt-2 mytext-gray text-09">عنوان عکس</span>
-                                    <img src="/img/Gallery/sample1.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="rtl">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
-                                <a href="/img/Gallery/sample2.png" data-toggle="lightbox" data-gallery="example-gallery">
+                                            <span class="mt-2 mytext-gray text-09">@item.Name </span>
+                                            <img src="~/Images/Gallery/@item.ImageUrl" class="img-fluid">
+                                            <p class="p-2 text-08" dir="rtl">
+                                                @item.Description
+                                            </p>
+                                        </a>
+                                    </div>
+                                }
+                                else if (item.Status == 6)
+                                {
+                                    <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
+                                        <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
 
-                                    <span class="mt-2 mytext-gray text-09">عنوان عکس</span>
-                                    <img src="/img/Gallery/sample2.png" class="img-fluid">
-                                    <p class="p-2 text-08" dir="rtl">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-                                    </p>
-                                </a>
-                            </div>
+                                            <span class="mt-2 mytext-gray text-09"> @item.Name</span>
+                                            <video class="img-fluid" controls>
+                                                <source src="~/Images/Gallery/@item.ImageUrl" type="video/mp4" />
+                                            </video>
+                                            <div>
+                                                <p class="p-2 text-08" dir="rtl">
+                                                    @item.Description
+                                                </p>
+                                            </div>
 
+                                        </a>
+                                    </div>
+                                }
+
+
+                            }
                         </div>
                     </div>
-                    <div class="edit-admin pb-5 d-none">
-                        <hr />
-                        <a class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="edit-admin pb-5">
+                            <hr />
+                            <a href="/Admin/Home" class="btn btn-info mr-auto pl-3 float-left pr-3 mytext-white"><i uk-icon="create-outline"></i>ویرایش</a>
+                        </div>
+
+                    }
                 </div>
             </div>
         </div>

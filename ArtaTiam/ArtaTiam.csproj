@@ -41,9 +41,6 @@
     <Folder Include="wwwroot\Images\Gallery\" />
     <Folder Include="wwwroot\Images\VideoSectionHome\" />
     <Folder Include="wwwroot\Images\Slider\" />
-    <Folder Include="wwwroot\img\flag\" />
-    <Folder Include="wwwroot\img\index\Slideshow\" />
-    <Folder Include="wwwroot\img\static-layout\" />
   </ItemGroup>
 
   <ItemGroup>

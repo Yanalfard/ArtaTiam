@@ -338,12 +338,15 @@ a:hover {
     padding: 50px 0px 20px 0px; }
     .footer-section footer .footer-titr {
       font-family: BNARM;
-      font-size: 24px; }
+      font-size: 18px; }
+      .footer-section footer .footer-titr span {
+        font-size: 2rem; }
     .footer-section footer .footer-widget hr {
       border: 2px groove #E3AC34; }
     .footer-section footer .footer-widget h6 {
       padding-bottom: 0.45rem;
-      font-family: IRANYekan; }
+      font-family: IRANYekan;
+      margin-top: 11px; }
     .footer-section footer .footer-widget .vertical-divider {
       width: 0.5px;
       height: 40px;
@@ -433,6 +436,7 @@ a:hover {
     width: 25vw !important; } }
 
 .header-section {
+  /* Standard syntax */
   /* Standard syntax */
   /* Standard syntax */
   /* Standard syntax */
@@ -603,6 +607,18 @@ a:hover {
     bottom: 80px; }
   100% {
     bottom: 180px; } }
+
+@-webkit-keyframes mymove7 {
+  0% {
+    margin-left: 400px; }
+  100% {
+    margin-left: 0px; } }
+
+@keyframes mymove7 {
+  0% {
+    margin-left: 400px; }
+  100% {
+    margin-left: 0px; } }
   .header-section .carousel-ban-text-adj {
     position: absolute;
     width: 600px;
@@ -700,8 +716,11 @@ a:hover {
       bottom: 60px;
       padding: 10px 0 !important; }
       .header-section .carousel-ban-text-adj h1 {
-        font-size: 14px;
+        font-size: 12px;
         padding-right: 0 !important; }
+        .header-section .carousel-ban-text-adj h1 i {
+          font-size: 1.5rem !important;
+          font-weight: 800; }
       .header-section .carousel-ban-text-adj p {
         font-size: 8px;
         margin: 3px 0 6px 0;
@@ -719,8 +738,31 @@ a:hover {
       .header-section .carousel-swap-adjuster li {
         width: 90px;
         margin-left: 0px; }
-    .header-section .carousel-ban-text-adj .greenButton {
-      width: 200px !important; } }
+    .header-section .carousel-ban-text-adj {
+      /**/ }
+      .header-section .carousel-ban-text-adj h1 {
+        /*font-size: 1.5rem !important;*/ }
+        .header-section .carousel-ban-text-adj h1 i {
+          font-size: 4rem !important;
+          font-weight: 800; }
+      .header-section .carousel-ban-text-adj .greenButton {
+        width: 200px !important; }
+    .header-section .carousel-item3 .carousel-ban-text-adj {
+      -webkit-animation: mymove6 2s !important;
+      /* Safari 4.0 - 8.0 */
+      animation: mymove6 2s !important; } }
+  @media only screen and (min-width: 769px) and (max-width: 1199px) {
+    .header-section .carousel-ban-text-adj {
+      /**/ }
+      .header-section .carousel-ban-text-adj h1 {
+        /*font-size: 1.5rem !important;*/ }
+        .header-section .carousel-ban-text-adj h1 i {
+          font-size: 4rem !important;
+          font-weight: 800; }
+    .header-section .carousel-item3 .carousel-ban-text-adj {
+      -webkit-animation: mymove6 2s !important;
+      /* Safari 4.0 - 8.0 */
+      animation: mymove6 2s !important; } }
   .header-section .tile_1 {
     z-index: 14; }
   .header-section .tile_2 {
@@ -745,7 +787,7 @@ a:hover {
     width: 800px !important;
     display: flex;
     /*margin-left: 18px;*/
-    bottom: 180px;
+    bottom: 130px !important;
     background: rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(7px);
     border-radius: 12px;
@@ -753,7 +795,7 @@ a:hover {
     .carousel-ban-text-adj h1 {
       font-size: 1.5rem !important; }
       .carousel-ban-text-adj h1 i {
-        font-size: 2.5rem !important;
+        font-size: 6rem !important;
         font-weight: 800; }
     .carousel-ban-text-adj p {
       font-size: 1rem; }
@@ -764,11 +806,13 @@ a:hover {
       min-width: 300px !important;
       font-size: 1rem; }
   .carousel-item3 .carousel-ban-text-adj {
-    -webkit-animation: mymove6 2s !important;
+    -webkit-animation: mymove7 2s !important;
     /* Safari 4.0 - 8.0 */
-    animation: mymove6 2s !important; }
+    animation: mymove7 2s !important; }
   .header-section .carousel-control-next, .header-section .carousel-control-prev {
-    top: 0px; } }
+    top: 0px; }
+  .header-section .carousel-swap-adjuster {
+    bottom: -50px; } }
 
 /*end header style*/
 .Introduction-section {
@@ -917,7 +961,8 @@ a:hover {
 .our-service-section {
   position: relative;
   padding-top: 100px;
-  background-image: url("/img/index/service-bg.jpg");
+  /*background-image: url('/img/index/service-bg.jpg');*/
+  background-image: url("/img/index/image-min.jpg");
   /* Set a specific height */
   min-height: 450px;
   /* Create the parallax scrolling effect */

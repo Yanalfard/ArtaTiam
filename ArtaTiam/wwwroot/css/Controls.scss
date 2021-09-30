@@ -456,17 +456,22 @@ a:hover {
 
             .footer-titr {
                 font-family: BNARM;
-                font-size: 24px;
+                font-size: 18px;
+                span{
+                    font-size:2rem;
+                }
             }
 
             .footer-widget {
                 hr {
+                    
                     border: 2px groove #E3AC34;
                 }
 
                 h6 {
                     padding-bottom: 0.45rem;
                     font-family: IRANYekan;
+                    margin-top:11px;
                 }
 
                 .vertical-divider {

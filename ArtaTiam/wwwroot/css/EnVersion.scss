@@ -58,14 +58,18 @@
 
 .footer-section {
     .footer-titr {
-     /*   font-family: !important;*/
-        font-size: 20px !important;
+        font-size: 17px;
+
+        span {
+            font-size: 1.5rem !important;
+        }
     }
 
     .footer-widget {
 
         h6 {
             /*font-family: Tahoma;*/
+            margin-top: 3px!important;
         }
 
         li {
@@ -119,7 +123,6 @@
         padding-left: 0px;
         text-align: center;
         color: #EDB649 !important;
-        font-size: 20px !important;
     }
 
     @media only screen and (max-width: 600px) {
@@ -129,6 +132,10 @@
             h1 {
                 font-size: 9px !important;
                 padding-right: 0 !important;
+
+                b {
+                    font-size: 0.8rem !important;
+                }
             }
 
             p {
@@ -148,8 +155,13 @@
     /////////////////////////////////////////////////////////////////
     @media only screen and (min-width:1200px) {
         .carousel-ban-text-adj {
+            bottom:180px!important;
             h1 {
-                font-size: 2.2rem !important;
+                font-size: 1.5rem !important;
+
+                b {
+                    font-size: 3.2rem !important;
+                }
             }
         }
     }

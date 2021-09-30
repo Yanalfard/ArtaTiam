@@ -40,11 +40,13 @@
       width: 30px; } }
 
 .footer-section .footer-titr {
-  /*   font-family: !important;*/
-  font-size: 20px !important; }
+  font-size: 17px; }
+  .footer-section .footer-titr span {
+    font-size: 1.5rem !important; }
 
 .footer-section .footer-widget h6 {
-  /*font-family: Tahoma;*/ }
+  /*font-family: Tahoma;*/
+  margin-top: 3px !important; }
 
 .footer-section .footer-widget li {
   /*font-family: Tahoma !important;*/ }
@@ -76,14 +78,15 @@
     vertical-align: top;
     padding-left: 0px;
     text-align: center;
-    color: #EDB649 !important;
-    font-size: 20px !important; }
+    color: #EDB649 !important; }
   @media only screen and (max-width: 600px) {
     .header-section .carousel-ban-text-adj {
       width: 230px !important; }
       .header-section .carousel-ban-text-adj h1 {
         font-size: 9px !important;
         padding-right: 0 !important; }
+        .header-section .carousel-ban-text-adj h1 b {
+          font-size: 0.8rem !important; }
       .header-section .carousel-ban-text-adj p {
         font-size: 7px !important;
         margin: 2px 0 5px 0;
@@ -94,8 +97,12 @@
         margin-top: 2px !important;
         min-width: 100px; } }
   @media only screen and (min-width: 1200px) {
-    .header-section .carousel-ban-text-adj h1 {
-      font-size: 2.2rem !important; } }
+    .header-section .carousel-ban-text-adj {
+      bottom: 180px !important; }
+      .header-section .carousel-ban-text-adj h1 {
+        font-size: 1.5rem !important; }
+        .header-section .carousel-ban-text-adj h1 b {
+          font-size: 3.2rem !important; } }
 
 .service-section .service-container {
   width: 90%; }

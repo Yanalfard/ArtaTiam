@@ -338,12 +338,15 @@ a:hover {
     padding: 50px 0px 20px 0px; }
     .footer-section footer .footer-titr {
       font-family: BNARM;
-      font-size: 24px; }
+      font-size: 18px; }
+      .footer-section footer .footer-titr span {
+        font-size: 2rem; }
     .footer-section footer .footer-widget hr {
       border: 2px groove #E3AC34; }
     .footer-section footer .footer-widget h6 {
       padding-bottom: 0.45rem;
-      font-family: IRANYekan; }
+      font-family: IRANYekan;
+      margin-top: 11px; }
     .footer-section footer .footer-widget .vertical-divider {
       width: 0.5px;
       height: 40px;

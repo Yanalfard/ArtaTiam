@@ -127,21 +127,23 @@
 
     @media only screen and (max-width: 600px) {
         .carousel-ban-text-adj {
-            width: 230px !important;
+
 
             h1 {
-                font-size: 9px !important;
+                font-size: 0.6rem !important;
                 padding-right: 0 !important;
 
                 b {
-                    font-size: 0.8rem !important;
+                    font-size: 1rem !important;
                 }
             }
 
             p {
-                font-size: 7px !important;
-                margin: 2px 0 5px 0;
+                font-size: 10px !important;
+                margin: 0px 0 20px 0;
                 padding-right: 0 !important;
+                text-align: center;
+                width: 100%;
             }
 
             .greenButton {
@@ -151,16 +153,25 @@
                 min-width: 100px;
             }
         }
+
+        #marquee-text {
+            font-size: 1rem;
+        }
     }
     /////////////////////////////////////////////////////////////////
     @media only screen and (min-width:1200px) {
         .carousel-ban-text-adj {
-            bottom:180px!important;
+            p {
+                margin-right: 40px !important;
+                margin-left: 0 !important;
+            }
+
             h1 {
                 font-size: 1.5rem !important;
 
                 b {
                     font-size: 3.2rem !important;
+                    
                 }
             }
         }
@@ -274,3 +285,34 @@
             }
         }
     }
+
+#marquee-block {
+    width: 500px;
+    margin: 30px auto 0 0;
+    margin-left: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    direction: ltr;
+}
+
+#marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 13s linear infinite;
+    font-size: 1.5rem;
+}
+
+#marquee-text:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}

@@ -13,7 +13,7 @@
 <link href="~/css/Index.min.css" rel="stylesheet" />
 <section class="header-section">
     <!--Carousel Wrapper-->
-    <div id="carousel-thumb" class="carousel carousel-thumbnails slide" data-ride="carousel" data-interval="5000" data-pause="false">
+    <div id="carousel-thumb" class="carousel carousel-thumbnails slide" data-ride="carousel" data-interval="10000" data-pause="false">
         <!--Slides-->
         @await Component.InvokeAsync("SliderHomeComponent")
     </div>
@@ -246,15 +246,16 @@
         rtl: true,
         responsive: {
             0: {
-                items: 3
+                items: 4
             },
             600: {
-                items: 5
+                items: 7
             },
             1000: {
-                items: 8
+                items: 12
             }
         }
     })
 
 </script>
+

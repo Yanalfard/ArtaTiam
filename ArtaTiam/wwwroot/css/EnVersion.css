@@ -80,29 +80,32 @@
     text-align: center;
     color: #EDB649 !important; }
   @media only screen and (max-width: 600px) {
-    .header-section .carousel-ban-text-adj {
-      width: 230px !important; }
-      .header-section .carousel-ban-text-adj h1 {
-        font-size: 9px !important;
-        padding-right: 0 !important; }
-        .header-section .carousel-ban-text-adj h1 b {
-          font-size: 0.8rem !important; }
-      .header-section .carousel-ban-text-adj p {
-        font-size: 7px !important;
-        margin: 2px 0 5px 0;
-        padding-right: 0 !important; }
-      .header-section .carousel-ban-text-adj .greenButton {
-        width: 30% !important;
-        font-size: 6px !important;
-        margin-top: 2px !important;
-        min-width: 100px; } }
+    .header-section .carousel-ban-text-adj h1 {
+      font-size: 0.6rem !important;
+      padding-right: 0 !important; }
+      .header-section .carousel-ban-text-adj h1 b {
+        font-size: 1rem !important; }
+    .header-section .carousel-ban-text-adj p {
+      font-size: 10px !important;
+      margin: 0px 0 20px 0;
+      padding-right: 0 !important;
+      text-align: center;
+      width: 100%; }
+    .header-section .carousel-ban-text-adj .greenButton {
+      width: 30% !important;
+      font-size: 6px !important;
+      margin-top: 2px !important;
+      min-width: 100px; }
+    .header-section #marquee-text {
+      font-size: 1rem; } }
   @media only screen and (min-width: 1200px) {
-    .header-section .carousel-ban-text-adj {
-      bottom: 180px !important; }
-      .header-section .carousel-ban-text-adj h1 {
-        font-size: 1.5rem !important; }
-        .header-section .carousel-ban-text-adj h1 b {
-          font-size: 3.2rem !important; } }
+    .header-section .carousel-ban-text-adj p {
+      margin-right: 40px !important;
+      margin-left: 0 !important; }
+    .header-section .carousel-ban-text-adj h1 {
+      font-size: 1.5rem !important; }
+      .header-section .carousel-ban-text-adj h1 b {
+        font-size: 3.2rem !important; } }
 
 .service-section .service-container {
   width: 90%; }
@@ -170,3 +173,27 @@
   .certificate .bgMyGreen:hover a, .certificate .bgMyGreen:hover .uk-icon {
     color: #126634 !important;
     fill: #126634 !important; }
+
+#marquee-block {
+  width: 500px;
+  margin: 30px auto 0 0;
+  margin-left: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  direction: ltr; }
+
+#marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 13s linear infinite;
+  font-size: 1.5rem; }
+
+#marquee-text:hover {
+  animation-play-state: paused; }
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-100%, 0); } }

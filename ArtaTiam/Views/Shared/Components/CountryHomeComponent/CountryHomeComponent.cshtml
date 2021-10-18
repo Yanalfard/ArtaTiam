@@ -3,12 +3,12 @@
     <h6 class="text-center IRANYekan pt-5 pb-3 text-Bold">افتخار همکاری با کشورهای</h6>
 
 
-    <div class="owl-carousel owl-theme col-10 my-center">
+    <div class="owl-carousel owl-theme col-11 my-center">
         @foreach (var item in Model)
         {
             <div class="item">
                 <img class="my-center" src="~/Images/Country/@item.ImageUrl" alt="flag-img" />
-                <label>@item.Name</label>
+                <label class="text-Bold">@item.Name</label>
             </div>
         }
     </div>

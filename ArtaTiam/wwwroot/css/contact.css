@@ -526,13 +526,34 @@ a:hover {
   padding-top: 130px;
   padding-bottom: 20px; }
   .services-section .sevice-container {
-    display: flex; }
+    display: flex;
+    position: relative; }
     .services-section .sevice-container .content-container {
       flex: 1; }
     .services-section .sevice-container .img-container {
       flex: 1; }
       .services-section .sevice-container .img-container img {
         vertical-align: middle !important; }
+  .services-section .my-service {
+    position: relative;
+    background-image: url("/img/index/our-srv-bg.jpg");
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*      backdrop-filter:opacity(0.2);*/ }
+    .services-section .my-service paragragh {
+      color: black; }
+  .services-section .my-service::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.88); }
   .services-section .general-services .service-number-bg {
     min-width: 40px;
     width: 40px;

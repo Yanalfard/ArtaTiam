@@ -992,7 +992,7 @@ a:hover {
   position: relative;
   padding-top: 100px;
   /*background-image: url('/img/index/service-bg.jpg');*/
-  background-image: url("/img/index/our-srv-bg.jpg");
+  background-image: url("/img/index/service-bg.jpg");
   /* Set a specific height */
   min-height: 450px;
   /* Create the parallax scrolling effect */

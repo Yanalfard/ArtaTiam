@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace DataLayer.Models
+namespace DataLayer
 {
     [Table("TblImage", Schema = "dbo")]
     public partial class TblImage

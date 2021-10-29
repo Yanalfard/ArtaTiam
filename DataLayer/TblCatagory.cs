@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace DataLayer.Models
+namespace DataLayer
 {
     [Table("TblCatagory", Schema = "dbo")]
     public partial class TblCatagory
@@ -12,7 +14,7 @@ namespace DataLayer.Models
         public TblCatagory()
         {
             InverseParent = new HashSet<TblCatagory>();
-            TblBlogs = new HashSet<Models2.TblBlog>();
+            TblBlogs = new HashSet<TblBlog>();
         }
 
         [Key]
@@ -34,7 +36,7 @@ namespace DataLayer.Models
         public virtual TblCatagory Parent { get; set; }
         [InverseProperty(nameof(TblCatagory.Parent))]
         public virtual ICollection<TblCatagory> InverseParent { get; set; }
-        [InverseProperty(nameof(Models2.TblBlog.Catagory))]
-        public virtual ICollection<Models2.TblBlog> TblBlogs { get; set; }
+        [InverseProperty(nameof(TblBlog.Catagory))]
+        public virtual ICollection<TblBlog> TblBlogs { get; set; }
     }
 }

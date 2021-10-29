@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace DataLayer.Models
+namespace DataLayer
 {
     [Table("TblNegotiations", Schema = "dbo")]
     public partial class TblNegotiation

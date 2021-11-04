@@ -122,7 +122,13 @@
         vertical-align: top;
         padding-left: 0px;
         text-align: center;
-        color: #EDB649 !important;
+
+        .i {
+            font-weight: 800;
+            background: linear-gradient(to left, #dba63c, #f8f09c, #B38728, #f7ed82, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     @media only screen and (max-width: 600px) {
@@ -130,8 +136,12 @@
 
 
             h1 {
-                font-size: 0.6rem !important;
+                font-size: 1rem !important;
                 padding-right: 0 !important;
+                padding-left: 0 !important;
+                margin-left:0;
+                margin-right:0;
+                text-align: center !important;
 
                 b {
                     font-size: 1rem !important;
@@ -171,7 +181,6 @@
 
                 b {
                     font-size: 3.2rem !important;
-                    
                 }
             }
         }

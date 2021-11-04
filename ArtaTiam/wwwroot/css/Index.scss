@@ -887,17 +887,16 @@ background-image: url('/img/static-layout/flag-bg.jpg');
         vertical-align: top !important;
         padding-left: 0px;
         text-align: left;
-        color: #EDB649 !important;
         //font-size: 30px;
-
         i {
             font-weight: 800;
-            text-shadow: 2px 2px #176F40;
+            background: linear-gradient(to left, #dba63c, #f7ed82, #B38728, #f7ed82, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 
     .carousel-paragraph {
-        
         text-shadow: 2px 2px #367453;
     }
 }
@@ -910,7 +909,7 @@ background-image: url('/img/static-layout/flag-bg.jpg');
         }
 
         h1 {
-            font-size: 1.5rem !important;
+            font-size: 3rem !important;
 
             i {
                 font-size: 6rem !important;
@@ -936,10 +935,10 @@ background-image: url('/img/static-layout/flag-bg.jpg');
         }
 
         h1 {
-            font-size: 1.5rem !important;
+            font-size: 2.5rem !important;
 
             i {
-                font-size: 4rem !important;
+                font-size: 4.5rem !important;
                 font-weight: 800;
             }
         }
@@ -959,10 +958,10 @@ background-image: url('/img/static-layout/flag-bg.jpg');
         }
 
         h1 {
-            font-size: 1.7rem !important;
+            font-size: 2.2rem !important;
 
             i {
-                font-size: 4rem !important;
+                font-size: 3.5rem !important;
                 font-weight: 800;
             }
         }
@@ -971,12 +970,12 @@ background-image: url('/img/static-layout/flag-bg.jpg');
 @media only screen and (max-width: 600px) {
     .carousel-ban-text-adj {
         h1 {
-            font-size: 15px;
+            font-size: 1.4rem;
             padding-right: 0 !important;
 
 
             i {
-                font-size: 2.5rem;
+                font-size: 2.1rem;
                 font-weight: 800;
             }
         }

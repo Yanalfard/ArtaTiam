@@ -488,6 +488,13 @@ a:hover {
   padding: 7px 4px;
   width: 100%; }
 
+.certificate .mygrid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 20px 3vw; }
+
 .certificate .bgMyGreen {
   border: 1px solid #126634;
   border-right: none;
@@ -506,6 +513,30 @@ a:hover {
   .certificate .bgMyGreen:hover a, .certificate .bgMyGreen:hover .uk-icon {
     color: #126634 !important;
     fill: #126634 !important; }
+
+@media only screen and (min-width: 1038px) and (max-width: 1203px) {
+  .certificate .mygrid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 4em;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px 3vw; } }
+
+@media only screen and (min-width: 681px) and (max-width: 896px) {
+  .certificate .mygrid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 4em;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px 3vw; } }
+
+@media only screen and (min-width: 448px) and (max-width: 520px) {
+  .certificate .mygrid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px 6vw; } }
 
 /*Staff section*/
 .about-us-section .grid {

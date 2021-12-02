@@ -16,7 +16,7 @@ namespace DataLayer.Models
         }
 
         public virtual DbSet<TblBanner> TblBanners { get; set; }
-        public virtual DbSet<Models2.TblBlog> TblBlogs { get; set; }
+        public virtual DbSet<Models.TblBlog> TblBlogs { get; set; }
         public virtual DbSet<TblCatagory> TblCatagories { get; set; }
         public virtual DbSet<TblConfig> TblConfigs { get; set; }
         public virtual DbSet<TblContactU> TblContactUs { get; set; }
@@ -41,7 +41,7 @@ namespace DataLayer.Models
             modelBuilder.HasDefaultSchema("artatiya_user")
                 .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<Models2.TblBlog>(entity =>
+            modelBuilder.Entity<Models.TblBlog>(entity =>
             {
                 entity.Property(e => e.DateCreated).HasDefaultValueSql("(getdate())");
 

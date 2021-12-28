@@ -53,7 +53,7 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            @foreach (var item in Model.Where(i => i.Status == 1))
+                            @foreach (var item in Model.Where(i => i.Status == 1).OrderByDescending(i=>i.ImageId))
                             {
                                 <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
                                     <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
@@ -87,7 +87,7 @@
 
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            @foreach (var item in Model.Where(i => i.Status == 2))
+                            @foreach (var item in Model.Where(i => i.Status == 2).OrderByDescending(i => i.ImageId))
                             {
                                 <div class="white-gallery-card gallery-item mt-2 mt-md-0 my-center">
                                     <a href="~/Images/Gallery/@item.ImageUrl" data-toggle="lightbox" data-gallery="example-gallery">
@@ -128,7 +128,7 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            @foreach (var item in Model.Where(i => i.Status == 3 || i.Status == 4))
+                            @foreach (var item in Model.Where(i => i.Status == 3 || i.Status == 4).OrderByDescending(i => i.ImageId))
                             {
                                 if (item.Status == 3)
                                 {
@@ -187,7 +187,7 @@
                     </h3>
                     <div class="my-center">
                         <div class="mb-3 grid">
-                            @foreach (var item in Model.Where(i => i.Status == 5 || i.Status == 6))
+                            @foreach (var item in Model.Where(i => i.Status == 5 || i.Status == 6).OrderByDescending(i => i.ImageId))
                             {
                                 if (item.Status == 5)
                                 {

@@ -20,7 +20,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
         Core _core = new Core();
         public IActionResult Image(int id, int page = 1)
         {
-            List<TblImage> list = _core.Image.Get(i => i.Status == id).ToList();
+            List<TblImage> list = _core.Image.Get(i => i.Status == id, orderBy: i => i.OrderByDescending(i => i.ImageId)).ToList();
             ViewBag.idImage = id;
             ViewBag.name = "";
             if (id == 1)
@@ -47,7 +47,7 @@ namespace ArtaTiam.Areas.Admin.Controllers
             {
                 ViewBag.name = "ویدیو محصولات";
             }
-            return View(PagingList.Create(list, 10, page));
+            return View(list);
         }
 
         [HttpGet]
